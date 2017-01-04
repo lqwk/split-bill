@@ -1,5 +1,5 @@
 //
-//  SBExpense.h
+//  SBPayment.h
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/4/17.
@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class SBPayment;
 @class SBMoney;
+@class SBPerson;
 
-@interface SBExpense : NSObject
+@interface SBPayment : NSObject
 
+@property (nonatomic, strong) SBPerson *person;
 @property (nonatomic, strong) SBMoney *amount;
-@property (nonatomic, strong) NSArray<SBPayment *> *payments;
 
 @end

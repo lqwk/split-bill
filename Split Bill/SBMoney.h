@@ -1,5 +1,5 @@
 //
-//  SBPerson.h
+//  SBMoney.h
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/4/17.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SBPerson : NSObject
+@interface SBMoney : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic) NSInteger weight;
+@property (nonatomic) NSInteger whole;
+@property (nonatomic) NSInteger decimal;
 
 @end

@@ -18,6 +18,8 @@
 		B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1ED1E1DAC8900B282A0 /* SBSplitEngine.m */; };
 		B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F01E1DAC9B00B282A0 /* SBPerson.m */; };
 		B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F31E1DACA400B282A0 /* SBExpense.m */; };
+		B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F61E1DB34D00B282A0 /* SBPayment.m */; };
+		B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F91E1DB3BC00B282A0 /* SBMoney.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		B450D1F01E1DAC9B00B282A0 /* SBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPerson.m; sourceTree = "<group>"; };
 		B450D1F21E1DACA400B282A0 /* SBExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBExpense.h; sourceTree = "<group>"; };
 		B450D1F31E1DACA400B282A0 /* SBExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBExpense.m; sourceTree = "<group>"; };
+		B450D1F51E1DB34D00B282A0 /* SBPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPayment.h; sourceTree = "<group>"; };
+		B450D1F61E1DB34D00B282A0 /* SBPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPayment.m; sourceTree = "<group>"; };
+		B450D1F81E1DB3BC00B282A0 /* SBMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMoney.h; sourceTree = "<group>"; };
+		B450D1F91E1DB3BC00B282A0 /* SBMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMoney.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,10 @@
 				B450D1ED1E1DAC8900B282A0 /* SBSplitEngine.m */,
 				B450D1EF1E1DAC9B00B282A0 /* SBPerson.h */,
 				B450D1F01E1DAC9B00B282A0 /* SBPerson.m */,
+				B450D1F81E1DB3BC00B282A0 /* SBMoney.h */,
+				B450D1F91E1DB3BC00B282A0 /* SBMoney.m */,
+				B450D1F51E1DB34D00B282A0 /* SBPayment.h */,
+				B450D1F61E1DB34D00B282A0 /* SBPayment.m */,
 				B450D1F21E1DACA400B282A0 /* SBExpense.h */,
 				B450D1F31E1DACA400B282A0 /* SBExpense.m */,
 			);
@@ -303,10 +313,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B450D1BF1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld in Sources */,
+				B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
 				B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
+				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
