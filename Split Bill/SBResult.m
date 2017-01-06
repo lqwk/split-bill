@@ -7,6 +7,8 @@
 //
 
 #import "SBResult.h"
+#import "SBPerson.h"
+#import "SBMoney.h"
 
 @interface SBResult ()
 
@@ -27,6 +29,36 @@
     result.lender = lender;
     result.amount = amount;
     return result;
+}
+
+#pragma mark - Main Methods
+
+- (NSInteger)canAggregateWith:(SBResult *)result
+{
+    if ([self.lendee.name isEqualToString:result.lendee.name] && [self.lender.name isEqualToString:result.lender.name]) {
+        return 1;
+    } else if ([self.lendee.name isEqualToString:result.lender.name] && [self.lender.name isEqualToString:result.lendee.name]) {
+        return 2;
+    }
+
+    return 0;
+}
+
+- (SBResult *)aggregateWith:(SBResult *)result withFlag:(NSInteger)flag
+{
+    if (flag == 1) {
+        SBMoney *total = [self.amount add:result.amount];
+        return [SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total];
+    } else if (flag == 2) {
+        SBMoney *total = [self.amount subtract:result.amount];
+        if (total.val >= 0) {
+            return [SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total];
+        } else {
+            return [SBResult resultWithLendee:result.lendee andLender:result.lender andAmount:[total abs]];
+        }
+    }
+
+    return nil;
 }
 
 #pragma mark - DEBUG

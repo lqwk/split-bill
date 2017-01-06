@@ -21,4 +21,9 @@
                      andLender:(SBPerson *)lender
                      andAmount:(SBMoney *)amount;
 
+- (NSInteger)canAggregateWith:(SBResult *)result;
+
+// If flag == 2, reverse aggregation. If flag == 1, ordinary aggregation
+- (SBResult *)aggregateWith:(SBResult *)result withFlag:(NSInteger)flag;
+
 @end

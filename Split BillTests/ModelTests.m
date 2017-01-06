@@ -11,6 +11,7 @@
 #import "SBPerson.h"
 #import "SBPayment.h"
 #import "SBExpense.h"
+#import "SBResult.h"
 
 @interface ModelTests : XCTestCase
 
@@ -122,6 +123,42 @@
     SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment1, payment2, payment3, nil]];
     NSArray *results = [expense resultsForEvaluation];
     NSLog(@"%@", results);
+}
+
+- (void)testAggregate
+{
+    SBPerson *person1 = [SBPerson personWithName:@"Lan" andWeight:2];
+    SBPerson *person2 = [SBPerson personWithName:@"Man" andWeight:1];
+    SBPerson *person3 = [SBPerson personWithName:@"Chen" andWeight:1];
+
+    SBMoney *money1 = [SBMoney moneyWithWhole:10 andDecimal:20];
+    SBMoney *money2 = [SBMoney moneyWithWhole:20 andDecimal:10];
+
+    SBResult *result1 = [SBResult resultWithLendee:person1 andLender:person2 andAmount:money1];
+    SBResult *result2 = [SBResult resultWithLendee:person1 andLender:person2 andAmount:money2];
+    SBResult *result3 = [SBResult resultWithLendee:person1 andLender:person3 andAmount:money2];
+    SBResult *result4 = [SBResult resultWithLendee:person2 andLender:person1 andAmount:money2];
+
+    XCTAssert([result1 canAggregateWith:result2] == 1);
+    XCTAssert([result2 canAggregateWith:result1] == 1);
+    XCTAssert([result1 canAggregateWith:result4] == 2);
+    XCTAssert([result4 canAggregateWith:result1] == 2);
+    XCTAssert(![result1 canAggregateWith:result3]);
+    XCTAssert(![result3 canAggregateWith:result1]);
+    XCTAssert(![result4 canAggregateWith:result3]);
+    XCTAssert(![result3 canAggregateWith:result4]);
+
+    NSInteger flag1 = [result1 canAggregateWith:result2];
+    SBResult *aggregatedResult1 = [result1 aggregateWith:result2 withFlag:flag1];
+    NSLog(@"1: %@", result1);
+    NSLog(@"2: %@", result2);
+    NSLog(@"T: %@", aggregatedResult1);
+
+    NSInteger flag2 = [result1 canAggregateWith:result4];
+    SBResult *aggregatedResult2 = [result1 aggregateWith:result4 withFlag:flag2];
+    NSLog(@"1: %@", result1);
+    NSLog(@"2: %@", result4);
+    NSLog(@"T: %@", aggregatedResult2);
 }
 
 @end
