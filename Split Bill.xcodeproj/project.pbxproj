@@ -20,6 +20,7 @@
 		B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F31E1DACA400B282A0 /* SBExpense.m */; };
 		B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F61E1DB34D00B282A0 /* SBPayment.m */; };
 		B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F91E1DB3BC00B282A0 /* SBMoney.m */; };
+		B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1FC1E1F365F00B282A0 /* SBResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		B450D1F61E1DB34D00B282A0 /* SBPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPayment.m; sourceTree = "<group>"; };
 		B450D1F81E1DB3BC00B282A0 /* SBMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMoney.h; sourceTree = "<group>"; };
 		B450D1F91E1DB3BC00B282A0 /* SBMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMoney.m; sourceTree = "<group>"; };
+		B450D1FB1E1F365F00B282A0 /* SBResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBResult.h; sourceTree = "<group>"; };
+		B450D1FC1E1F365F00B282A0 /* SBResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 				B450D1F61E1DB34D00B282A0 /* SBPayment.m */,
 				B450D1F21E1DACA400B282A0 /* SBExpense.h */,
 				B450D1F31E1DACA400B282A0 /* SBExpense.m */,
+				B450D1FB1E1F365F00B282A0 /* SBResult.h */,
+				B450D1FC1E1F365F00B282A0 /* SBResult.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
 				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
+				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
