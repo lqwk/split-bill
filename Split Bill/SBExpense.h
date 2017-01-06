@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class SBPayment;
+@class SBPerson;
 @class SBResult;
+@class SBMoney;
 
 @interface SBExpense : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) SBMoney *amount;
 
-+ (SBExpense *)expenseWithName:(NSString *)name andPayments:(NSArray<SBPayment *> *)payments;
++ (SBExpense *)expenseWithName:(NSString *)name andPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
 
 // Returns a list of results after evaluating each payment in the expense.
 - (NSArray<SBResult *> *)resultsForEvaluation;
