@@ -74,7 +74,33 @@
         }
     }
 
-    return results;
+    NSLog(@"Original Results: %@", results);
+
+    NSMutableArray *aggregatedResults = [[NSMutableArray alloc] initWithCapacity:0];
+
+    // Aggregate the reults
+    while (results.count) {
+        SBResult *r1 = results[0];
+        for (int i = 1; i < results.count; ++i) {
+            SBResult *r2 = results[i];
+            NSInteger flag = [r1 canAggregateWith:r2];
+            if (flag) {
+                SBResult *ar = [r1 aggregateWith:r2 withFlag:flag];
+                if (ar.amount.val != 0) {
+                    [aggregatedResults addObject:ar];
+                }
+                [results removeObject:r1];
+                [results removeObject:r2];
+                break;
+            }
+            if (i == results.count-1) {
+                [aggregatedResults addObject:r1];
+                [results removeObject:r1];
+            }
+        }
+    }
+
+    return aggregatedResults;
 }
 
 #pragma mark - DEBUG
