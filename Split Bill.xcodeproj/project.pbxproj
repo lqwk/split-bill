@@ -13,8 +13,6 @@
 		B450D1BF1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */; };
 		B450D1C11E1DAB5B00B282A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B450D1C01E1DAB5B00B282A0 /* Assets.xcassets */; };
 		B450D1C41E1DAB5B00B282A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1C21E1DAB5B00B282A0 /* LaunchScreen.storyboard */; };
-		B450D1CF1E1DAB5B00B282A0 /* Split_BillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1CE1E1DAB5B00B282A0 /* Split_BillTests.m */; };
-		B450D1DA1E1DAB5B00B282A0 /* Split_BillUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1D91E1DAB5B00B282A0 /* Split_BillUITests.m */; };
 		B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1ED1E1DAC8900B282A0 /* SBSplitEngine.m */; };
 		B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F01E1DAC9B00B282A0 /* SBPerson.m */; };
 		B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F31E1DACA400B282A0 /* SBExpense.m */; };
@@ -52,10 +50,8 @@
 		B450D1C31E1DAB5B00B282A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B450D1C51E1DAB5B00B282A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B450D1CA1E1DAB5B00B282A0 /* Split BillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Split BillTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B450D1CE1E1DAB5B00B282A0 /* Split_BillTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Split_BillTests.m; sourceTree = "<group>"; };
 		B450D1D01E1DAB5B00B282A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B450D1D51E1DAB5B00B282A0 /* Split BillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Split BillUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B450D1D91E1DAB5B00B282A0 /* Split_BillUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Split_BillUITests.m; sourceTree = "<group>"; };
 		B450D1DB1E1DAB5B00B282A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B450D1EC1E1DAC8900B282A0 /* SBSplitEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSplitEngine.h; sourceTree = "<group>"; };
 		B450D1ED1E1DAC8900B282A0 /* SBSplitEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSplitEngine.m; sourceTree = "<group>"; };
@@ -144,7 +140,6 @@
 		B450D1CD1E1DAB5B00B282A0 /* Split BillTests */ = {
 			isa = PBXGroup;
 			children = (
-				B450D1CE1E1DAB5B00B282A0 /* Split_BillTests.m */,
 				B450D1FF1E1F415900B282A0 /* ModelPrintingTests.m */,
 				B450D1D01E1DAB5B00B282A0 /* Info.plist */,
 			);
@@ -154,7 +149,6 @@
 		B450D1D81E1DAB5B00B282A0 /* Split BillUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B450D1D91E1DAB5B00B282A0 /* Split_BillUITests.m */,
 				B450D1DB1E1DAB5B00B282A0 /* Info.plist */,
 			);
 			path = "Split BillUITests";
@@ -337,7 +331,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B450D2001E1F415900B282A0 /* ModelPrintingTests.m in Sources */,
-				B450D1CF1E1DAB5B00B282A0 /* Split_BillTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B450D1DA1E1DAB5B00B282A0 /* Split_BillUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
