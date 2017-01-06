@@ -37,6 +37,34 @@
     self.whole += amount.whole;
 }
 
+- (void)subtract:(SBMoney *)amount
+{
+    self.decimal -= amount.decimal;
+    if (self.decimal < 0) {
+        self.decimal += 100;
+        self.whole -= 1;
+    }
+    self.whole -= amount.whole;
+}
+
+- (void)multiply:(NSInteger)amount
+{
+    self.decimal *= amount;
+    self.whole *= amount;
+    if (self.decimal >= 100) {
+        self.decimal -= 100;
+        self.whole += 1;
+    }
+}
+
+- (void)divide:(NSInteger)amount
+{
+    NSInteger absolute = self.whole * 100 + self.decimal;
+    NSInteger val = (double)absolute / (double)amount + 0.5;
+    self.whole = val / 100;
+    self.decimal = val % 100;
+}
+
 #pragma mark - DEBUG
 
 - (NSString *)description
