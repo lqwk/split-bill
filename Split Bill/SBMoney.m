@@ -10,8 +10,7 @@
 
 @interface SBMoney ()
 
-@property (nonatomic, readwrite) NSInteger whole;
-@property (nonatomic, readwrite) NSInteger decimal;
+@property (nonatomic, readwrite) NSInteger val;
 
 @end
 
@@ -20,56 +19,72 @@
 + (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal
 {
     SBMoney *money = [[SBMoney alloc] init];
-    money.whole = whole;
-    money.decimal = decimal;
+    money.val = whole * 100 + decimal;
+    return money;
+}
+
++(SBMoney *)moneyWithVal:(NSInteger)val
+{
+    SBMoney *money = [[SBMoney alloc] init];
+    money.val = val;
     return money;
 }
 
 #pragma mark - Main Methods
 
-- (void)add:(SBMoney *)amount
+- (SBMoney *)add:(SBMoney *)amount
 {
-    self.decimal += amount.decimal;
-    if (self.decimal >= 100) {
-        self.decimal -= 100;
-        self.whole += 1;
+    double absolute = (double)self.val + (double)amount.val;
+    if (absolute > 0) {
+        absolute += 0.5;
+    } else if (absolute < 0) {
+        absolute -= 0.5;
     }
-    self.whole += amount.whole;
+    NSInteger val = absolute;
+    return [SBMoney moneyWithVal:val];
 }
 
-- (void)subtract:(SBMoney *)amount
+- (SBMoney *)subtract:(SBMoney *)amount
 {
-    self.decimal -= amount.decimal;
-    if (self.decimal < 0) {
-        self.decimal += 100;
-        self.whole -= 1;
+    double absolute = (double)self.val - (double)amount.val;
+    if (absolute > 0) {
+        absolute += 0.5;
+    } else if (absolute < 0) {
+        absolute -= 0.5;
     }
-    self.whole -= amount.whole;
+    NSInteger val = absolute;
+    return [SBMoney moneyWithVal:val];
 }
 
-- (void)multiply:(NSInteger)amount
+- (SBMoney *)multiply:(NSInteger)amount
 {
-    self.decimal *= amount;
-    self.whole *= amount;
-    if (self.decimal >= 100) {
-        self.decimal -= 100;
-        self.whole += 1;
+    double absolute = (double)self.val * amount;
+    if (absolute > 0) {
+        absolute += 0.5;
+    } else if (absolute < 0) {
+        absolute -= 0.5;
     }
+    NSInteger val = absolute;
+    return [SBMoney moneyWithVal:val];
 }
 
-- (void)divide:(NSInteger)amount
+- (SBMoney *)divide:(NSInteger)amount
 {
-    NSInteger absolute = self.whole * 100 + self.decimal;
-    NSInteger val = (double)absolute / (double)amount + 0.5;
-    self.whole = val / 100;
-    self.decimal = val % 100;
+    double absolute = (double)self.val / amount;
+    if (absolute > 0) {
+        absolute += 0.5;
+    } else if (absolute < 0) {
+        absolute -= 0.5;
+    }
+    NSInteger val = absolute;
+    return [SBMoney moneyWithVal:val];
 }
 
 #pragma mark - DEBUG
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%ld.%ld", self.whole, self.decimal];
+    return [NSString stringWithFormat:@"%ld.%ld", self.val / 100, labs(self.val % 100)];
 }
 
 @end

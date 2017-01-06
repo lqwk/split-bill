@@ -37,7 +37,7 @@
     SBPerson *person2 = [SBPerson personWithName:@"Man" andWeight:1];
     SBMoney *money = [SBMoney moneyWithWhole:10 andDecimal:20];
     SBPayment *payment = [SBPayment paymentWithPerson:person andAmount:money];
-    SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment, payment, payment, payment, nil] andPeople:[NSArray arrayWithObjects:person, person2, nil]];
+    SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment, payment, payment, payment, nil]];
     SBResult *result = [SBResult resultWithLendee:person2 andLender:person andAmount:money];
 
     NSLog(@"%@, %@", person, person2);

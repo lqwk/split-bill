@@ -8,6 +8,9 @@
 
 #import <XCTest/XCTest.h>
 #import "SBMoney.h"
+#import "SBPerson.h"
+#import "SBPayment.h"
+#import "SBExpense.h"
 
 @interface ModelTests : XCTestCase
 
@@ -31,20 +34,16 @@
 
     SBMoney *m1 = [SBMoney moneyWithWhole:10 andDecimal:10];
     SBMoney *m2 = [SBMoney moneyWithWhole:5 andDecimal:50];
-    XCTAssertEqual(m1.whole, 10);
-    XCTAssertEqual(m1.decimal, 10);
+    XCTAssertEqual(m1.val, 1010);
+    XCTAssertEqual(m2.val, 550);
 
-    [m1 add:m2];
-    XCTAssertEqual(m1.whole, 15);
-    XCTAssertEqual(m1.decimal, 60);
-    XCTAssertEqual(m2.whole, 5);
-    XCTAssertEqual(m2.decimal, 50);
+    SBMoney *m = [m1 add:m2];
+    XCTAssertEqual(m.val, 1560);
+    XCTAssertEqual(m2.val, 550);
 
-    [m1 add:m2];
-    XCTAssertEqual(m1.whole, 21);
-    XCTAssertEqual(m1.decimal, 10);
-    XCTAssertEqual(m2.whole, 5);
-    XCTAssertEqual(m2.decimal, 50);
+    m = [m add:m2];
+    XCTAssertEqual(m.val, 2110);
+    XCTAssertEqual(m2.val, 550);
 }
 
 - (void)testMoneySubtract {
@@ -53,20 +52,16 @@
 
     SBMoney *m1 = [SBMoney moneyWithWhole:10 andDecimal:10];
     SBMoney *m2 = [SBMoney moneyWithWhole:5 andDecimal:50];
-    XCTAssertEqual(m1.whole, 10);
-    XCTAssertEqual(m1.decimal, 10);
+    XCTAssertEqual(m1.val, 1010);
+    XCTAssertEqual(m2.val, 550);
 
-    [m1 subtract:m2];
-    XCTAssertEqual(m1.whole, 4);
-    XCTAssertEqual(m1.decimal, 60);
-    XCTAssertEqual(m2.whole, 5);
-    XCTAssertEqual(m2.decimal, 50);
+    SBMoney *m = [m1 subtract:m2];
+    XCTAssertEqual(m.val, 460);
+    XCTAssertEqual(m2.val, 550);
 
-    [m1 subtract:m2];
-    XCTAssertEqual(m1.whole, -1);
-    XCTAssertEqual(m1.decimal, 10);
-    XCTAssertEqual(m2.whole, 5);
-    XCTAssertEqual(m2.decimal, 50);
+    m = [m subtract:m2];
+    XCTAssertEqual(m.val, -90);
+    XCTAssertEqual(m2.val, 550);
 }
 
 - (void)testMoneyMultiply {
@@ -74,16 +69,13 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 
     SBMoney *m1 = [SBMoney moneyWithWhole:10 andDecimal:10];
-    XCTAssertEqual(m1.whole, 10);
-    XCTAssertEqual(m1.decimal, 10);
+    XCTAssertEqual(m1.val, 1010);
 
-    [m1 multiply:2];
-    XCTAssertEqual(m1.whole, 20);
-    XCTAssertEqual(m1.decimal, 20);
+    SBMoney *m = [m1 multiply:2];
+    XCTAssertEqual(m.val, 2020);
 
-    [m1 multiply:7];
-    XCTAssertEqual(m1.whole, 141);
-    XCTAssertEqual(m1.decimal, 40);
+    m = [m multiply:7];
+    XCTAssertEqual(m.val, 14140);
 }
 
 - (void)testMoneyDivide {
@@ -91,16 +83,27 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 
     SBMoney *m1 = [SBMoney moneyWithWhole:10 andDecimal:10];
-    XCTAssertEqual(m1.whole, 10);
-    XCTAssertEqual(m1.decimal, 10);
+    XCTAssertEqual(m1.val, 1010);
 
-    [m1 divide:2];
-    XCTAssertEqual(m1.whole, 5);
-    XCTAssertEqual(m1.decimal, 5);
+    SBMoney *m = [m1 divide:2];
+    XCTAssertEqual(m.val, 505);
 
-    [m1 divide:3];
-    XCTAssertEqual(m1.whole, 1);
-    XCTAssertEqual(m1.decimal, 68);
+    m = [m divide:3];
+    XCTAssertEqual(m.val, 168);
+}
+
+- (void)testExpenseEvalutation {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    SBPerson *person1 = [SBPerson personWithName:@"Lan" andWeight:2];
+    SBPerson *person2 = [SBPerson personWithName:@"Man" andWeight:1];
+    SBMoney *money1 = [SBMoney moneyWithWhole:10 andDecimal:20];
+    SBMoney *money2 = [SBMoney moneyWithWhole:15 andDecimal:55];
+    SBPayment *payment1 = [SBPayment paymentWithPerson:person1 andAmount:money1];
+    SBPayment *payment2 = [SBPayment paymentWithPerson:person2 andAmount:money2];
+    SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment1, payment2, nil]];
+    [expense resultsForEvaluation];
 }
 
 @end
