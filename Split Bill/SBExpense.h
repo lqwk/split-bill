@@ -10,9 +10,15 @@
 
 @class SBPayment;
 @class SBPerson;
+@class SBResult;
 
 @interface SBExpense : NSObject
 
-+ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
+@property (nonatomic, strong, readonly) NSString *name;
+
++ (SBExpense *)expenseWithName:(NSString *)name andPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
+
+// Returns a list of results after evaluating each payment in the expense.
+- (NSArray<SBResult *> *)resultsForEvaluation;
 
 @end

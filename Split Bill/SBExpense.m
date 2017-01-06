@@ -9,9 +9,11 @@
 #import "SBExpense.h"
 #import "SBPayment.h"
 #import "SBPerson.h"
+#import "SBResult.h"
 
 @interface SBExpense ()
 
+@property (nonatomic, strong, readwrite) NSString *name;
 @property (nonatomic, strong) NSArray<SBPayment *> *payments;
 @property (nonatomic, strong) NSArray<SBPerson *> *people;
 
@@ -19,19 +21,31 @@
 
 @implementation SBExpense
 
-+ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray *)people
++ (SBExpense *)expenseWithName:(NSString *)name andPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
 {
     SBExpense *expense = [[SBExpense alloc] init];
+    expense.name = name;
     expense.payments = payments;
     expense.people = people;
     return expense;
+}
+
+#pragma mark - Main Methods
+
+- (NSArray *)resultsForEvaluation
+{
+    NSMutableArray<SBResult *> *results = [NSMutableArray<SBResult *> arrayWithCapacity:0];
+
+
+
+    return results;
 }
 
 #pragma mark - DEBUG
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Expense with payments: %@ for people: %@", self.payments, self.people];
+    return [NSString stringWithFormat:@"Expense \"%@\" with payments: %@ for people: %@", self.name, self.payments, self.people];
 }
 
 @end
