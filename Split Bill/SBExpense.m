@@ -44,13 +44,34 @@
     }
 
     SBMoney *each = [total divide:totalWeight];
-    NSLog(@"Total: %@, Each: %@", total, each);
+    NSLog(@"Total expense: %@, each should pay: %@", total, each);
 
     for (SBPayment *payment in self.payments) {
+        NSMutableArray *people = [[NSMutableArray alloc] initWithCapacity:0];
+        for (SBPayment *p in self.payments) {
+            if (![payment isEqual:p]) {
+                [people addObject:p.person];
+            }
+        }
+        NSLog(@"%@", people);
+
         SBMoney *shouldPay = [each multiply:payment.person.weight];
         SBMoney *delta = [payment.amount subtract:shouldPay];
         NSLog(@"%@ paid %@, should pay %@, delta: %@", payment.person, payment.amount, shouldPay, delta);
 
+        if (delta.val < 0) { // owes other people money
+            SBMoney *eachDelta = [[delta abs] divide:totalWeight];
+            for (SBPerson *person in people) {
+                SBResult *result = [SBResult resultWithLendee:payment.person andLender:person andAmount:[eachDelta multiply:person.weight]];
+                [results addObject:result];
+            }
+        } else if (delta.val > 0) { // other people owe money
+            SBMoney *eachDelta = [delta divide:totalWeight];
+            for (SBPerson *person in people) {
+                SBResult *result = [SBResult resultWithLendee:person andLender:payment.person andAmount:[eachDelta multiply:person.weight]];
+                [results addObject:result];
+            }
+        }
     }
 
     return results;

@@ -92,7 +92,7 @@
     XCTAssertEqual(m.val, 168);
 }
 
-- (void)testExpenseEvalutation {
+- (void)testExpenseEvalutation1 {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 
@@ -103,7 +103,25 @@
     SBPayment *payment1 = [SBPayment paymentWithPerson:person1 andAmount:money1];
     SBPayment *payment2 = [SBPayment paymentWithPerson:person2 andAmount:money2];
     SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment1, payment2, nil]];
-    [expense resultsForEvaluation];
+    NSArray *results = [expense resultsForEvaluation];
+    NSLog(@"%@", results);
+}
+
+- (void)testExpenseEvalutation2 {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    SBPerson *person1 = [SBPerson personWithName:@"Lan" andWeight:2];
+    SBPerson *person2 = [SBPerson personWithName:@"Man" andWeight:1];
+    SBPerson *person3 = [SBPerson personWithName:@"Chen" andWeight:1];
+    SBMoney *money1 = [SBMoney moneyWithWhole:40 andDecimal:0];
+    SBMoney *money2 = [SBMoney moneyWithWhole:0 andDecimal:0];
+    SBPayment *payment1 = [SBPayment paymentWithPerson:person1 andAmount:money1];
+    SBPayment *payment2 = [SBPayment paymentWithPerson:person2 andAmount:money2];
+    SBPayment *payment3 = [SBPayment paymentWithPerson:person3 andAmount:money2];
+    SBExpense *expense = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment1, payment2, payment3, nil]];
+    NSArray *results = [expense resultsForEvaluation];
+    NSLog(@"%@", results);
 }
 
 @end

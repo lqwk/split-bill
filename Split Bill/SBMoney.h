@@ -20,4 +20,6 @@
 - (SBMoney *)multiply:(NSInteger)amount;
 - (SBMoney *)divide:(NSInteger)amount;
 
+- (SBMoney *)abs;
+
 @end

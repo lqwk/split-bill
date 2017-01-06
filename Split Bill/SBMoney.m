@@ -80,6 +80,11 @@
     return [SBMoney moneyWithVal:val];
 }
 
+- (SBMoney *)abs
+{
+    return [SBMoney moneyWithVal:labs(self.val)];
+}
+
 #pragma mark - DEBUG
 
 - (NSString *)description
