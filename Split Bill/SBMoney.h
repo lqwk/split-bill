@@ -15,4 +15,6 @@
 
 + (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal;
 
+- (void)add:(SBMoney *)amount;
+
 @end

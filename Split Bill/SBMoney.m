@@ -25,6 +25,18 @@
     return money;
 }
 
+#pragma mark - Main Methods
+
+- (void)add:(SBMoney *)amount
+{
+    self.decimal += amount.decimal;
+    if (self.decimal >= 100) {
+        self.decimal -= 100;
+        self.whole += 1;
+    }
+    self.whole += amount.whole;
+}
+
 #pragma mark - DEBUG
 
 - (NSString *)description

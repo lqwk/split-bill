@@ -10,6 +10,7 @@
 #import "SBPayment.h"
 #import "SBPerson.h"
 #import "SBResult.h"
+#import "SBMoney.h"
 
 @interface SBExpense ()
 
@@ -36,7 +37,10 @@
 {
     NSMutableArray<SBResult *> *results = [NSMutableArray<SBResult *> arrayWithCapacity:0];
 
-
+    SBMoney *total = [SBMoney moneyWithWhole:0 andDecimal:0];
+    for (SBPayment *payment in self.payments) {
+        [total add:payment.amount];
+    }
 
     return results;
 }
