@@ -10,4 +10,19 @@
 
 @implementation SBPayment
 
++ (SBPayment *)paymentWithPerson:(SBPerson *)person andAmount:(SBMoney *)amount
+{
+    SBPayment *payment = [[SBPayment alloc] init];
+    payment.person = person;
+    payment.amount = amount;
+    return payment;
+}
+
+#pragma mark - DEBUG
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Payment: %@ paid %@", self.person, self.amount];
+}
+
 @end

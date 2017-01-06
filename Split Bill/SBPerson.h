@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSInteger weight;
 
++ (SBPerson *)personWithName:(NSString *)name andWeight:(NSInteger)weight;
+
 @end

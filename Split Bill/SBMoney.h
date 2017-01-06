@@ -13,4 +13,6 @@
 @property (nonatomic) NSInteger whole;
 @property (nonatomic) NSInteger decimal;
 
++ (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal;
+
 @end

@@ -10,4 +10,19 @@
 
 @implementation SBPerson
 
++ (SBPerson *)personWithName:(NSString *)name andWeight:(NSInteger)weight
+{
+    SBPerson *person = [[SBPerson alloc] init];
+    person.name = name;
+    person.weight = weight;
+    return person;
+}
+
+#pragma mark - DEBUG
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ (%ld)", self.name, self.weight];
+}
+
 @end

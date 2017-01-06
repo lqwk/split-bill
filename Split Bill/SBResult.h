@@ -17,4 +17,8 @@
 @property (nonatomic, strong) SBPerson *lender;
 @property (nonatomic, strong) SBMoney *amount;
 
++ (SBResult *)resultWithLendee:(SBPerson *)lendee
+                     andLender:(SBPerson *)lender
+                     andAmount:(SBMoney *)amount;
+
 @end

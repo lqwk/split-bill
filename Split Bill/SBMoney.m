@@ -10,4 +10,19 @@
 
 @implementation SBMoney
 
++ (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal
+{
+    SBMoney *money = [[SBMoney alloc] init];
+    money.whole = whole;
+    money.decimal = decimal;
+    return money;
+}
+
+#pragma mark - DEBUG
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%ld.%ld", self.whole, self.decimal];
+}
+
 @end

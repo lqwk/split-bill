@@ -10,4 +10,22 @@
 
 @implementation SBResult
 
++ (SBResult *)resultWithLendee:(SBPerson *)lendee
+                     andLender:(SBPerson *)lender
+                     andAmount:(SBMoney *)amount
+{
+    SBResult *result = [[SBResult alloc] init];
+    result.lendee = lendee;
+    result.lender = lender;
+    result.amount = amount;
+    return result;
+}
+
+#pragma mark - DEBUG
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Result: %@ owes %@ %@", self.lendee, self.lender, self.amount];
+}
+
 @end

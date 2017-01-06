@@ -16,4 +16,6 @@
 @property (nonatomic, strong) SBMoney *amount;
 @property (nonatomic, strong) NSArray<SBPayment *> *payments;
 
++ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments;
+
 @end
