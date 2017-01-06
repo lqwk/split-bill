@@ -187,4 +187,34 @@
     NSLog(@"%@", results);
 }
 
+- (void)testLondonBillSplit
+{
+    SBPerson *p1 = [SBPerson personWithName:@"Lan" andWeight:2];
+    SBPerson *p2 = [SBPerson personWithName:@"Man" andWeight:1];
+    SBPerson *p3 = [SBPerson personWithName:@"Chen" andWeight:1];
+
+    SBMoney *m1 = [SBMoney moneyWithWhole:51 andDecimal:80];
+    SBMoney *m2 = [SBMoney moneyWithWhole:13 andDecimal:50];
+    SBMoney *m3 = [SBMoney moneyWithWhole:463 andDecimal:10];
+    SBMoney *m4 = [SBMoney moneyWithWhole:71 andDecimal:17];
+    SBMoney *m5 = [SBMoney moneyWithWhole:424 andDecimal:0];
+
+    SBExpense *e1 = [SBExpense expenseWithName:@"Abby Tickets" andPayments:[NSArray arrayWithObjects:[SBPayment paymentWithPerson:p1 andAmount:m1], [SBPayment paymentWithPerson:p3 andAmount:[SBMoney moneyWithVal:0]], nil]];
+    SBExpense *e2 = [SBExpense expenseWithName:@"Medicine" andPayments:[NSArray arrayWithObjects:[SBPayment paymentWithPerson:p1 andAmount:m2], [SBPayment paymentWithPerson:p2 andAmount: [SBMoney moneyWithVal:0]], nil]];
+    SBExpense *e3 = [SBExpense expenseWithName:@"Lan Total" andPayments:[NSArray arrayWithObjects:[SBPayment paymentWithPerson:p1 andAmount:m3], [SBPayment paymentWithPerson:p2 andAmount: [SBMoney moneyWithVal:0]], [SBPayment paymentWithPerson:p3 andAmount: [SBMoney moneyWithVal:0]], nil]];
+    SBExpense *e4 = [SBExpense expenseWithName:@"Chen Total" andPayments:[NSArray arrayWithObjects:[SBPayment paymentWithPerson:p3 andAmount:m4], [SBPayment paymentWithPerson:p1 andAmount: [SBMoney moneyWithVal:0]], [SBPayment paymentWithPerson:p2 andAmount: [SBMoney moneyWithVal:0]], nil]];
+    SBExpense *e5 = [SBExpense expenseWithName:@"Man Total" andPayments:[NSArray arrayWithObjects:[SBPayment paymentWithPerson:p3 andAmount:m5], [SBPayment paymentWithPerson:p1 andAmount: [SBMoney moneyWithVal:0]], [SBPayment paymentWithPerson:p3 andAmount: [SBMoney moneyWithVal:0]], nil]];
+
+    NSLog(@"%@", e1);
+    NSLog(@"%@", e2);
+    NSLog(@"%@", e3);
+    NSLog(@"%@", e4);
+    NSLog(@"%@", e5);
+
+    SBSplitEngine *engine = [SBSplitEngine engineWithExpenses:[NSArray arrayWithObjects:e1, e2, e3, e4, e5, nil]];
+    NSArray *results = [engine resultsForEvaluation];
+    NSLog(@"%@", results);
+
+}
+
 @end

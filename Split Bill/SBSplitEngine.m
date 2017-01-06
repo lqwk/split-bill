@@ -47,13 +47,14 @@
             if (flag) {
                 SBResult *ar = [r1 aggregateWith:r2 withFlag:flag];
                 if (ar.amount.val != 0) {
-                    [aggregatedResults addObject:ar];
+                    [results addObject:ar];
+                    // [aggregatedResults addObject:ar];
                 }
                 [results removeObject:r1];
                 [results removeObject:r2];
                 break;
             }
-            if (i == results.count-1) {
+            if (i >= results.count-1) {
                 [aggregatedResults addObject:r1];
                 [results removeObject:r1];
             }
