@@ -20,7 +20,6 @@
 		B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F61E1DB34D00B282A0 /* SBPayment.m */; };
 		B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F91E1DB3BC00B282A0 /* SBMoney.m */; };
 		B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1FC1E1F365F00B282A0 /* SBResult.m */; };
-		B450D2001E1F415900B282A0 /* ModelPrintingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1FF1E1F415900B282A0 /* ModelPrintingTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +66,6 @@
 		B450D1F91E1DB3BC00B282A0 /* SBMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMoney.m; sourceTree = "<group>"; };
 		B450D1FB1E1F365F00B282A0 /* SBResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBResult.h; sourceTree = "<group>"; };
 		B450D1FC1E1F365F00B282A0 /* SBResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBResult.m; sourceTree = "<group>"; };
-		B450D1FF1E1F415900B282A0 /* ModelPrintingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPrintingTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +140,6 @@
 		B450D1CD1E1DAB5B00B282A0 /* Split BillTests */ = {
 			isa = PBXGroup;
 			children = (
-				B450D1FF1E1F415900B282A0 /* ModelPrintingTests.m */,
 				B414877C1E1F641A006F70A6 /* ModelTests.m */,
 				B450D1D01E1DAB5B00B282A0 /* Info.plist */,
 			);
@@ -333,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B450D2001E1F415900B282A0 /* ModelPrintingTests.m in Sources */,
 				B414877D1E1F641A006F70A6 /* ModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
