@@ -12,6 +12,7 @@
 #import "SBPayment.h"
 #import "SBExpense.h"
 #import "SBResult.h"
+#import "SBSplitEngine.h"
 
 @interface ModelTests : XCTestCase
 
@@ -159,6 +160,31 @@
     NSLog(@"1: %@", result1);
     NSLog(@"2: %@", result4);
     NSLog(@"T: %@", aggregatedResult2);
+}
+
+- (void)testEngine
+{
+    SBPerson *person1 = [SBPerson personWithName:@"Lan" andWeight:2];
+    SBPerson *person2 = [SBPerson personWithName:@"Man" andWeight:1];
+    SBPerson *person3 = [SBPerson personWithName:@"Chen" andWeight:1];
+
+    SBMoney *money1 = [SBMoney moneyWithWhole:40 andDecimal:0];
+    SBMoney *money2 = [SBMoney moneyWithWhole:0 andDecimal:0];
+    SBPayment *payment1 = [SBPayment paymentWithPerson:person1 andAmount:money1];
+    SBPayment *payment2 = [SBPayment paymentWithPerson:person2 andAmount:money2];
+    SBPayment *payment3 = [SBPayment paymentWithPerson:person3 andAmount:money2];
+    SBExpense *expense1 = [SBExpense expenseWithName:@"Frenchie" andPayments:[NSArray arrayWithObjects:payment1, payment2, payment3, nil]];
+
+
+    SBMoney *money3 = [SBMoney moneyWithWhole:10 andDecimal:20];
+    SBMoney *money4 = [SBMoney moneyWithWhole:15 andDecimal:55];
+    SBPayment *payment4 = [SBPayment paymentWithPerson:person1 andAmount:money3];
+    SBPayment *payment5 = [SBPayment paymentWithPerson:person2 andAmount:money4];
+    SBExpense *expense2 = [SBExpense expenseWithName:@"TPT" andPayments:[NSArray arrayWithObjects:payment4, payment5, nil]];
+
+    SBSplitEngine *engine = [SBSplitEngine engineWithExpenses:[NSArray arrayWithObjects:expense1, expense2, nil]];
+    NSArray *results = [engine resultsForEvaluation];
+    NSLog(@"%@", results);
 }
 
 @end

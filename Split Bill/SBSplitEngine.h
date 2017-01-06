@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class SBPerson;
 @class SBExpense;
+@class SBResult;
 
 @interface SBSplitEngine : NSObject
 
-+ (SBSplitEngine *)engineWithPeople:(NSArray<SBPerson *> *)people andExpenses:(NSArray<SBExpense *> *)expenses;
++ (SBSplitEngine *)engineWithExpenses:(NSArray<SBExpense *> *)expenses;
+
+// Returns a list of results after evaluating each expense.
+- (NSArray<SBResult *> *)resultsForEvaluation;
 
 @end

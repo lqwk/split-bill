@@ -89,7 +89,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%ld.%ld", self.val / 100, labs(self.val % 100)];
+    return [NSString stringWithFormat:@"%ld.%02ld", self.val / 100, labs(self.val % 100)];
 }
 
 @end

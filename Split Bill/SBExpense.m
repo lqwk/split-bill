@@ -100,6 +100,10 @@
         }
     }
 
+    if (results.count == 1) {
+        [aggregatedResults addObject:results[0]];
+    }
+
     return aggregatedResults;
 }
 
