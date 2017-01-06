@@ -7,20 +7,23 @@
 //
 
 #import "SBExpense.h"
+#import "SBPayment.h"
+#import "SBPerson.h"
 
 @interface SBExpense ()
 
-@property (nonatomic, strong) SBMoney *amount;
 @property (nonatomic, strong) NSArray<SBPayment *> *payments;
+@property (nonatomic, strong) NSArray<SBPerson *> *people;
 
 @end
 
 @implementation SBExpense
 
-+ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments
++ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray *)people
 {
     SBExpense *expense = [[SBExpense alloc] init];
     expense.payments = payments;
+    expense.people = people;
     return expense;
 }
 
@@ -28,7 +31,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Expense with payments: %@", self.payments];
+    return [NSString stringWithFormat:@"Expense with payments: %@ for people: %@", self.payments, self.people];
 }
 
 @end

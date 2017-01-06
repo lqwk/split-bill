@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @class SBPayment;
-@class SBMoney;
+@class SBPerson;
 
 @interface SBExpense : NSObject
 
-+ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments;
++ (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
 
 @end
