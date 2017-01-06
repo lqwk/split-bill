@@ -8,6 +8,13 @@
 
 #import "SBPerson.h"
 
+@interface SBPerson ()
+
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, readwrite) NSInteger weight;
+
+@end
+
 @implementation SBPerson
 
 + (SBPerson *)personWithName:(NSString *)name andWeight:(NSInteger)weight

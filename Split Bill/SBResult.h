@@ -13,9 +13,9 @@
 
 @interface SBResult : NSObject
 
-@property (nonatomic, strong) SBPerson *lendee;
-@property (nonatomic, strong) SBPerson *lender;
-@property (nonatomic, strong) SBMoney *amount;
+@property (nonatomic, strong, readonly) SBPerson *lendee;
+@property (nonatomic, strong, readonly) SBPerson *lender;
+@property (nonatomic, strong, readonly) SBMoney *amount;
 
 + (SBResult *)resultWithLendee:(SBPerson *)lendee
                      andLender:(SBPerson *)lender

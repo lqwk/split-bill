@@ -13,8 +13,8 @@
 
 @interface SBPayment : NSObject
 
-@property (nonatomic, strong) SBPerson *person;
-@property (nonatomic, strong) SBMoney *amount;
+@property (nonatomic, strong, readonly) SBPerson *person;
+@property (nonatomic, strong, readonly) SBMoney *amount;
 
 + (SBPayment *)paymentWithPerson:(SBPerson *)person andAmount:(SBMoney *)amount;
 

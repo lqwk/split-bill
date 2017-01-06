@@ -8,6 +8,13 @@
 
 #import "SBExpense.h"
 
+@interface SBExpense ()
+
+@property (nonatomic, strong) SBMoney *amount;
+@property (nonatomic, strong) NSArray<SBPayment *> *payments;
+
+@end
+
 @implementation SBExpense
 
 + (SBExpense *)expenseWithPayments:(NSArray<SBPayment *> *)payments

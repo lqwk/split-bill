@@ -8,6 +8,21 @@
 
 #import "SBSplitEngine.h"
 
+@interface SBSplitEngine ()
+
+@property (nonatomic, strong) NSArray<SBPerson *> *people;
+@property (nonatomic, strong) NSArray<SBExpense *> *expenses;
+
+@end
+
 @implementation SBSplitEngine
+
++ (SBSplitEngine *)engineWithPeople:(NSArray<SBPerson *> *)people andExpenses:(NSArray<SBExpense *> *)expenses
+{
+    SBSplitEngine *engine = [[SBSplitEngine alloc] init];
+    engine.people = people;
+    engine.expenses = expenses;
+    return engine;
+}
 
 @end

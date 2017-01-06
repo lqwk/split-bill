@@ -8,6 +8,13 @@
 
 #import "SBMoney.h"
 
+@interface SBMoney ()
+
+@property (nonatomic, readwrite) NSInteger whole;
+@property (nonatomic, readwrite) NSInteger decimal;
+
+@end
+
 @implementation SBMoney
 
 + (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal

@@ -8,6 +8,14 @@
 
 #import "SBResult.h"
 
+@interface SBResult ()
+
+@property (nonatomic, strong, readwrite) SBPerson *lendee;
+@property (nonatomic, strong, readwrite) SBPerson *lender;
+@property (nonatomic, strong, readwrite) SBMoney *amount;
+
+@end
+
 @implementation SBResult
 
 + (SBResult *)resultWithLendee:(SBPerson *)lendee

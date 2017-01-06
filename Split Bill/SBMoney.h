@@ -10,8 +10,8 @@
 
 @interface SBMoney : NSObject
 
-@property (nonatomic) NSInteger whole;
-@property (nonatomic) NSInteger decimal;
+@property (nonatomic, readonly) NSInteger whole;
+@property (nonatomic, readonly) NSInteger decimal;
 
 + (SBMoney *)moneyWithWhole:(NSInteger)whole andDecimal:(NSInteger)decimal;
 

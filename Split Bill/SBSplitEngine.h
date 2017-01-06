@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class SBPerson;
+@class SBExpense;
+
 @interface SBSplitEngine : NSObject
+
++ (SBSplitEngine *)engineWithPeople:(NSArray<SBPerson *> *)people andExpenses:(NSArray<SBExpense *> *)expenses;
 
 @end

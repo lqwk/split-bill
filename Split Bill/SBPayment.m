@@ -8,6 +8,13 @@
 
 #import "SBPayment.h"
 
+@interface SBPayment ()
+
+@property (nonatomic, strong, readwrite) SBPerson *person;
+@property (nonatomic, strong, readwrite) SBMoney *amount;
+
+@end
+
 @implementation SBPayment
 
 + (SBPayment *)paymentWithPerson:(SBPerson *)person andAmount:(SBMoney *)amount

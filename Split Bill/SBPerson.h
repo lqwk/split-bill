@@ -10,8 +10,8 @@
 
 @interface SBPerson : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic) NSInteger weight;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, readonly) NSInteger weight;
 
 + (SBPerson *)personWithName:(NSString *)name andWeight:(NSInteger)weight;
 
