@@ -1,40 +1,33 @@
 //
-//  GroupsTableViewController.m
+//  GroupDetailTableViewController.m
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/7/17.
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //
 
-#import "GroupsTableViewController.h"
 #import "GroupDetailTableViewController.h"
-#import <CoreData/CoreData.h>
-#import "AppDelegate.h"
 #import "Group+CoreDataClass.h"
+#import "Person+CoreDataClass.h"
+#import "Expense+CoreDataClass.h"
 
-@interface GroupsTableViewController ()
+@interface GroupDetailTableViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSArray *people;
+@property (nonatomic, strong) NSArray *expenses;
 
 @end
 
-@implementation GroupsTableViewController
+@implementation GroupDetailTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"Group"];
-    req.predicate = nil;
-    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:NO selector:@selector(localizedStandardCompare:)]];
-    NSError *error;
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:req managedObjectContext:delegate.persistentContainer.viewContext sectionNameKeyPath:nil cacheName:nil];
+    self.people = self.group.people.allObjects;
+    self.expenses = self.group.expenses.allObjects;
 
-    if (![self.fetchedResultsController performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
+    self.navigationItem.title = self.group.name;
 
     self.tableView.rowHeight = 56.f;
 }
@@ -43,27 +36,51 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *sections = [self.fetchedResultsController sections];
-    id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-    NSInteger numberOfObjects = [sectionInfo numberOfObjects];
-    return numberOfObjects;
+    if (section == 0) {
+        return self.people.count;
+    } else {
+        return self.expenses.count;
+    }
+
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
-    
-    Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = group.name;
-    cell.detailTextLabel.text = group.unique;
+    UITableViewCell *cell = nil;
+
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell" forIndexPath:indexPath];
+        Person *person = [self.people objectAtIndex:indexPath.row];
+        cell.textLabel.text = person.name;
+        cell.detailTextLabel.text = person.unique;
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell" forIndexPath:indexPath];
+        Expense *expense = [self.expenses objectAtIndex:indexPath.row];
+        cell.textLabel.text = expense.name;
+        cell.detailTextLabel.text = expense.unique;
+    }
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"People";
+    } else {
+        return @"Expenses";
+    }
+
+    return @"";
 }
 
 
@@ -101,19 +118,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    GroupDetailTableViewController *vc = segue.destinationViewController;
-    UITableViewCell *cell = sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    vc.group = group;
 }
-
+*/
 
 @end
