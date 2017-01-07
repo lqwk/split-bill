@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SBPayment;
-@class SBPerson;
-@class SBResult;
-@class SBMoney;
+@class SBPayment, SBPerson, SBResult, SBMoney;
 
 @interface SBExpense : NSObject
 
