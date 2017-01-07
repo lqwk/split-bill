@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		B414877D1E1F641A006F70A6 /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B414877C1E1F641A006F70A6 /* ModelTests.m */; };
 		B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */; };
-		B42C6E011E20C29100577965 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF31E20C29100577965 /* Person+CoreDataProperties.m */; };
 		B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */; };
-		B42C6E031E20C29100577965 /* Payment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF71E20C29100577965 /* Payment+CoreDataProperties.m */; };
 		B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF91E20C29100577965 /* Group+CoreDataClass.m */; };
-		B42C6E051E20C29200577965 /* Group+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DFB1E20C29100577965 /* Group+CoreDataProperties.m */; };
 		B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DFD1E20C29100577965 /* Expense+CoreDataClass.m */; };
-		B42C6E071E20C29200577965 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DFF1E20C29100577965 /* Expense+CoreDataProperties.m */; };
+		B42C6E101E2166D100577965 /* Payment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E091E2166D100577965 /* Payment+CoreDataProperties.m */; };
+		B42C6E111E2166D100577965 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E0B1E2166D100577965 /* Expense+CoreDataProperties.m */; };
+		B42C6E121E2166D100577965 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E0D1E2166D100577965 /* Person+CoreDataProperties.m */; };
+		B42C6E161E21679100577965 /* Group+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E151E21679100577965 /* Group+CoreDataProperties.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -50,20 +50,20 @@
 		B414877C1E1F641A006F70A6 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
 		B42C6DF01E20C29100577965 /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
 		B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
-		B42C6DF21E20C29100577965 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B42C6DF31E20C29100577965 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B42C6DF41E20C29100577965 /* Payment+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payment+CoreDataClass.h"; sourceTree = "<group>"; };
 		B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payment+CoreDataClass.m"; sourceTree = "<group>"; };
-		B42C6DF61E20C29100577965 /* Payment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payment+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B42C6DF71E20C29100577965 /* Payment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payment+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B42C6DF81E20C29100577965 /* Group+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+CoreDataClass.h"; sourceTree = "<group>"; };
 		B42C6DF91E20C29100577965 /* Group+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+CoreDataClass.m"; sourceTree = "<group>"; };
-		B42C6DFA1E20C29100577965 /* Group+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B42C6DFB1E20C29100577965 /* Group+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B42C6DFC1E20C29100577965 /* Expense+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataClass.h"; sourceTree = "<group>"; };
 		B42C6DFD1E20C29100577965 /* Expense+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataClass.m"; sourceTree = "<group>"; };
-		B42C6DFE1E20C29100577965 /* Expense+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B42C6DFF1E20C29100577965 /* Expense+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E081E2166D100577965 /* Payment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payment+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B42C6E091E2166D100577965 /* Payment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payment+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E0A1E2166D100577965 /* Expense+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B42C6E0B1E2166D100577965 /* Expense+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E0C1E2166D100577965 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B42C6E0D1E2166D100577965 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E141E21679100577965 /* Group+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B42C6E151E21679100577965 /* Group+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,22 +180,22 @@
 		B450D1E71E1DAC0200B282A0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				B42C6DF01E20C29100577965 /* Person+CoreDataClass.h */,
-				B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */,
-				B42C6DF21E20C29100577965 /* Person+CoreDataProperties.h */,
-				B42C6DF31E20C29100577965 /* Person+CoreDataProperties.m */,
-				B42C6DF41E20C29100577965 /* Payment+CoreDataClass.h */,
-				B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */,
-				B42C6DF61E20C29100577965 /* Payment+CoreDataProperties.h */,
-				B42C6DF71E20C29100577965 /* Payment+CoreDataProperties.m */,
 				B42C6DF81E20C29100577965 /* Group+CoreDataClass.h */,
 				B42C6DF91E20C29100577965 /* Group+CoreDataClass.m */,
-				B42C6DFA1E20C29100577965 /* Group+CoreDataProperties.h */,
-				B42C6DFB1E20C29100577965 /* Group+CoreDataProperties.m */,
+				B42C6E141E21679100577965 /* Group+CoreDataProperties.h */,
+				B42C6E151E21679100577965 /* Group+CoreDataProperties.m */,
+				B42C6DF01E20C29100577965 /* Person+CoreDataClass.h */,
+				B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */,
+				B42C6E0C1E2166D100577965 /* Person+CoreDataProperties.h */,
+				B42C6E0D1E2166D100577965 /* Person+CoreDataProperties.m */,
+				B42C6DF41E20C29100577965 /* Payment+CoreDataClass.h */,
+				B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */,
+				B42C6E081E2166D100577965 /* Payment+CoreDataProperties.h */,
+				B42C6E091E2166D100577965 /* Payment+CoreDataProperties.m */,
 				B42C6DFC1E20C29100577965 /* Expense+CoreDataClass.h */,
 				B42C6DFD1E20C29100577965 /* Expense+CoreDataClass.m */,
-				B42C6DFE1E20C29100577965 /* Expense+CoreDataProperties.h */,
-				B42C6DFF1E20C29100577965 /* Expense+CoreDataProperties.m */,
+				B42C6E0A1E2166D100577965 /* Expense+CoreDataProperties.h */,
+				B42C6E0B1E2166D100577965 /* Expense+CoreDataProperties.m */,
 				B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -358,17 +358,17 @@
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
 				B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */,
 				B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */,
-				B42C6E011E20C29100577965 /* Person+CoreDataProperties.m in Sources */,
-				B42C6E031E20C29100577965 /* Payment+CoreDataProperties.m in Sources */,
 				B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */,
+				B42C6E101E2166D100577965 /* Payment+CoreDataProperties.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
+				B42C6E111E2166D100577965 /* Expense+CoreDataProperties.m in Sources */,
 				B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */,
 				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
+				B42C6E161E21679100577965 /* Group+CoreDataProperties.m in Sources */,
+				B42C6E121E2166D100577965 /* Person+CoreDataProperties.m in Sources */,
 				B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */,
-				B42C6E071E20C29200577965 /* Expense+CoreDataProperties.m in Sources */,
-				B42C6E051E20C29200577965 /* Group+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

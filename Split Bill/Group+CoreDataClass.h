@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Group : NSManagedObject
 
++ (Group *)groupWithName:(NSString *)name
+                  unique:(NSString *)unique
+  inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

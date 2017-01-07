@@ -27,9 +27,9 @@
         <relationship name="payments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payment" inverseName="person" inverseEntity="Payment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-56" positionY="-18" width="128" height="133"/>
-        <element name="Group" positionX="-353" positionY="63" width="128" height="103"/>
         <element name="Expense" positionX="-270" positionY="306" width="128" height="118"/>
+        <element name="Group" positionX="-353" positionY="63" width="128" height="103"/>
         <element name="Payment" positionX="-2" positionY="272" width="128" height="88"/>
+        <element name="Person" positionX="-56" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSManagedObject
 
++ (Person *)insertPersonWithName:(NSString *)name
+                          unique:(NSString *)unique
+                          weight:(NSInteger)weight
+                       groupName:(NSString *)groupName
+                     groupUnique:(NSString *)groupUnique
+          inManagedObjectContext:(NSManagedObjectContext *)context;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
