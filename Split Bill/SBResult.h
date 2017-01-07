@@ -24,6 +24,7 @@
 - (NSInteger)canAggregateWith:(SBResult *)result;
 
 // If flag == 2, reverse aggregation. If flag == 1, ordinary aggregation
+// If flag == 3 or flag == 4, chain aggregation
 - (NSArray<SBResult *> *)aggregateWith:(SBResult *)result withFlag:(NSInteger)flag;
 
 @end
