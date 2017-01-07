@@ -14,17 +14,37 @@
 
 @implementation Person
 
-+ (Person *)insertPersonWithName:(NSString *)name
-                          unique:(NSString *)unique
-                          weight:(NSInteger)weight
-                       groupName:(NSString *)groupName
-                     groupUnique:(NSString *)groupUnique
-          inManagedObjectContext:(NSManagedObjectContext *)context
++ (Person *)personWithName:(NSString *)name
+                    unique:(NSString *)unique
+                    weight:(NSInteger)weight
+                 groupName:(NSString *)groupName
+               groupUnique:(NSString *)groupUnique
+    inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
-    person.name = name;
-    person.unique = unique;
-    person.weight = weight;
+    Person *person = nil;
+
+    // Search for the given group
+    NSFetchRequest *req = [Person fetchRequest];
+    req.predicate = [NSPredicate predicateWithFormat:@"unique ==[c] %@", unique];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:req error:&error];
+
+    if (!results || error) {
+        NSLog(@"ERROR in fetching PERSON with unique: %@", unique);
+    } else if (results.count > 1) {
+        NSLog(@"ERROR: more than 1 match for PERSON with unique: %@", unique);
+    } else if (results.count == 1) {
+        NSLog(@"Found PERSON with unique: %@", unique);
+        person = [results lastObject];
+    } else {
+        NSLog(@"Insering PERSON with unique: %@", unique);
+        person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
+        person.name = name;
+        person.unique = unique;
+        person.weight = weight;
+        person.group = [Group groupWithName:groupName unique:groupUnique inManagedObjectContext:context];
+    }
+
     return person;
 }
 
