@@ -48,9 +48,11 @@
 
     while (tempResults.count > 1) {
         SBResult *r1 = tempResults[0];
+        // NSLog(@"%@", tempResults);
         for (int i = 1; i < tempResults.count; ++i) {
             SBResult *r2 = tempResults[i];
             NSInteger flag = [r1 canAggregateWith:r2];
+            // NSLog(@"%ld", flag);
             if (flag) {
                 NSArray *ar = [r1 aggregateWith:r2 withFlag:flag];
                 for (SBResult *a in ar) {
@@ -62,7 +64,7 @@
                 [tempResults removeObject:r2];
                 break;
             }
-            if (i >= results.count-1) {
+            if (i >= tempResults.count-1) {
                 [reducedResults addObject:r1];
                 [tempResults removeObject:r1];
             }

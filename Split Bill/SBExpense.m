@@ -57,6 +57,19 @@
             [uninvolved addObject:payment];
         }
     }
+    for (SBPerson *p in people) {
+        BOOL found = NO;
+        for (SBPayment *pp in involved) {
+            if ([pp.person.name isEqualToString:p.name]) {
+                found = YES;
+                break;
+            }
+        }
+        if (!found) {
+            [involved addObject:[SBPayment paymentWithPerson:p andAmount:[SBMoney moneyWithVal:0]]];
+        }
+    }
+
     expense.involved = involved;
     expense.uninvolved = uninvolved;
 
@@ -73,6 +86,9 @@
     SBMoney *each = [self.amount divide:self.weight];
     NSLog(@"Total expense: %@, each should pay: %@", self.amount, each);
 
+    NSLog(@"Involved: %@", self.involved);
+    NSLog(@"Uninvolved: %@", self.uninvolved);
+
 
     // delta may be positive or negative depending on how much they paid
     for (SBPayment *payment in self.involved) {
@@ -82,7 +98,7 @@
                 [ps addObject:p];
             }
         }
-        NSLog(@"%@", ps);
+        NSLog(@"Non-self people payments: %@", ps);
 
         SBMoney *shouldPay = [each multiply:payment.person.weight];
         SBMoney *delta = [payment.amount subtract:shouldPay];
@@ -109,7 +125,7 @@
     // because these uninvolved people paid for other people's expenses
     for (SBPayment *payment in self.uninvolved) {
         NSArray *ps = [self.involved copy];
-        NSLog(@"%@", ps);
+        NSLog(@"Non-self people payments: %@", ps);
 
         SBMoney *shouldPay = [each multiply:0];
         SBMoney *delta = [payment.amount subtract:shouldPay];
