@@ -26,6 +26,8 @@
     return engine;
 }
 
+#pragma mark - Main Methods
+
 - (NSArray<SBResult *> *)resultsForEvaluation
 {
     NSMutableArray<SBResult *> *results = [NSMutableArray<SBResult *> arrayWithCapacity:0];
@@ -66,6 +68,11 @@
     }
 
     return aggregatedResults;
+}
+
++ (NSArray<SBResult *> *)reducedResults:(NSArray<SBResult *> *)results
+{
+    return nil;
 }
 
 @end

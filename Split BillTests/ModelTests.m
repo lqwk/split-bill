@@ -114,6 +114,49 @@
     NSLog(@"%@", results);
 }
 
+- (void)testAggregate {
+    SBPerson *a = [SBPerson personWithName:@"A" andWeight:1];
+    SBPerson *b = [SBPerson personWithName:@"B" andWeight:1];
+    SBPerson *c = [SBPerson personWithName:@"C" andWeight:1];
+    SBPerson *d = [SBPerson personWithName:@"D" andWeight:1];
+
+    SBResult *r1 = [SBResult resultWithLendee:a andLender:b andAmount:[SBMoney moneyWithWhole:2 andDecimal:0]];
+    SBResult *r2 = [SBResult resultWithLendee:b andLender:c andAmount:[SBMoney moneyWithWhole:5 andDecimal:0]];
+    SBResult *r3 = [SBResult resultWithLendee:a andLender:b andAmount:[SBMoney moneyWithWhole:10 andDecimal:0]];
+    SBResult *r4 = [SBResult resultWithLendee:b andLender:a andAmount:[SBMoney moneyWithWhole:7 andDecimal:10]];
+    SBResult *r5 = [SBResult resultWithLendee:c andLender:d andAmount:[SBMoney moneyWithWhole:7 andDecimal:10]];
+
+    NSInteger flag = [r1 canAggregateWith:r2];
+    NSLog(@"%ld", flag);
+    NSArray *r = [r1 aggregateWith:r2 withFlag:flag];
+    NSLog(@"%@", r);
+
+    flag = [r2 canAggregateWith:r1];
+    NSLog(@"%ld", flag);
+    r = [r2 aggregateWith:r1 withFlag:flag];
+    NSLog(@"%@", r);
+
+    flag = [r1 canAggregateWith:r3];
+    NSLog(@"%ld", flag);
+    r = [r1 aggregateWith:r3 withFlag:flag];
+    NSLog(@"%@", r);
+
+    flag = [r1 canAggregateWith:r4];
+    NSLog(@"%ld", flag);
+    r = [r1 aggregateWith:r4 withFlag:flag];
+    NSLog(@"%@", r);
+
+    flag = [r3 canAggregateWith:r4];
+    NSLog(@"%ld", flag);
+    r = [r3 aggregateWith:r4 withFlag:flag];
+    NSLog(@"%@", r);
+
+    flag = [r1 canAggregateWith:r5];
+    NSLog(@"%ld", flag);
+    r = [r1 aggregateWith:r5 withFlag:flag];
+    NSLog(@"%@", r);
+}
+
 // - (void)testExpenseEvalutation1 {
 //     // This is an example of a functional test case.
 //     // Use XCTAssert and related functions to verify your tests produce the correct results.

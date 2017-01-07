@@ -18,4 +18,6 @@
 // Returns a list of results after evaluating each expense.
 - (NSArray<SBResult *> *)resultsForEvaluation;
 
++ (NSArray<SBResult *> *)reducedResults:(NSArray<SBResult *> *)results;
+
 @end

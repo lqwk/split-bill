@@ -39,22 +39,47 @@
         return 1;
     } else if ([self.lendee.name isEqualToString:result.lender.name] && [self.lender.name isEqualToString:result.lendee.name]) {
         return 2;
+    } else if ([self.lender.name isEqualToString:result.lendee.name] && ![self.lendee.name isEqualToString:result.lender.name]) {
+        return 3;
+    } else if ([self.lendee.name isEqualToString:result.lender.name] && ![self.lender.name isEqualToString:result.lendee.name]) {
+        return 4;
     }
 
     return 0;
 }
 
-- (SBResult *)aggregateWith:(SBResult *)result withFlag:(NSInteger)flag
+- (NSArray<SBResult *> *)aggregateWith:(SBResult *)result withFlag:(NSInteger)flag
 {
     if (flag == 1) {
         SBMoney *total = [self.amount add:result.amount];
-        return [SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total];
+        return [NSArray arrayWithObject:[SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total]];
     } else if (flag == 2) {
         SBMoney *total = [self.amount subtract:result.amount];
         if (total.val >= 0) {
-            return [SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total];
+            return [NSArray arrayWithObject:[SBResult resultWithLendee:self.lendee andLender:self.lender andAmount:total]];
         } else {
-            return [SBResult resultWithLendee:result.lendee andLender:result.lender andAmount:[total abs]];
+            return [NSArray arrayWithObject:[SBResult resultWithLendee:result.lendee andLender:result.lender andAmount:[total abs]]];
+        }
+    } else if (flag == 3 || flag == 4) {
+        SBResult *r1 = nil;
+        SBResult *r2 = nil;
+
+        if (flag == 3) {
+            r1 = self;
+            r2 = result;
+        } else {
+            r1 = result;
+            r2 = self;
+        }
+
+        if (r1.amount.val == r2.amount.val) {
+            return [NSArray arrayWithObject:[SBResult resultWithLendee:r1.lendee andLender:r2.lender andAmount:r1.amount]];
+        } else if (r1.amount.val < r2.amount.val) {
+            SBMoney *delta = [r2.amount subtract:r1.amount];
+            return [NSArray arrayWithObjects:[SBResult resultWithLendee:r1.lendee andLender:r2.lender andAmount:r1.amount], [SBResult resultWithLendee:r1.lender andLender:r2.lender andAmount:delta], nil];
+        } else if (r1.amount.val > r2.amount.val) {
+            SBMoney *delta = [r1.amount subtract:r2.amount];
+            return [NSArray arrayWithObjects:[SBResult resultWithLendee:r1.lendee andLender:r1.lender andAmount:delta], [SBResult resultWithLendee:r1.lendee andLender:r2.lender andAmount:r2.amount], nil];
         }
     }
 
