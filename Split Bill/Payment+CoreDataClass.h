@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Payment : NSManagedObject
 
++ (Payment *)paymentWithAmount:(int64_t)amount
+                        person:(Person *)person
+                       expense:(Expense *)expense
+        inManagedObjectContext:(NSManagedObjectContext *)context;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

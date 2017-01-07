@@ -10,6 +10,19 @@
 #import "Payment+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
 #import "Person+CoreDataClass.h"
+
 @implementation Payment
+
++ (Payment *)paymentWithAmount:(int64_t)amount
+                        person:(Person *)person
+                       expense:(Expense *)expense
+        inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Payment *payment = [NSEntityDescription insertNewObjectForEntityForName:@"Payment" inManagedObjectContext:context];
+    payment.amount = amount;
+    payment.person = person;
+    payment.expense = expense;
+    return payment;
+}
 
 @end
