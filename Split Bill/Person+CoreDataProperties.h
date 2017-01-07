@@ -19,18 +19,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *unique;
 @property (nonatomic) int64_t weight;
-@property (nullable, nonatomic, retain) Expense *expense;
+@property (nullable, nonatomic, retain) NSSet<Expense *> *expensesInvolved;
 @property (nullable, nonatomic, retain) Group *group;
-@property (nullable, nonatomic, retain) NSSet<Payment *> *payments;
+@property (nullable, nonatomic, retain) NSSet<Payment *> *paymentsMade;
 
 @end
 
 @interface Person (CoreDataGeneratedAccessors)
 
-- (void)addPaymentsObject:(Payment *)value;
-- (void)removePaymentsObject:(Payment *)value;
-- (void)addPayments:(NSSet<Payment *> *)values;
-- (void)removePayments:(NSSet<Payment *> *)values;
+- (void)addExpensesInvolvedObject:(Expense *)value;
+- (void)removeExpensesInvolvedObject:(Expense *)value;
+- (void)addExpensesInvolved:(NSSet<Expense *> *)values;
+- (void)removeExpensesInvolved:(NSSet<Expense *> *)values;
+
+- (void)addPaymentsMadeObject:(Payment *)value;
+- (void)removePaymentsMadeObject:(Payment *)value;
+- (void)addPaymentsMade:(NSSet<Payment *> *)values;
+- (void)removePaymentsMade:(NSSet<Payment *> *)values;
 
 @end
 

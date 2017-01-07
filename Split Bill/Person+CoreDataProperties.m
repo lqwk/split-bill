@@ -18,8 +18,8 @@
 @dynamic name;
 @dynamic unique;
 @dynamic weight;
-@dynamic expense;
+@dynamic expensesInvolved;
 @dynamic group;
-@dynamic payments;
+@dynamic paymentsMade;
 
 @end

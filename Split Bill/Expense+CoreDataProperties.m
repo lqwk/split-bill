@@ -18,7 +18,7 @@
 @dynamic name;
 @dynamic unique;
 @dynamic group;
-@dynamic involved;
-@dynamic payments;
+@dynamic peopleInvolved;
+@dynamic paymentsInvolved;
 
 @end
