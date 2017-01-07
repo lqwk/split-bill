@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "Person+CoreDataClass.h"
+#import "Group+CoreDataClass.h"
+#import "Expense+CoreDataClass.h"
+#import "Payment+CoreDataClass.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +22,39 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // NSString *group = [NSString stringWithFormat:@"%@-%@", [NSDate date], @"London"];
+
+    // Person *p1 = [Person personWithName:@"Lan" unique:[NSString stringWithFormat:@"%@-%@", group, @"Lan"] weight:2 groupName:@"London" groupUnique:group inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@", p1);
+
+    // Person *p2 = [Person personWithName:@"Man" unique:[NSString stringWithFormat:@"%@-%@", group, @"Man"] weight:1 groupName:@"London" groupUnique:group inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@", p2);
+
+    // Group *g1 = [Group groupWithName:@"London" unique:group inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@",g1);
+
+    // Expense *e1 = [Expense expenseWithName:@"Frenchie" unique:[NSString stringWithFormat:@"%@-%@", group, @"Frenchie"] group:g1 peopleInvolved:[NSSet setWithObjects:p1, p2, nil] inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@", e1);
+    // NSLog(@"%@", p1);
+    // NSLog(@"%@", p2);
+
+
+    // Payment *pp1 = [Payment paymentWithAmount:5500 person:p1 expense:e1 inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@", pp1);
+
+    // Payment *pp2 = [Payment paymentWithAmount:10500 person:p2 expense:e1 inManagedObjectContext:self.persistentContainer.viewContext];
+    // [self saveContext];
+    // NSLog(@"%@", pp2);
+
+    // NSLog(@"%@", e1);
+
+    // NSLog(@"DONE");
+
     return YES;
 }
 
