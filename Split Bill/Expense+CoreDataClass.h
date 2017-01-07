@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Expense : NSManagedObject
 
++ (Expense *)expenseWithName:(NSString *)name
+                      unique:(NSString *)unique
+                       group:(Group *)group
+              peopleInvolved:(NSSet<Person *> *)peopleInvolved
+      inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

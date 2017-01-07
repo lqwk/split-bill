@@ -23,7 +23,7 @@
 {
     Person *person = nil;
 
-    // Search for the given group
+    // Search for the given person
     NSFetchRequest *req = [Person fetchRequest];
     req.predicate = [NSPredicate predicateWithFormat:@"unique ==[c] %@", unique];
     NSError *error;
