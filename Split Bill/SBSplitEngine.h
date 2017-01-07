@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SBExpense;
-@class SBResult;
+@class SBExpense, SBResult;
 
 @interface SBSplitEngine : NSObject
 
