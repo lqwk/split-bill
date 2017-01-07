@@ -17,6 +17,7 @@
 		B42C6E2D1E21988E00577965 /* Payment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E281E21988E00577965 /* Payment+CoreDataProperties.m */; };
 		B42C6E2E1E21988E00577965 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E2A1E21988E00577965 /* Expense+CoreDataProperties.m */; };
 		B42C6E2F1E2199A200577965 /* Split_Bill.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */; };
+		B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E321E219EE700577965 /* GroupsTableViewController.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -65,6 +66,8 @@
 		B42C6E281E21988E00577965 /* Payment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payment+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B42C6E291E21988E00577965 /* Expense+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B42C6E2A1E21988E00577965 /* Expense+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E311E219EE700577965 /* GroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsTableViewController.h; sourceTree = "<group>"; };
+		B42C6E321E219EE700577965 /* GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsTableViewController.m; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B42C6E301E219ED100577965 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E311E219EE700577965 /* GroupsTableViewController.h */,
+				B42C6E321E219EE700577965 /* GroupsTableViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		B450D1A51E1DAB5A00B282A0 = {
 			isa = PBXGroup;
 			children = (
@@ -140,12 +152,13 @@
 		B450D1B01E1DAB5B00B282A0 /* Split Bill */ = {
 			isa = PBXGroup;
 			children = (
-				B450D1EB1E1DAC3400B282A0 /* Model */,
-				B450D1E71E1DAC0200B282A0 /* CoreData */,
 				B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */,
 				B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */,
 				B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */,
 				B450D1C51E1DAB5B00B282A0 /* Info.plist */,
+				B42C6E301E219ED100577965 /* UI */,
+				B450D1EB1E1DAC3400B282A0 /* Model */,
+				B450D1E71E1DAC0200B282A0 /* CoreData */,
 				B450D1B11E1DAB5B00B282A0 /* Supporting Files */,
 			);
 			path = "Split Bill";
@@ -366,6 +379,7 @@
 				B42C6E2D1E21988E00577965 /* Payment+CoreDataProperties.m in Sources */,
 				B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */,
 				B42C6E2E1E21988E00577965 /* Expense+CoreDataProperties.m in Sources */,
+				B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */,
 				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
