@@ -38,41 +38,42 @@
 
     NSLog(@"Total Results: %@", results);
 
-    NSMutableArray *aggregatedResults = [[NSMutableArray alloc] initWithCapacity:0];
-
-    // Aggregate the reults
-    while (results.count > 1) {
-        SBResult *r1 = results[0];
-        for (int i = 1; i < results.count; ++i) {
-            SBResult *r2 = results[i];
-            NSInteger flag = [r1 canAggregateWith:r2];
-            if (flag) {
-                SBResult *ar = [r1 aggregateWith:r2 withFlag:flag];
-                if (ar.amount.val != 0) {
-                    [results addObject:ar];
-                    // [aggregatedResults addObject:ar];
-                }
-                [results removeObject:r1];
-                [results removeObject:r2];
-                break;
-            }
-            if (i >= results.count-1) {
-                [aggregatedResults addObject:r1];
-                [results removeObject:r1];
-            }
-        }
-    }
-
-    if (results.count == 1) {
-        [aggregatedResults addObject:results[0]];
-    }
-
-    return aggregatedResults;
+    return [SBSplitEngine reducedResults:results];
 }
 
 + (NSArray<SBResult *> *)reducedResults:(NSArray<SBResult *> *)results
 {
-    return nil;
+    NSMutableArray *reducedResults = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *tempResults = [results mutableCopy];
+
+    while (tempResults.count > 1) {
+        SBResult *r1 = tempResults[0];
+        for (int i = 1; i < tempResults.count; ++i) {
+            SBResult *r2 = tempResults[i];
+            NSInteger flag = [r1 canAggregateWith:r2];
+            if (flag) {
+                NSArray *ar = [r1 aggregateWith:r2 withFlag:flag];
+                for (SBResult *a in ar) {
+                    if (a.amount.val != 0) {
+                        [tempResults addObject:a];
+                    }
+                }
+                [tempResults removeObject:r1];
+                [tempResults removeObject:r2];
+                break;
+            }
+            if (i >= results.count-1) {
+                [reducedResults addObject:r1];
+                [tempResults removeObject:r1];
+            }
+        }
+    }
+
+    if (tempResults.count == 1) {
+        [reducedResults addObject:tempResults[0]];
+    }
+
+    return reducedResults;
 }
 
 @end

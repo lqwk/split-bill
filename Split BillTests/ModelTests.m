@@ -109,9 +109,18 @@
     SBPayment *pp4 = [SBPayment paymentWithPerson:p4 andAmount:m1];
     SBPayment *pp5 = [SBPayment paymentWithPerson:p5 andAmount:m1];
 
-    SBExpense *e = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
-    NSArray *results = [e resultsForEvaluation];
+    SBExpense *e1 = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
+    SBExpense *e2 = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
+    SBExpense *e3 = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
+    SBExpense *e4 = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
+    SBExpense *e5 = [SBExpense expenseWithName:@"Weird" andPayments:[NSArray arrayWithObjects:pp1, pp2, pp3, pp4, pp5, nil] andPeople:[NSArray arrayWithObjects:p1, p2, p3, p4, nil]];
+
+    NSArray *results = [e1 resultsForEvaluation];
     NSLog(@"%@", results);
+
+    SBSplitEngine *engine = [SBSplitEngine engineWithExpenses:[NSArray arrayWithObjects:e1, e2, e3, e4, e5, nil]];
+    NSArray *rr = [engine resultsForEvaluation];
+    NSLog(@"%@", rr);
 }
 
 - (void)testAggregate {

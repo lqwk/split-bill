@@ -11,6 +11,7 @@
 #import "SBPerson.h"
 #import "SBResult.h"
 #import "SBMoney.h"
+#import "SBSplitEngine.h"
 
 @interface SBExpense ()
 
@@ -127,7 +128,7 @@
 
     NSLog(@"Original Results: %@", results);
 
-    return nil;
+    return [SBSplitEngine reducedResults:results];
 }
 
 #pragma mark - DEBUG
