@@ -7,7 +7,7 @@
 //
 
 #import "AddGroupTableViewController.h"
-#import "AddGroupTextFieldTableViewCell.h"
+#import "TextFieldTableViewCell.h"
 #import "AppDelegate.h"
 #import "Group+CoreDataClass.h"
 #import "NSDate+SBHelper.h"
@@ -34,7 +34,7 @@
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    AddGroupTextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    TextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     NSString *groupName = [cell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 
     if ([groupName isEqualToString:@""]) {
@@ -64,7 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AddGroupTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddGroupTextCell" forIndexPath:indexPath];
+    TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddGroupTextCell" forIndexPath:indexPath];
     
     cell.textField.placeholder = @"Group Name";
     

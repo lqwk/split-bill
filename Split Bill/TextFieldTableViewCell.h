@@ -1,5 +1,5 @@
 //
-//  AddGroupTextFieldTableViewCell.h
+//  TextFieldTableViewCell.h
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/7/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddGroupTextFieldTableViewCell : UITableViewCell
+@interface TextFieldTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
