@@ -1,85 +1,74 @@
 //
-//  GroupDetailTableViewController.m
+//  AddGroupTableViewController.m
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/7/17.
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //
 
-#import "GroupDetailTableViewController.h"
+#import "AddGroupTableViewController.h"
+#import "AddGroupTextFieldTableViewCell.h"
+#import "AppDelegate.h"
 #import "Group+CoreDataClass.h"
-#import "Person+CoreDataClass.h"
-#import "Expense+CoreDataClass.h"
+#import "NSDate+SBHelper.h"
 
-@interface GroupDetailTableViewController ()
-
-@property (nonatomic, strong) NSArray *people;
-@property (nonatomic, strong) NSArray *expenses;
+@interface AddGroupTableViewController ()
 
 @end
 
-@implementation GroupDetailTableViewController
+@implementation AddGroupTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
-    self.people = self.group.people.allObjects;
-    self.expenses = self.group.expenses.allObjects;
+#pragma mark - Actions
 
-    self.navigationItem.title = self.group.name;
+- (IBAction)CancelAddingGroup:(UIBarButtonItem *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
-    self.tableView.rowHeight = 56.f;
+- (IBAction)AddGroup:(UIBarButtonItem *)sender
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    AddGroupTextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    NSString *groupName = [cell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+    if ([groupName isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Group Name Cannot Be Blank" message:@"Please enter a non-blank name for your group." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        Group *group = [Group groupWithName:groupName unique:[NSString stringWithFormat:@"%@/%@", [[NSDate date] dateID], groupName] inManagedObjectContext:delegate.persistentContainer.viewContext];
+        [delegate saveContext];
+        NSLog(@"%@", group);
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return self.people.count;
-    } else {
-        return self.expenses.count;
-    }
-
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = nil;
-
-    if (indexPath.section == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell" forIndexPath:indexPath];
-        Person *person = [self.people objectAtIndex:indexPath.row];
-        cell.textLabel.text = person.name;
-        cell.detailTextLabel.text = person.unique;
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell" forIndexPath:indexPath];
-        Expense *expense = [self.expenses objectAtIndex:indexPath.row];
-        cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = expense.unique;
-    }
+    AddGroupTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddGroupTextCell" forIndexPath:indexPath];
+    
+    cell.textField.placeholder = @"Group Name";
     
     return cell;
-}
-
-#pragma mark - UITableViewDelegate
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return @"People";
-    } else {
-        return @"Expenses";
-    }
-
-    return @"";
 }
 
 

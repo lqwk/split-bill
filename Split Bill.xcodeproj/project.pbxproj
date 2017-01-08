@@ -19,6 +19,9 @@
 		B42C6E2F1E2199A200577965 /* Split_Bill.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */; };
 		B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E321E219EE700577965 /* GroupsTableViewController.m */; };
 		B42C6E361E21A46400577965 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */; };
+		B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */; };
+		B42C6E3D1E21B4F800577965 /* AddGroupTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E3C1E21B4F800577965 /* AddGroupTextFieldTableViewCell.m */; };
+		B42C6E411E21B8EF00577965 /* NSDate+SBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -71,6 +74,12 @@
 		B42C6E321E219EE700577965 /* GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsTableViewController.m; sourceTree = "<group>"; };
 		B42C6E341E21A46400577965 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailTableViewController.h; sourceTree = "<group>"; };
 		B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailTableViewController.m; sourceTree = "<group>"; };
+		B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupTableViewController.h; sourceTree = "<group>"; };
+		B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupTableViewController.m; sourceTree = "<group>"; };
+		B42C6E3B1E21B4F800577965 /* AddGroupTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E3C1E21B4F800577965 /* AddGroupTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E3F1E21B8EF00577965 /* NSDate+SBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SBHelper.h"; sourceTree = "<group>"; };
+		B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SBHelper.m"; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,12 +135,33 @@
 		B42C6E301E219ED100577965 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B42C6E341E21A46400577965 /* GroupDetailTableViewController.h */,
-				B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */,
+				B42C6E3A1E21B4D700577965 /* Views */,
 				B42C6E311E219EE700577965 /* GroupsTableViewController.h */,
 				B42C6E321E219EE700577965 /* GroupsTableViewController.m */,
+				B42C6E341E21A46400577965 /* GroupDetailTableViewController.h */,
+				B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */,
+				B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */,
+				B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		B42C6E3A1E21B4D700577965 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E3B1E21B4F800577965 /* AddGroupTextFieldTableViewCell.h */,
+				B42C6E3C1E21B4F800577965 /* AddGroupTextFieldTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B42C6E3E1E21B89100577965 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E3F1E21B8EF00577965 /* NSDate+SBHelper.h */,
+				B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		B450D1A51E1DAB5A00B282A0 = {
@@ -161,6 +191,7 @@
 				B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */,
 				B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */,
 				B450D1C51E1DAB5B00B282A0 /* Info.plist */,
+				B42C6E3E1E21B89100577965 /* Helpers */,
 				B42C6E301E219ED100577965 /* UI */,
 				B450D1EB1E1DAC3400B282A0 /* Model */,
 				B450D1E71E1DAC0200B282A0 /* CoreData */,
@@ -374,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42C6E361E21A46400577965 /* GroupDetailTableViewController.m in Sources */,
+				B42C6E411E21B8EF00577965 /* NSDate+SBHelper.m in Sources */,
 				B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
@@ -383,10 +415,12 @@
 				B42C6E2B1E21988E00577965 /* Group+CoreDataProperties.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
 				B42C6E2D1E21988E00577965 /* Payment+CoreDataProperties.m in Sources */,
+				B42C6E3D1E21B4F800577965 /* AddGroupTextFieldTableViewCell.m in Sources */,
 				B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */,
 				B42C6E2E1E21988E00577965 /* Expense+CoreDataProperties.m in Sources */,
 				B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */,
 				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
+				B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
 				B42C6E2C1E21988E00577965 /* Person+CoreDataProperties.m in Sources */,
