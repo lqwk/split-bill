@@ -22,6 +22,8 @@
 		B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */; };
 		B42C6E411E21B8EF00577965 /* NSDate+SBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */; };
 		B42C6E441E21EEE200577965 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */; };
+		B42C6E471E21F7DF00577965 /* StepperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */; };
+		B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -80,6 +82,10 @@
 		B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SBHelper.m"; sourceTree = "<group>"; };
 		B42C6E421E21EEE200577965 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E451E21F7DF00577965 /* StepperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepperTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepperTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPersonTableViewController.h; sourceTree = "<group>"; };
+		B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPersonTableViewController.m; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 				B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */,
 				B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */,
 				B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */,
+				B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */,
+				B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -151,6 +159,8 @@
 			children = (
 				B42C6E421E21EEE200577965 /* TextFieldTableViewCell.h */,
 				B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */,
+				B42C6E451E21F7DF00577965 /* StepperTableViewCell.h */,
+				B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,6 +421,7 @@
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
 				B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */,
 				B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */,
+				B42C6E471E21F7DF00577965 /* StepperTableViewCell.m in Sources */,
 				B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */,
 				B42C6E2B1E21988E00577965 /* Group+CoreDataProperties.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
@@ -425,6 +436,7 @@
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
 				B42C6E2C1E21988E00577965 /* Person+CoreDataProperties.m in Sources */,
 				B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */,
+				B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

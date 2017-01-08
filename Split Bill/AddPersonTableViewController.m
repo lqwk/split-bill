@@ -1,22 +1,23 @@
 //
-//  AddGroupTableViewController.m
+//  AddPersonTableViewController.m
 //  Split Bill
 //
 //  Created by Qingwei Lan on 1/7/17.
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //
 
-#import "AddGroupTableViewController.h"
+#import "AddPersonTableViewController.h"
 #import "TextFieldTableViewCell.h"
+#import "StepperTableViewCell.h"
 #import "AppDelegate.h"
+#import "Person+CoreDataClass.h"
 #import "Group+CoreDataClass.h"
-#import "NSDate+SBHelper.h"
 
-@interface AddGroupTableViewController ()
+@interface AddPersonTableViewController ()
 
 @end
 
-@implementation AddGroupTableViewController
+@implementation AddPersonTableViewController
 
 - (void)viewDidLoad
 {
@@ -25,28 +26,40 @@
 
 #pragma mark - Actions
 
-- (IBAction)cancelAddingGroup:(UIBarButtonItem *)sender
+- (IBAction)cancelAddingPerson:(UIBarButtonItem *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)addGroup:(UIBarButtonItem *)sender
+- (IBAction)addPerson:(UIBarButtonItem *)sender
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    TextFieldTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    NSString *groupName = [cell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 
-    if ([groupName isEqualToString:@""]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Group Name Cannot Be Blank" message:@"Please enter a non-blank name for your group." preferredStyle:UIAlertControllerStyleAlert];
+    NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    TextFieldTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
+    NSString *name = [nameCell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+    NSIndexPath *weightIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    StepperTableViewCell *weightCell = [self.tableView cellForRowAtIndexPath:weightIndexPath];
+    NSInteger weight = [weightCell.weightLabel.text integerValue];
+
+    if ([name isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Person Name Cannot Be Blank" message:@"Please enter a non-blank name for the person." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:action];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        Group *group = [Group groupWithName:groupName unique:[NSString stringWithFormat:@"%@/%@", [[NSDate date] dateID], groupName] inManagedObjectContext:delegate.persistentContainer.viewContext];
-        [delegate saveContext];
-        NSLog(@"%@", group);
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (weight < 1) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Person Weight Cannot Be Zero" message:@"Please enter a non-zero weight for the person." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            Person *person = [Person personWithName:name unique:[NSString stringWithFormat:@"%@+%@", self.group.unique, name] weight:weight group:self.group inManagedObjectContext:delegate.persistentContainer.viewContext];
+            [delegate saveContext];
+            NSLog(@"%@", person);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }
 }
 
@@ -59,15 +72,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddGroupTextCell" forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
     
-    cell.textField.placeholder = @"Group Name";
-    
+    switch (indexPath.row) {
+        case 0:
+        {
+            TextFieldTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddPersonTextCell" forIndexPath:indexPath];
+            temp.textField.placeholder = @"Person Name";
+            cell = temp;
+            break;
+        }
+
+        case 1:
+        {
+            StepperTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddPersonStepperCell" forIndexPath:indexPath];
+            cell = temp;
+            break;
+        }
+
+        default: break;
+    }
+
     return cell;
 }
 

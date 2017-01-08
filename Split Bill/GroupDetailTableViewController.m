@@ -10,6 +10,7 @@
 #import "Group+CoreDataClass.h"
 #import "Person+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
+#import "AddPersonTableViewController.h"
 
 @interface GroupDetailTableViewController ()
 
@@ -19,6 +20,31 @@
 @end
 
 @implementation GroupDetailTableViewController
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleContextChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:nil];
+}
+
+- (void)handleContextChange:(NSNotification *)notification
+{
+    // NSLog(@"%@", [[notification.userInfo objectForKey:@"updated"] class]);
+    for (NSManagedObject *obj in [notification.userInfo objectForKey:@"updated"]) {
+        if ([obj isKindOfClass:[Group class]]) {
+            Group *g = (Group *)obj;
+            if ([g.unique isEqualToString:self.group.unique]) {
+                self.group = g;
+            }
+        }
+        NSLog(@"UPDATED: %@", obj);
+    }
+
+    self.people = self.group.people.allObjects;
+    self.expenses = self.group.expenses.allObjects;
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -117,14 +143,17 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddPerson"]) {
+        UINavigationController *navc = segue.destinationViewController;
+        AddPersonTableViewController *vc = (AddPersonTableViewController *)navc.topViewController;
+        vc.group = self.group;
+    }
 }
-*/
+
 
 @end
