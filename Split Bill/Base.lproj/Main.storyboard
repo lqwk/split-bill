@@ -348,14 +348,39 @@
         <!--New Expense-->
         <scene sceneID="qJq-D7-oyg">
             <objects>
-                <tableViewController id="IfA-2O-qge" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ems-aO-r44">
+                <tableViewController id="IfA-2O-qge" customClass="AddExpenseTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ems-aO-r44">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddExpenseTextCell" rowHeight="52" id="4sM-Gu-1dy" customClass="TextFieldTableViewCell">
+                                <rect key="frame" x="0.0" y="56" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4sM-Gu-1dy" id="iKA-cQ-C7w">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rTf-tp-XWd">
+                                            <rect key="frame" x="8" y="8" width="359" height="35.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rTf-tp-XWd" firstAttribute="trailing" secondItem="iKA-cQ-C7w" secondAttribute="trailing" constant="-8" id="bRs-dY-R7W"/>
+                                        <constraint firstItem="rTf-tp-XWd" firstAttribute="top" secondItem="iKA-cQ-C7w" secondAttribute="top" constant="8" id="mz7-HX-CJa"/>
+                                        <constraint firstAttribute="bottom" secondItem="rTf-tp-XWd" secondAttribute="bottom" constant="8" id="wJV-LO-uV5"/>
+                                        <constraint firstItem="rTf-tp-XWd" firstAttribute="leading" secondItem="iKA-cQ-C7w" secondAttribute="leading" constant="8" id="zQ0-8q-VGk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="rTf-tp-XWd" id="S91-ia-gnd"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IoD-hf-LIb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IoD-hf-LIb" id="oJB-dW-flZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -369,7 +394,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Expense" id="w0X-fH-asx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JXu-qD-hgC"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JXu-qD-hgC">
+                            <connections>
+                                <action selector="cancelAddingExpense:" destination="IfA-2O-qge" id="wag-0B-4GB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="Tdp-EQ-e79"/>
                     </navigationItem>
                 </tableViewController>
