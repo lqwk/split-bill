@@ -11,6 +11,7 @@
 #import "Person+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
 #import "AddPersonTableViewController.h"
+#import "AddExpenseTableViewController.h"
 
 @interface GroupDetailTableViewController ()
 
@@ -125,6 +126,11 @@
         UINavigationController *navc = segue.destinationViewController;
         AddPersonTableViewController *vc = (AddPersonTableViewController *)navc.topViewController;
         vc.group = self.group;
+    } else if ([segue.identifier isEqualToString:@"AddExpense"]) {
+        UINavigationController *navc = segue.destinationViewController;
+        AddExpenseTableViewController *vc = (AddExpenseTableViewController *)navc.topViewController;
+        vc.group = self.group;
+        vc.people = self.people;
     }
 }
 

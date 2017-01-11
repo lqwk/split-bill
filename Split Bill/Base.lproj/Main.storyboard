@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -404,13 +406,88 @@
                                     <outlet property="calculatorTextField" destination="M6z-ND-pcd" id="3QZ-AR-Rr7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IoD-hf-LIb">
-                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeopleInvolvedCell" rowHeight="52" id="IoD-hf-LIb" customClass="PeopleInvolvedTableViewCell">
+                                <rect key="frame" x="0.0" y="160" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IoD-hf-LIb" id="oJB-dW-flZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-cM-IFc">
+                                            <rect key="frame" x="8" y="8" width="179.5" height="35.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-5z-hks" customClass="VENCalculatorInputTextField">
+                                            <rect key="frame" x="195" y="8" width="54.5" height="35.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsG-Pt-bYK" customClass="VENCalculatorInputTextField">
+                                            <rect key="frame" x="257.5" y="8" width="109.5" height="35.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pXI-cM-IFc" firstAttribute="trailing" secondItem="oJB-dW-flZ" secondAttribute="centerX" id="1vi-e5-yoY"/>
+                                        <constraint firstAttribute="trailing" secondItem="RsG-Pt-bYK" secondAttribute="trailing" constant="8" id="6BF-vM-dGO"/>
+                                        <constraint firstItem="EcT-5z-hks" firstAttribute="leading" secondItem="pXI-cM-IFc" secondAttribute="trailing" constant="8" id="6RP-7k-JHf"/>
+                                        <constraint firstAttribute="bottom" secondItem="EcT-5z-hks" secondAttribute="bottom" constant="8" id="BzI-kn-cHP"/>
+                                        <constraint firstItem="pXI-cM-IFc" firstAttribute="top" secondItem="oJB-dW-flZ" secondAttribute="top" constant="8" id="DMI-Gf-huk"/>
+                                        <constraint firstItem="pXI-cM-IFc" firstAttribute="leading" secondItem="oJB-dW-flZ" secondAttribute="leading" constant="8" id="Nay-Ec-N0V"/>
+                                        <constraint firstAttribute="bottom" secondItem="RsG-Pt-bYK" secondAttribute="bottom" constant="8" id="P5v-YD-kFE"/>
+                                        <constraint firstItem="RsG-Pt-bYK" firstAttribute="leading" secondItem="EcT-5z-hks" secondAttribute="trailing" constant="8" id="Rre-s9-aZe"/>
+                                        <constraint firstItem="RsG-Pt-bYK" firstAttribute="top" secondItem="oJB-dW-flZ" secondAttribute="top" constant="8" id="ilU-Lg-sBD"/>
+                                        <constraint firstItem="RsG-Pt-bYK" firstAttribute="width" secondItem="EcT-5z-hks" secondAttribute="width" multiplier="2" id="mhU-Bk-pZz"/>
+                                        <constraint firstAttribute="bottom" secondItem="pXI-cM-IFc" secondAttribute="bottom" constant="8" id="tOO-sG-cfZ"/>
+                                        <constraint firstItem="EcT-5z-hks" firstAttribute="top" secondItem="oJB-dW-flZ" secondAttribute="top" constant="8" id="yEU-6i-jUN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="pXI-cM-IFc" id="y28-OT-aaL"/>
+                                    <outlet property="shouldPayTextField" destination="RsG-Pt-bYK" id="6rt-p8-cQw"/>
+                                    <outlet property="weightTextField" destination="EcT-5z-hks" id="GU6-Qh-4wC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeoplePaymentCell" rowHeight="52" id="kSf-j5-Heu" customClass="PeoplePaymentTableViewCell">
+                                <rect key="frame" x="0.0" y="212" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kSf-j5-Heu" id="lV3-wN-4Bg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rc-2x-h4E">
+                                            <rect key="frame" x="8" y="8" width="179.5" height="35.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-Tq-Mhf" customClass="VENCalculatorInputTextField">
+                                            <rect key="frame" x="195.5" y="8" width="171.5" height="35.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RRd-Tq-Mhf" firstAttribute="top" secondItem="lV3-wN-4Bg" secondAttribute="top" constant="8" id="8Yt-89-Qjq"/>
+                                        <constraint firstItem="9Rc-2x-h4E" firstAttribute="top" secondItem="lV3-wN-4Bg" secondAttribute="top" constant="8" id="DmX-01-m3f"/>
+                                        <constraint firstItem="RRd-Tq-Mhf" firstAttribute="leading" secondItem="9Rc-2x-h4E" secondAttribute="trailing" constant="8" id="Ij5-BF-CX4"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Rc-2x-h4E" secondAttribute="bottom" constant="8" id="f22-sU-g2d"/>
+                                        <constraint firstAttribute="bottom" secondItem="RRd-Tq-Mhf" secondAttribute="bottom" constant="8" id="fXR-6W-AGh"/>
+                                        <constraint firstItem="9Rc-2x-h4E" firstAttribute="trailing" secondItem="lV3-wN-4Bg" secondAttribute="centerX" id="qr0-lq-L62"/>
+                                        <constraint firstAttribute="trailing" secondItem="RRd-Tq-Mhf" secondAttribute="trailing" constant="8" id="rCC-ou-Nfw"/>
+                                        <constraint firstItem="9Rc-2x-h4E" firstAttribute="leading" secondItem="lV3-wN-4Bg" secondAttribute="leading" constant="8" id="yl3-1b-VRM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="9Rc-2x-h4E" id="SRy-Wd-830"/>
+                                    <outlet property="paymentTextfield" destination="RRd-Tq-Mhf" id="CbI-Se-nkD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -429,7 +506,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ6-Zx-ztZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="1156"/>
+            <point key="canvasLocation" x="2652" y="1155.472263868066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CJA-vB-mvA">

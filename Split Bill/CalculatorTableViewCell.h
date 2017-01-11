@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet VENCalculatorInputTextField *calculatorTextField;
 
+- (void)setup;
+
 @end

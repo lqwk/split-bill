@@ -23,4 +23,21 @@
     // Configure the view for the selected state
 }
 
+- (void)setup
+{
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.calculatorTextField.inputView.frame.size.width, 50.f)];
+    toolBar.barStyle = UIBarStyleDefault;
+    toolBar.items = @[[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                      [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donePad)]];
+    [toolBar sizeToFit];
+    self.calculatorTextField.inputAccessoryView = toolBar;
+
+    self.calculatorTextField.placeholder = @"Total Cost of Expense";
+}
+
+- (void)donePad
+{
+    [self.calculatorTextField resignFirstResponder];
+}
+
 @end

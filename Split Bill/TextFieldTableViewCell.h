@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+- (void)setup;
+
 @end

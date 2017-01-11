@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Group;
+
 @interface AddExpenseTableViewController : UITableViewController
+
+@property (nonatomic, strong) Group *group;
+@property (nonatomic, strong) NSArray *people;
 
 @end

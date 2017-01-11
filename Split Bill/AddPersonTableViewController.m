@@ -83,6 +83,7 @@
         case 0:
         {
             TextFieldTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddPersonTextCell" forIndexPath:indexPath];
+            [temp setup];
             temp.textField.placeholder = @"Person Name";
             cell = temp;
             break;

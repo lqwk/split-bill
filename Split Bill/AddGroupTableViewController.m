@@ -65,7 +65,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddGroupTextCell" forIndexPath:indexPath];
-    
+
+    [cell setup];
     cell.textField.placeholder = @"Group Name";
     
     return cell;

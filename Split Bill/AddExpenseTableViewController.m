@@ -9,7 +9,10 @@
 #import "AddExpenseTableViewController.h"
 #import "TextFieldTableViewCell.h"
 #import "CalculatorTableViewCell.h"
+#import "PeopleInvolvedTableViewCell.h"
+#import "PeoplePaymentTableViewCell.h"
 #import "AppDelegate.h"
+#import "Person+CoreDataClass.h"
 
 @interface AddExpenseTableViewController ()
 
@@ -20,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.tableView.rowHeight = 44.f;
 }
 
 #pragma mark - Actions
@@ -61,18 +66,19 @@
     // }
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
     switch (section) {
         case 0: return 2; break;
-        case 1: return 1; break;
+        case 1: return self.people.count; break;
+        case 2: return self.people.count; break;
         default: break;
     }
 
@@ -91,7 +97,9 @@
                 case 0:
                 {
                     TextFieldTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseTextCell" forIndexPath:indexPath];
+                    [temp setup];
                     temp.textField.placeholder = @"Name of Expense";
+                    temp.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = temp;
                     break;
                 }
@@ -99,7 +107,8 @@
                 case 1:
                 {
                     CalculatorTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseCalculatorCell" forIndexPath:indexPath];
-                    temp.calculatorTextField.placeholder = @"Total Cost of Expense";
+                    [temp setup];
+                    temp.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = temp;
                     break;
                 }
@@ -110,10 +119,68 @@
             break;
         }
 
+        case 1:
+        {
+            Person *p = [self.people objectAtIndex:indexPath.row];
+            PeopleInvolvedTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PeopleInvolvedCell" forIndexPath:indexPath];
+            temp.person = p;
+            [temp setup];
+            // temp.each = self.total / self.totalWeight;
+            temp.chosen = YES;
+            cell = temp;
+            break;
+        }
+
+        case 2:
+        {
+            Person *p = [self.people objectAtIndex:indexPath.row];
+            PeoplePaymentTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PeoplePaymentCell" forIndexPath:indexPath];
+            [temp setup];
+            temp.person = p;
+            cell = temp;
+            break;
+        }
+
         default: break;
     }
 
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (indexPath.section == 1) {
+        PeopleInvolvedTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.chosen = !cell.chosen;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0: return @"Basic Details"; break;
+        case 1: return @"People Who Should Pay"; break;
+        case 2: return @"People Who Paid"; break;
+        default: break;
+    }
+
+    return @"";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0: break;
+        case 1: return @"Click on the person to remove from \"Who Should Pay\". Click again to re-add."; break;
+        case 2: return @"Click on the person to remove from \"Who Paid\". Click again to re-add."; break;
+        default: break;
+    }
+
+    return @"";
 }
 
 @end
