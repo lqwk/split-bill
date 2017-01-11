@@ -14,7 +14,9 @@
 #import "AppDelegate.h"
 #import "Person+CoreDataClass.h"
 
-@interface AddExpenseTableViewController ()
+@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate>
+
+@property (nonatomic) double totalCost;
 
 @end
 
@@ -108,6 +110,7 @@
                 {
                     CalculatorTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseCalculatorCell" forIndexPath:indexPath];
                     [temp setup];
+                    temp.delegate = self;
                     temp.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = temp;
                     break;
@@ -181,6 +184,14 @@
     }
 
     return @"";
+}
+
+#pragma mark - CalculatorTableViewCellDelegate
+
+- (void)calculatorCell:(CalculatorTableViewCell *)cell calculatorTextFieldDidChange:(NSString *)text
+{
+    double totalCost = [text doubleValue];
+    NSLog(@"Delegate -> Total Cost: %f", totalCost);
 }
 
 @end

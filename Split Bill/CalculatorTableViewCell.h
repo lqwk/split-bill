@@ -9,7 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <VENCalculatorInputView/VENCalculatorInputTextField.h>
 
+@class CalculatorTableViewCell;
+
+@protocol CalculatorTableViewCellDelegate <NSObject>
+
+@optional
+
+- (void)calculatorCell:(CalculatorTableViewCell *)cell calculatorTextFieldDidChange:(NSString *)text;
+
+@end
+
 @interface CalculatorTableViewCell : UITableViewCell
+
+@property (nonatomic, assign) id <CalculatorTableViewCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet VENCalculatorInputTextField *calculatorTextField;
 

@@ -8,6 +8,10 @@
 
 #import "CalculatorTableViewCell.h"
 
+@interface CalculatorTableViewCell () <UITextFieldDelegate>
+
+@end
+
 @implementation CalculatorTableViewCell
 
 - (void)awakeFromNib
@@ -31,6 +35,7 @@
                       [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donePad)]];
     [toolBar sizeToFit];
     self.calculatorTextField.inputAccessoryView = toolBar;
+    self.calculatorTextField.delegate = self;
 
     self.calculatorTextField.placeholder = @"Total Cost of Expense";
 }
@@ -38,6 +43,16 @@
 - (void)donePad
 {
     [self.calculatorTextField resignFirstResponder];
+}
+
+# pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"Called Delegate: %@", textField.text);
+    if ([self.delegate respondsToSelector:@selector(calculatorCell:calculatorTextFieldDidChange:)]) {
+        [self.delegate calculatorCell:self calculatorTextFieldDidChange:textField.text];
+    }
 }
 
 @end
