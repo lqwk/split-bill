@@ -8,6 +8,7 @@
 
 #import "AddExpenseTableViewController.h"
 #import "TextFieldTableViewCell.h"
+#import "CalculatorTableViewCell.h"
 #import "AppDelegate.h"
 
 @interface AddExpenseTableViewController ()
@@ -91,6 +92,14 @@
                 {
                     TextFieldTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseTextCell" forIndexPath:indexPath];
                     temp.textField.placeholder = @"Name of Expense";
+                    cell = temp;
+                    break;
+                }
+
+                case 1:
+                {
+                    CalculatorTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseCalculatorCell" forIndexPath:indexPath];
+                    temp.calculatorTextField.placeholder = @"Total Cost of Expense";
                     cell = temp;
                     break;
                 }

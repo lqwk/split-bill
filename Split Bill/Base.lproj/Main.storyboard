@@ -379,8 +379,33 @@
                                     <outlet property="textField" destination="rTf-tp-XWd" id="S91-ia-gnd"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddExpenseCalculatorCell" rowHeight="52" id="Jfe-eM-x5B" customClass="CalculatorTableViewCell">
+                                <rect key="frame" x="0.0" y="108" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jfe-eM-x5B" id="nnZ-cv-wg0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="M6z-ND-pcd" customClass="VENCalculatorInputTextField">
+                                            <rect key="frame" x="8" y="8" width="359" height="35.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="M6z-ND-pcd" firstAttribute="leading" secondItem="nnZ-cv-wg0" secondAttribute="leading" constant="8" id="7wW-Rl-gHB"/>
+                                        <constraint firstItem="M6z-ND-pcd" firstAttribute="top" secondItem="nnZ-cv-wg0" secondAttribute="top" constant="8" id="Ttv-U7-jWz"/>
+                                        <constraint firstAttribute="bottom" secondItem="M6z-ND-pcd" secondAttribute="bottom" constant="8" id="bgL-0b-n95"/>
+                                        <constraint firstItem="M6z-ND-pcd" firstAttribute="trailing" secondItem="nnZ-cv-wg0" secondAttribute="trailing" constant="-8" id="v3I-qx-9Dk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="calculatorTextField" destination="M6z-ND-pcd" id="3QZ-AR-Rr7"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IoD-hf-LIb">
-                                <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IoD-hf-LIb" id="oJB-dW-flZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
