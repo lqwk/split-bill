@@ -48,4 +48,26 @@
     return person;
 }
 
++ (void)deletePersonWithUnique:(NSString *)unique
+      fromManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Search for the given person
+    NSFetchRequest *req = [Person fetchRequest];
+    req.predicate = [NSPredicate predicateWithFormat:@"unique ==[c] %@", unique];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:req error:&error];
+
+    if (!results || error) {
+        NSLog(@"ERROR in fetching PERSON with unique: %@", unique);
+    } else if (results.count > 1) {
+        NSLog(@"ERROR: more than 1 match for PERSON with unique: %@", unique);
+    } else if (results.count == 1) {
+        NSLog(@"Found PERSON with unique: %@", unique);
+        Person *person = [results lastObject];
+        [context deleteObject:person];
+    } else {
+        NSLog(@"Did not find PERSON with unique: %@", unique);
+    }
+}
+
 @end

@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
                groupUnique:(NSString *)groupUnique
     inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void)deletePersonWithUnique:(NSString *)unique
+      fromManagedObjectContext:(NSManagedObjectContext *)context;
+
 
 @end
 
