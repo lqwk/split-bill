@@ -10,17 +10,28 @@
 #import <VENCalculatorInputView/VENCalculatorInputTextField.h>
 
 @class Person;
+@class PeopleInvolvedTableViewCell;
+
+@protocol PeopleInvolvedCellDelegate <NSObject>
+
+@optional
+
+- (void)weightDidChangeForPeopleInvolvedCell:(PeopleInvolvedTableViewCell *)cell;
+
+@end
 
 @interface PeopleInvolvedTableViewCell : UITableViewCell
 
+@property (nonatomic, assign) id <PeopleInvolvedCellDelegate> delegate;
+
 @property (nonatomic, strong) Person *person;
-@property (nonatomic) double each;
+@property (nonatomic) double eachCost;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet VENCalculatorInputTextField *weightTextField;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 @property (weak, nonatomic) IBOutlet VENCalculatorInputTextField *shouldPayTextField;
 
-@property (nonatomic) BOOL chosen;
+@property (nonatomic) BOOL notChosen;
 
 - (void)setup;
 

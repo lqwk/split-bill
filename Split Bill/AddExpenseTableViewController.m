@@ -14,9 +14,11 @@
 #import "AppDelegate.h"
 #import "Person+CoreDataClass.h"
 
-@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate>
+@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate>
 
 @property (nonatomic) double totalCost;
+@property (nonatomic) double totalWeight;
+@property (nonatomic) double eachCost;
 
 @end
 
@@ -26,10 +28,34 @@
 {
     [super viewDidLoad];
 
-    self.tableView.rowHeight = 44.f;
+    self.tableView.rowHeight = 42.f;
+
+    self.totalCost = 0;
+    double totalWeight = 0;
+    for (Person *p in self.people) {
+        totalWeight += p.weight;
+    }
+    self.totalWeight = totalWeight;
+
+    if (self.totalWeight == 0) {
+        self.eachCost = 0;
+    } else {
+        self.eachCost = self.totalCost / self.totalWeight;
+    }
 }
 
 #pragma mark - Actions
+
+- (void)setEachCost:(double)eachCost
+{
+    _eachCost = eachCost;
+
+    // update each cell
+    for (int i = 0; i < self.people.count; ++i) {
+        PeopleInvolvedTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+        cell.eachCost = self.eachCost;
+    }
+}
 
 - (IBAction)cancelAddingExpense:(UIBarButtonItem *)sender
 {
@@ -87,7 +113,6 @@
     return 0;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
@@ -127,9 +152,9 @@
             Person *p = [self.people objectAtIndex:indexPath.row];
             PeopleInvolvedTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PeopleInvolvedCell" forIndexPath:indexPath];
             temp.person = p;
+            temp.delegate = self;
+            temp.eachCost = self.eachCost;
             [temp setup];
-            // temp.each = self.total / self.totalWeight;
-            temp.chosen = YES;
             cell = temp;
             break;
         }
@@ -138,8 +163,8 @@
         {
             Person *p = [self.people objectAtIndex:indexPath.row];
             PeoplePaymentTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PeoplePaymentCell" forIndexPath:indexPath];
-            [temp setup];
             temp.person = p;
+            [temp setup];
             cell = temp;
             break;
         }
@@ -158,7 +183,7 @@
 
     if (indexPath.section == 1) {
         PeopleInvolvedTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        cell.chosen = !cell.chosen;
+        cell.notChosen = !cell.notChosen;
     }
 }
 
@@ -191,7 +216,36 @@
 - (void)calculatorCell:(CalculatorTableViewCell *)cell calculatorTextFieldDidChange:(NSString *)text
 {
     double totalCost = [text doubleValue];
-    NSLog(@"Delegate -> Total Cost: %f", totalCost);
+    self.totalCost = totalCost;
+    if (self.totalWeight == 0) {
+        self.eachCost = 0;
+    } else {
+        self.eachCost = self.totalCost / self.totalWeight;
+    }
+    NSLog(@"CalculatorDelegate -> Total Cost: %f", totalCost);
+    NSLog(@"CalculatorDelegate -> Total Weight: %f", self.totalWeight);
+    NSLog(@"CalculatorDelegate -> Each Cost: %f", self.eachCost);
+}
+
+#pragma mark - PeopleInvolvedCellDelegate
+
+- (void)weightDidChangeForPeopleInvolvedCell:(PeopleInvolvedTableViewCell *)cell
+{
+    // recalculate `weight` and `each` payment
+    double totalWeight = 0.0;
+    for (int i = 0; i < self.people.count; ++i) {
+        PeopleInvolvedTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+        double weight = [cell.weightLabel.text doubleValue];
+        totalWeight += weight;
+    }
+    self.totalWeight = totalWeight;
+    if (self.totalWeight == 0) {
+        self.eachCost = 0;
+    } else {
+        self.eachCost = self.totalCost / self.totalWeight;
+    }
+
+    NSLog(@"PeopleInvolvedDelegate -> Weight Changed: %f", self.totalWeight);
 }
 
 @end

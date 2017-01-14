@@ -7,6 +7,7 @@
 //
 
 #import "PeoplePaymentTableViewCell.h"
+#import "Person+CoreDataClass.h"
 
 @implementation PeoplePaymentTableViewCell
 
@@ -31,6 +32,7 @@
                       [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donePad)]];
     [toolBar sizeToFit];
     self.paymentTextfield.inputAccessoryView = toolBar;
+    self.nameLabel.text = self.person.name;
 }
 
 - (void)donePad

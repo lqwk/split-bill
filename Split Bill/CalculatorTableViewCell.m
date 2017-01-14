@@ -49,7 +49,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"Called Delegate: %@", textField.text);
+    NSLog(@"Called CalculatorDelegate: %@", textField.text);
     if ([self.delegate respondsToSelector:@selector(calculatorCell:calculatorTextFieldDidChange:)]) {
         [self.delegate calculatorCell:self calculatorTextFieldDidChange:textField.text];
     }
