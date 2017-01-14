@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 @property (weak, nonatomic) IBOutlet VENCalculatorInputTextField *shouldPayTextField;
 
-@property (nonatomic) BOOL notChosen;
+@property (nonatomic) BOOL chosen;
 
 - (void)setup;
 

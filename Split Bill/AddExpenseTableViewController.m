@@ -85,7 +85,7 @@
 
 - (IBAction)addExpense:(UIBarButtonItem *)sender
 {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    // AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     // NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     // TextFieldTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
@@ -206,7 +206,7 @@
 
     if (indexPath.section == 1) {
         PeopleInvolvedTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        cell.notChosen = !cell.notChosen;
+        cell.chosen = !cell.chosen;
     } else if (indexPath.section == 2) {
         PeoplePaymentTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.chosen = !cell.chosen;

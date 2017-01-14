@@ -14,8 +14,9 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+
     // Initialization code
-    NSLog(@"Called awakeFromNib, %d", self.notChosen);
+    self.chosen = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -30,33 +31,15 @@
 - (void)setEachCost:(double)eachCost
 {
     _eachCost = eachCost;
-    if (!self.notChosen) {
-        self.weightLabel.hidden = NO;
-        self.shouldPayTextField.hidden = NO;
-        self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
-        self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
-    } else {
-        self.weightLabel.hidden = YES;
-        self.shouldPayTextField.hidden = YES;
-        self.weightLabel.text = @"0";
-        self.shouldPayTextField.text = @"0.00";
-    }
+    [self setupUI];
 }
 
-- (void)setNotChosen:(BOOL)notChosen
+- (void)setChosen:(BOOL)chosen
 {
-    _notChosen = notChosen;
-    if (!notChosen) {
-        self.weightLabel.hidden = NO;
-        self.shouldPayTextField.hidden = NO;
-        self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
-        self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
-    } else {
-        self.weightLabel.hidden = YES;
-        self.shouldPayTextField.hidden = YES;
-        self.weightLabel.text = @"0";
-        self.shouldPayTextField.text = @"0.00";
-    }
+    _chosen = chosen;
+
+    [self setupUI];
+
     if ([self.delegate respondsToSelector:@selector(weightDidChangeForPeopleInvolvedCell:)]) {
         [self.delegate weightDidChangeForPeopleInvolvedCell:self];
     }
@@ -71,24 +54,29 @@
     [toolBar sizeToFit];
     self.shouldPayTextField.inputAccessoryView = toolBar;
     self.nameLabel.text = self.person.name;
-
-    // if (!self.notChosen) {
-    //     self.weightLabel.hidden = NO;
-    //     self.shouldPayTextField.hidden = NO;
-    //     self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
-    //     self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
-    // } else {
-    //     self.weightLabel.hidden = YES;
-    //     self.shouldPayTextField.hidden = YES;
-    //     self.weightLabel.text = @"0";
-    //     self.shouldPayTextField.text = @"0.00";
-    // }
 }
 
 - (void)donePad
 {
     if ([self.shouldPayTextField isFirstResponder]) {
         [self.shouldPayTextField resignFirstResponder];
+    }
+}
+
+# pragma mark - Helper Methods
+
+- (void)setupUI
+{
+    if (self.chosen) {
+        self.weightLabel.hidden = NO;
+        self.shouldPayTextField.hidden = NO;
+        self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
+        self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
+    } else {
+        self.weightLabel.hidden = YES;
+        self.shouldPayTextField.hidden = YES;
+        self.weightLabel.text = @"0";
+        self.shouldPayTextField.text = @"0.00";
     }
 }
 

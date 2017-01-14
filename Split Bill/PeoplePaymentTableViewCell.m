@@ -14,6 +14,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+
     // Initialization code
     self.chosen = YES;
 }
@@ -28,13 +29,9 @@
 - (void)setChosen:(BOOL)chosen
 {
     _chosen = chosen;
-    if (chosen) {
-        self.paymentTextfield.hidden = NO;
-        self.paymentTextfield.text = [NSString stringWithFormat:@"%.2f", self.eachPayment * self.person.weight];
-    } else {
-        self.paymentTextfield.hidden = YES;
-        self.paymentTextfield.text = @"0.00";
-    }
+
+    [self setupUI];
+
     if ([self.delegate respondsToSelector:@selector(weightDidChangeForPeoplePaymentCell:)]) {
         [self.delegate weightDidChangeForPeoplePaymentCell:self];
     }
@@ -43,13 +40,7 @@
 - (void)setEachPayment:(double)eachPayment
 {
     _eachPayment = eachPayment;
-    if (self.chosen) {
-        self.paymentTextfield.hidden = NO;
-        self.paymentTextfield.text = [NSString stringWithFormat:@"%.2f", self.eachPayment * self.person.weight];
-    } else {
-        self.paymentTextfield.hidden = YES;
-        self.paymentTextfield.text = @"0.00";
-    }
+    [self setupUI];
 }
 
 - (void)setup
@@ -66,6 +57,19 @@
 - (void)donePad
 {
     [self.paymentTextfield resignFirstResponder];
+}
+
+#pragma mark - Helper Methods
+
+- (void)setupUI
+{
+    if (self.chosen) {
+        self.paymentTextfield.hidden = NO;
+        self.paymentTextfield.text = [NSString stringWithFormat:@"%.2f", self.eachPayment * self.person.weight];
+    } else {
+        self.paymentTextfield.hidden = YES;
+        self.paymentTextfield.text = @"0.00";
+    }
 }
 
 @end
