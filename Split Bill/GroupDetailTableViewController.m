@@ -12,6 +12,8 @@
 #import "Expense+CoreDataClass.h"
 #import "AddPersonTableViewController.h"
 #import "AddExpenseTableViewController.h"
+#import "SBExpense.h"
+#import "SBSplitEngine.h"
 
 @interface GroupDetailTableViewController ()
 
@@ -62,15 +64,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
         return self.people.count;
-    } else {
+    } else if (section == 1) {
         return self.expenses.count;
+    } else {
+        return 1;
     }
 
     return 0;
@@ -85,11 +89,13 @@
         Person *person = [self.people objectAtIndex:indexPath.row];
         cell.textLabel.text = person.name;
         cell.detailTextLabel.text = person.unique;
-    } else {
+    } else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell" forIndexPath:indexPath];
         Expense *expense = [self.expenses objectAtIndex:indexPath.row];
         cell.textLabel.text = expense.name;
         cell.detailTextLabel.text = expense.unique;
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"EvaluateCell" forIndexPath:indexPath];
     }
     
     return cell;
@@ -130,6 +136,16 @@
         for (Payment *p in person.paymentsMade) {
             NSLog(@"PAYMENT: %@", p);
         }
+    } else if (indexPath.section == 2) {
+        NSMutableArray *expenses = [NSMutableArray arrayWithCapacity:0];
+        for (Expense *e in self.expenses) {
+            SBExpense *expense = [SBExpense expenseFromCDExpense:e];
+            [expenses addObject:expense];
+            NSLog(@"CONVERTED SBEXPENSE: %@", expense);
+        }
+        SBSplitEngine *se = [SBSplitEngine engineWithExpenses:expenses];
+        NSArray *results = [se resultsForEvaluation];
+        NSLog(@"FINAL RESULTS: %@", results);
     }
 }
 

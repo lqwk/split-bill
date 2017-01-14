@@ -12,6 +12,9 @@
 #import "SBResult.h"
 #import "SBMoney.h"
 #import "SBSplitEngine.h"
+#import "Expense+CoreDataClass.h"
+#import "Payment+CoreDataClass.h"
+#import "Person+CoreDataClass.h"
 
 @interface SBExpense ()
 
@@ -74,6 +77,24 @@
     expense.uninvolved = uninvolved;
 
     return expense;
+}
+
++ (SBExpense *)expenseFromCDExpense:(Expense *)expense
+{
+    NSMutableArray *payments = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *people = [NSMutableArray arrayWithCapacity:0];
+
+    for (Payment *p in expense.paymentsInvolved) {
+        SBPayment *payment = [SBPayment paymentFromCDPayment:p];
+        [payments addObject:payment];
+    }
+
+    for (Person *p in expense.peopleInvolved) {
+        SBPerson *person = [SBPerson personFromCDPerson:p];
+        [people addObject:person];
+    }
+
+    return [SBExpense expenseWithName:expense.name andPayments:payments andPeople:people];
 }
 
 #pragma mark - Main Methods
@@ -151,7 +172,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Expense \"%@\" with total %@, with people: %@", self.name, self.amount, self.people];
+    return [NSString stringWithFormat:@"Expense \"%@\" with total %@, with people: %@, with payments: %@", self.name, self.amount, self.people, self.payments];
 }
 
 @end

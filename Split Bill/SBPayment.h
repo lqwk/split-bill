@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class SBMoney, SBPerson;
+@class Payment;
 
 @interface SBPayment : NSObject
 
@@ -16,5 +17,8 @@
 @property (nonatomic, strong, readonly) SBMoney *amount;
 
 + (SBPayment *)paymentWithPerson:(SBPerson *)person andAmount:(SBMoney *)amount;
+
+// Convert Core Data <Payment> to <SBPayment>
++ (SBPayment *)paymentFromCDPayment:(Payment *)payment;
 
 @end

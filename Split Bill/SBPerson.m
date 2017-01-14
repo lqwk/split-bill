@@ -7,6 +7,7 @@
 //
 
 #import "SBPerson.h"
+#import "Person+CoreDataClass.h"
 
 @interface SBPerson ()
 
@@ -23,6 +24,11 @@
     person.name = name;
     person.weight = weight;
     return person;
+}
+
++ (SBPerson *)personFromCDPerson:(Person *)person
+{
+    return [SBPerson personWithName:person.name andWeight:person.weight];
 }
 
 #pragma mark - DEBUG

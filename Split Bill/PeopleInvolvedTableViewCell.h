@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <VENCalculatorInputView/VENCalculatorInputTextField.h>
 
-@class Person;
-@class PeopleInvolvedTableViewCell;
+@class Person, PeopleInvolvedTableViewCell;
 
 @protocol PeopleInvolvedCellDelegate <NSObject>
 
