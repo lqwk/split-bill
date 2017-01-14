@@ -74,10 +74,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // TODO: Delete the row from Core Data
-
-        // Delete the row from the data source
-        // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [delegate.persistentContainer.viewContext deleteObject:group];
+        [delegate saveContext];
     }
 }
 

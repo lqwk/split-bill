@@ -15,7 +15,7 @@
     </entity>
     <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="paymentsInvolved" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Expense" inverseName="paymentsInvolved" inverseEntity="Expense" syncable="YES"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="paymentsMade" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">

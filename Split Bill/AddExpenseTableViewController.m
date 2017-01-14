@@ -16,6 +16,7 @@
 #import "Payment+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
 #import "Group+CoreDataClass.h"
+#import "NSDate+SBHelper.h"
 
 @interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate>
 
@@ -114,7 +115,7 @@
         // create the Expense
         if (people.count != 0) {
             Expense *expense = [Expense expenseWithName:name
-                                                 unique:[NSString stringWithFormat:@"%@$%@", self.group.unique, name]
+                                                 unique:[NSString stringWithFormat:@"%@$%@*%@", self.group.unique, [[NSDate date] dateID], name]
                                                   group:self.group
                                          peopleInvolved:people
                                  inManagedObjectContext:delegate.persistentContainer.viewContext];
