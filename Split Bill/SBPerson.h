@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Person;
+
 @interface SBPerson : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, readonly) NSInteger weight;
 
 + (SBPerson *)personWithName:(NSString *)name andWeight:(NSInteger)weight;
+
+// Convert Core Data <Person> to <SBPerson>
++ (SBPerson *)personFromCDPerson:(Person *)person;
 
 @end

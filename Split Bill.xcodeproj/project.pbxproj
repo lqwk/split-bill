@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EB9356A111424718003526F /* libPods-Split BillTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE22428AA9FB17F14E674752 /* libPods-Split BillTests.a */; };
+		7AB49F940B6BB8FC3BD92848 /* libPods-Split BillUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 377A9FDF12F23D15E9A86E04 /* libPods-Split BillUITests.a */; };
 		B414877D1E1F641A006F70A6 /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B414877C1E1F641A006F70A6 /* ModelTests.m */; };
 		B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */; };
 		B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */; };
@@ -17,6 +19,17 @@
 		B42C6E2D1E21988E00577965 /* Payment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E281E21988E00577965 /* Payment+CoreDataProperties.m */; };
 		B42C6E2E1E21988E00577965 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E2A1E21988E00577965 /* Expense+CoreDataProperties.m */; };
 		B42C6E2F1E2199A200577965 /* Split_Bill.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */; };
+		B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E321E219EE700577965 /* GroupsTableViewController.m */; };
+		B42C6E361E21A46400577965 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */; };
+		B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */; };
+		B42C6E411E21B8EF00577965 /* NSDate+SBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */; };
+		B42C6E441E21EEE200577965 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */; };
+		B42C6E471E21F7DF00577965 /* StepperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */; };
+		B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */; };
+		B42C6E4D1E25DC9200577965 /* AddExpenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */; };
+		B42C6E501E25E19900577965 /* CalculatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E4F1E25E19900577965 /* CalculatorTableViewCell.m */; };
+		B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */; };
+		B42C6E561E25F09300577965 /* PeoplePaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -28,6 +41,7 @@
 		B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F61E1DB34D00B282A0 /* SBPayment.m */; };
 		B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F91E1DB3BC00B282A0 /* SBMoney.m */; };
 		B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1FC1E1F365F00B282A0 /* SBResult.m */; };
+		C828F2316A1871B10AB61E58 /* libPods-Split Bill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699FFE9370EDEF020B263A9A /* libPods-Split Bill.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		217CBDFF17CB4AFBE86C50AA /* Pods-Split BillUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split BillUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Split BillUITests/Pods-Split BillUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		377A9FDF12F23D15E9A86E04 /* libPods-Split BillUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Split BillUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3A36118635D3FAFF621525 /* Pods-Split Bill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split Bill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Split Bill/Pods-Split Bill.debug.xcconfig"; sourceTree = "<group>"; };
+		699FFE9370EDEF020B263A9A /* libPods-Split Bill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Split Bill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		784B545B40751C5682437FA1 /* Pods-Split BillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split BillTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Split BillTests/Pods-Split BillTests.debug.xcconfig"; sourceTree = "<group>"; };
+		97CFFA7FFFF488E20BCF21F7 /* Pods-Split BillUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split BillUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Split BillUITests/Pods-Split BillUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B414877C1E1F641A006F70A6 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
 		B42C6DF01E20C29100577965 /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
 		B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -65,6 +85,28 @@
 		B42C6E281E21988E00577965 /* Payment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payment+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B42C6E291E21988E00577965 /* Expense+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B42C6E2A1E21988E00577965 /* Expense+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B42C6E311E219EE700577965 /* GroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsTableViewController.h; sourceTree = "<group>"; };
+		B42C6E321E219EE700577965 /* GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsTableViewController.m; sourceTree = "<group>"; };
+		B42C6E341E21A46400577965 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailTableViewController.h; sourceTree = "<group>"; };
+		B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailTableViewController.m; sourceTree = "<group>"; };
+		B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupTableViewController.h; sourceTree = "<group>"; };
+		B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupTableViewController.m; sourceTree = "<group>"; };
+		B42C6E3F1E21B8EF00577965 /* NSDate+SBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SBHelper.h"; sourceTree = "<group>"; };
+		B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SBHelper.m"; sourceTree = "<group>"; };
+		B42C6E421E21EEE200577965 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E451E21F7DF00577965 /* StepperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepperTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepperTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPersonTableViewController.h; sourceTree = "<group>"; };
+		B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPersonTableViewController.m; sourceTree = "<group>"; };
+		B42C6E4B1E25DC9200577965 /* AddExpenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExpenseTableViewController.h; sourceTree = "<group>"; };
+		B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenseTableViewController.m; sourceTree = "<group>"; };
+		B42C6E4E1E25E19900577965 /* CalculatorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E4F1E25E19900577965 /* CalculatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E511E25E97800577965 /* PeopleInvolvedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleInvolvedTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleInvolvedTableViewCell.m; sourceTree = "<group>"; };
+		B42C6E541E25F09300577965 /* PeoplePaymentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePaymentTableViewCell.h; sourceTree = "<group>"; };
+		B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePaymentTableViewCell.m; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +132,9 @@
 		B450D1F91E1DB3BC00B282A0 /* SBMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMoney.m; sourceTree = "<group>"; };
 		B450D1FB1E1F365F00B282A0 /* SBResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBResult.h; sourceTree = "<group>"; };
 		B450D1FC1E1F365F00B282A0 /* SBResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBResult.m; sourceTree = "<group>"; };
+		BE22428AA9FB17F14E674752 /* libPods-Split BillTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Split BillTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F839F68081EEDD69C1C92758 /* Pods-Split BillTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split BillTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Split BillTests/Pods-Split BillTests.release.xcconfig"; sourceTree = "<group>"; };
+		F981CB1E42E6AB117AEF18AE /* Pods-Split Bill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split Bill.release.xcconfig"; path = "Pods/Target Support Files/Pods-Split Bill/Pods-Split Bill.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C828F2316A1871B10AB61E58 /* libPods-Split Bill.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB9356A111424718003526F /* libPods-Split BillTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,12 +158,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB49F940B6BB8FC3BD92848 /* libPods-Split BillUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02D49E0A15DED1A30B8D57F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E3A36118635D3FAFF621525 /* Pods-Split Bill.debug.xcconfig */,
+				F981CB1E42E6AB117AEF18AE /* Pods-Split Bill.release.xcconfig */,
+				784B545B40751C5682437FA1 /* Pods-Split BillTests.debug.xcconfig */,
+				F839F68081EEDD69C1C92758 /* Pods-Split BillTests.release.xcconfig */,
+				217CBDFF17CB4AFBE86C50AA /* Pods-Split BillUITests.debug.xcconfig */,
+				97CFFA7FFFF488E20BCF21F7 /* Pods-Split BillUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B42C6E301E219ED100577965 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E3A1E21B4D700577965 /* Views */,
+				B42C6E311E219EE700577965 /* GroupsTableViewController.h */,
+				B42C6E321E219EE700577965 /* GroupsTableViewController.m */,
+				B42C6E341E21A46400577965 /* GroupDetailTableViewController.h */,
+				B42C6E351E21A46400577965 /* GroupDetailTableViewController.m */,
+				B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */,
+				B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */,
+				B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */,
+				B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */,
+				B42C6E4B1E25DC9200577965 /* AddExpenseTableViewController.h */,
+				B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		B42C6E3A1E21B4D700577965 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E421E21EEE200577965 /* TextFieldTableViewCell.h */,
+				B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */,
+				B42C6E451E21F7DF00577965 /* StepperTableViewCell.h */,
+				B42C6E461E21F7DF00577965 /* StepperTableViewCell.m */,
+				B42C6E4E1E25E19900577965 /* CalculatorTableViewCell.h */,
+				B42C6E4F1E25E19900577965 /* CalculatorTableViewCell.m */,
+				B42C6E511E25E97800577965 /* PeopleInvolvedTableViewCell.h */,
+				B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */,
+				B42C6E541E25F09300577965 /* PeoplePaymentTableViewCell.h */,
+				B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B42C6E3E1E21B89100577965 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E3F1E21B8EF00577965 /* NSDate+SBHelper.h */,
+				B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		B450D1A51E1DAB5A00B282A0 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +229,8 @@
 				B450D1CD1E1DAB5B00B282A0 /* Split BillTests */,
 				B450D1D81E1DAB5B00B282A0 /* Split BillUITests */,
 				B450D1AF1E1DAB5B00B282A0 /* Products */,
+				02D49E0A15DED1A30B8D57F1 /* Pods */,
+				DDA32508846504280CF10EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,12 +247,14 @@
 		B450D1B01E1DAB5B00B282A0 /* Split Bill */ = {
 			isa = PBXGroup;
 			children = (
-				B450D1EB1E1DAC3400B282A0 /* Model */,
-				B450D1E71E1DAC0200B282A0 /* CoreData */,
 				B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */,
 				B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */,
 				B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */,
 				B450D1C51E1DAB5B00B282A0 /* Info.plist */,
+				B42C6E3E1E21B89100577965 /* Helpers */,
+				B42C6E301E219ED100577965 /* UI */,
+				B450D1EB1E1DAC3400B282A0 /* Model */,
+				B450D1E71E1DAC0200B282A0 /* CoreData */,
 				B450D1B11E1DAB5B00B282A0 /* Supporting Files */,
 			);
 			path = "Split Bill";
@@ -221,6 +330,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		DDA32508846504280CF10EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				699FFE9370EDEF020B263A9A /* libPods-Split Bill.a */,
+				BE22428AA9FB17F14E674752 /* libPods-Split BillTests.a */,
+				377A9FDF12F23D15E9A86E04 /* libPods-Split BillUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,9 +347,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B450D1DE1E1DAB5B00B282A0 /* Build configuration list for PBXNativeTarget "Split Bill" */;
 			buildPhases = (
+				3E83E49A18DC3F03C4E7870D /* [CP] Check Pods Manifest.lock */,
 				B450D1AA1E1DAB5A00B282A0 /* Sources */,
 				B450D1AB1E1DAB5A00B282A0 /* Frameworks */,
 				B450D1AC1E1DAB5A00B282A0 /* Resources */,
+				BC2989465774963CC4B84798 /* [CP] Embed Pods Frameworks */,
+				EDEBCA3E7A67CCBAD6440152 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,9 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B450D1E11E1DAB5B00B282A0 /* Build configuration list for PBXNativeTarget "Split BillTests" */;
 			buildPhases = (
+				2ECEDD0E694E27BA2206E78B /* [CP] Check Pods Manifest.lock */,
 				B450D1C61E1DAB5B00B282A0 /* Sources */,
 				B450D1C71E1DAB5B00B282A0 /* Frameworks */,
 				B450D1C81E1DAB5B00B282A0 /* Resources */,
+				EE0BE6A8450698DF80B451D9 /* [CP] Embed Pods Frameworks */,
+				2EB1922986E5AE960AC4FC24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,9 +388,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B450D1E41E1DAB5B00B282A0 /* Build configuration list for PBXNativeTarget "Split BillUITests" */;
 			buildPhases = (
+				A2AF14B6456AAE3980EF1C58 /* [CP] Check Pods Manifest.lock */,
 				B450D1D11E1DAB5B00B282A0 /* Sources */,
 				B450D1D21E1DAB5B00B282A0 /* Frameworks */,
 				B450D1D31E1DAB5B00B282A0 /* Resources */,
+				6027A16B444246F2336D9364 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,27 +477,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EB1922986E5AE960AC4FC24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Split BillTests/Pods-Split BillTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ECEDD0E694E27BA2206E78B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3E83E49A18DC3F03C4E7870D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6027A16B444246F2336D9364 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Split BillUITests/Pods-Split BillUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2AF14B6456AAE3980EF1C58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC2989465774963CC4B84798 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Split Bill/Pods-Split Bill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDEBCA3E7A67CCBAD6440152 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Split Bill/Pods-Split Bill-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE0BE6A8450698DF80B451D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Split BillTests/Pods-Split BillTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B450D1AA1E1DAB5A00B282A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42C6E501E25E19900577965 /* CalculatorTableViewCell.m in Sources */,
+				B42C6E361E21A46400577965 /* GroupDetailTableViewController.m in Sources */,
+				B42C6E411E21B8EF00577965 /* NSDate+SBHelper.m in Sources */,
+				B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */,
 				B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
 				B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */,
 				B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */,
+				B42C6E471E21F7DF00577965 /* StepperTableViewCell.m in Sources */,
 				B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */,
 				B42C6E2B1E21988E00577965 /* Group+CoreDataProperties.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
 				B42C6E2D1E21988E00577965 /* Payment+CoreDataProperties.m in Sources */,
 				B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */,
 				B42C6E2E1E21988E00577965 /* Expense+CoreDataProperties.m in Sources */,
+				B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */,
+				B42C6E561E25F09300577965 /* PeoplePaymentTableViewCell.m in Sources */,
+				B42C6E441E21EEE200577965 /* TextFieldTableViewCell.m in Sources */,
 				B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */,
+				B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */,
+				B42C6E4D1E25DC9200577965 /* AddExpenseTableViewController.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
 				B42C6E2C1E21988E00577965 /* Person+CoreDataProperties.m in Sources */,
 				B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */,
+				B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +775,7 @@
 		};
 		B450D1DF1E1DAB5B00B282A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E3A36118635D3FAFF621525 /* Pods-Split Bill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Split Bill/Info.plist";
@@ -525,6 +787,7 @@
 		};
 		B450D1E01E1DAB5B00B282A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F981CB1E42E6AB117AEF18AE /* Pods-Split Bill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Split Bill/Info.plist";
@@ -536,6 +799,7 @@
 		};
 		B450D1E21E1DAB5B00B282A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 784B545B40751C5682437FA1 /* Pods-Split BillTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Split BillTests/Info.plist";
@@ -548,6 +812,7 @@
 		};
 		B450D1E31E1DAB5B00B282A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F839F68081EEDD69C1C92758 /* Pods-Split BillTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Split BillTests/Info.plist";
@@ -560,6 +825,7 @@
 		};
 		B450D1E51E1DAB5B00B282A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 217CBDFF17CB4AFBE86C50AA /* Pods-Split BillUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Split BillUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -571,6 +837,7 @@
 		};
 		B450D1E61E1DAB5B00B282A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97CFFA7FFFF488E20BCF21F7 /* Pods-Split BillUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Split BillUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

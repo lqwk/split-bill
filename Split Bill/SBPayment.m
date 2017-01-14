@@ -7,6 +7,9 @@
 //
 
 #import "SBPayment.h"
+#import "SBPerson.h"
+#import "SBMoney.h"
+#import "Payment+CoreDataClass.h"
 
 @interface SBPayment ()
 
@@ -23,6 +26,11 @@
     payment.person = person;
     payment.amount = amount;
     return payment;
+}
+
++ (SBPayment *)paymentFromCDPayment:(Payment *)payment
+{
+    return [SBPayment paymentWithPerson:[SBPerson personFromCDPerson:payment.person] andAmount:[SBMoney moneyWithVal:payment.amount]];
 }
 
 #pragma mark - DEBUG

@@ -17,8 +17,7 @@
 + (Person *)personWithName:(NSString *)name
                     unique:(NSString *)unique
                     weight:(NSInteger)weight
-                 groupName:(NSString *)groupName
-               groupUnique:(NSString *)groupUnique
+                     group:(Group *)group
     inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Person *person = nil;
@@ -42,7 +41,7 @@
         person.name = name;
         person.unique = unique;
         person.weight = weight;
-        person.group = [Group groupWithName:groupName unique:groupUnique inManagedObjectContext:context];
+        person.group = group;
     }
 
     return person;

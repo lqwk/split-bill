@@ -19,8 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (Person *)personWithName:(NSString *)name
                     unique:(NSString *)unique
                     weight:(NSInteger)weight
-                 groupName:(NSString *)groupName
-               groupUnique:(NSString *)groupUnique
+                     group:(Group *)group
     inManagedObjectContext:(NSManagedObjectContext *)context;
 
 
