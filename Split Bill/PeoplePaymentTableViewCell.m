@@ -15,6 +15,7 @@
 {
     [super awakeFromNib];
     // Initialization code
+    self.chosen = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -22,6 +23,33 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setChosen:(BOOL)chosen
+{
+    _chosen = chosen;
+    if (chosen) {
+        self.paymentTextfield.hidden = NO;
+        self.paymentTextfield.text = [NSString stringWithFormat:@"%.2f", self.eachPayment * self.person.weight];
+    } else {
+        self.paymentTextfield.hidden = YES;
+        self.paymentTextfield.text = @"0.00";
+    }
+    if ([self.delegate respondsToSelector:@selector(weightDidChangeForPeoplePaymentCell:)]) {
+        [self.delegate weightDidChangeForPeoplePaymentCell:self];
+    }
+}
+
+- (void)setEachPayment:(double)eachPayment
+{
+    _eachPayment = eachPayment;
+    if (self.chosen) {
+        self.paymentTextfield.hidden = NO;
+        self.paymentTextfield.text = [NSString stringWithFormat:@"%.2f", self.eachPayment * self.person.weight];
+    } else {
+        self.paymentTextfield.hidden = YES;
+        self.paymentTextfield.text = @"0.00";
+    }
 }
 
 - (void)setup

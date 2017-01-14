@@ -72,17 +72,17 @@
     self.shouldPayTextField.inputAccessoryView = toolBar;
     self.nameLabel.text = self.person.name;
 
-    if (!self.notChosen) {
-        self.weightLabel.hidden = NO;
-        self.shouldPayTextField.hidden = NO;
-        self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
-        self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
-    } else {
-        self.weightLabel.hidden = YES;
-        self.shouldPayTextField.hidden = YES;
-        self.weightLabel.text = @"0";
-        self.shouldPayTextField.text = @"0.00";
-    }
+    // if (!self.notChosen) {
+    //     self.weightLabel.hidden = NO;
+    //     self.shouldPayTextField.hidden = NO;
+    //     self.weightLabel.text = [NSString stringWithFormat:@"%lld", self.person.weight];
+    //     self.shouldPayTextField.text = [NSString stringWithFormat:@"%.2f", self.eachCost * self.person.weight];
+    // } else {
+    //     self.weightLabel.hidden = YES;
+    //     self.shouldPayTextField.hidden = YES;
+    //     self.weightLabel.text = @"0";
+    //     self.shouldPayTextField.text = @"0.00";
+    // }
 }
 
 - (void)donePad
