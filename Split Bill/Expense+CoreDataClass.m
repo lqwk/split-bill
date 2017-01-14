@@ -51,4 +51,26 @@
     return expense;
 }
 
++ (void)deleteExpenseWithUnique:(NSString *)unique
+       fromManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Search for the given group
+    NSFetchRequest *req = [Expense fetchRequest];
+    req.predicate = [NSPredicate predicateWithFormat:@"unique ==[c] %@", unique];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:req error:&error];
+
+    if (!results || error) {
+        NSLog(@"ERROR in fetching EXPENSE with unique: %@", unique);
+    } else if (results.count > 1) {
+        NSLog(@"ERROR: more than 1 match for EXPENSE with unique: %@", unique);
+    } else if (results.count == 1) {
+        NSLog(@"Found EXPENSE with unique: %@", unique);
+        Expense *expense = [results lastObject];
+        [context deleteObject:expense];
+    } else {
+        NSLog(@"Did not find EXPENSE with unique: %@", unique);
+    }
+}
+
 @end

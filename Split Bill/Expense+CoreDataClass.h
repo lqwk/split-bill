@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
               peopleInvolved:(NSSet<Person *> *)peopleInvolved
       inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void)deleteExpenseWithUnique:(NSString *)unique
+       fromManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END
