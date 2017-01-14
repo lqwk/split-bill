@@ -118,6 +118,21 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        Person *person = [self.people objectAtIndex:indexPath.row];
+        NSLog(@"PERSON: %@", person);
+        for (Expense *e in person.expensesInvolved) {
+            NSLog(@"EXPENSE: %@", e);
+        }
+        for (Payment *p in person.paymentsMade) {
+            NSLog(@"PAYMENT: %@", p);
+        }
+    }
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

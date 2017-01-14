@@ -501,7 +501,11 @@
                                 <action selector="cancelAddingExpense:" destination="IfA-2O-qge" id="wag-0B-4GB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="Tdp-EQ-e79"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="Tdp-EQ-e79">
+                            <connections>
+                                <action selector="addExpense:" destination="IfA-2O-qge" id="J2M-rG-QES"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ6-Zx-ztZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

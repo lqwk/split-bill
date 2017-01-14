@@ -13,6 +13,9 @@
 #import "PeoplePaymentTableViewCell.h"
 #import "AppDelegate.h"
 #import "Person+CoreDataClass.h"
+#import "Payment+CoreDataClass.h"
+#import "Expense+CoreDataClass.h"
+#import "Group+CoreDataClass.h"
 
 @interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate>
 
@@ -85,34 +88,74 @@
 
 - (IBAction)addExpense:(UIBarButtonItem *)sender
 {
-    // AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    // NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    // TextFieldTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
-    // NSString *name = [nameCell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    TextFieldTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
+    NSString *name = [nameCell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 
-    // NSIndexPath *weightIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-    // StepperTableViewCell *weightCell = [self.tableView cellForRowAtIndexPath:weightIndexPath];
-    // NSInteger weight = [weightCell.weightLabel.text integerValue];
+    if ([name isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Expense Name Cannot Be Blank" message:@"Please enter a non-blank name for the expense." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    } else {
+        NSMutableArray *payments = [NSMutableArray arrayWithCapacity:0];
+        NSMutableSet *people = [NSMutableSet setWithCapacity:0];
 
-    // if ([name isEqualToString:@""]) {
-    //     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Person Name Cannot Be Blank" message:@"Please enter a non-blank name for the person." preferredStyle:UIAlertControllerStyleAlert];
-    //     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    //     [alert addAction:action];
-    //     [self presentViewController:alert animated:YES completion:nil];
-    // } else {
-    //     if (weight < 1) {
-    //         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Person Weight Cannot Be Zero" message:@"Please enter a non-zero weight for the person." preferredStyle:UIAlertControllerStyleAlert];
-    //         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    //         [alert addAction:action];
-    //         [self presentViewController:alert animated:YES completion:nil];
-    //     } else {
-    //         Person *person = [Person personWithName:name unique:[NSString stringWithFormat:@"%@+%@", self.group.unique, name] weight:weight group:self.group inManagedObjectContext:delegate.persistentContainer.viewContext];
-    //         [delegate saveContext];
-    //         NSLog(@"%@", person);
-    //         [self dismissViewControllerAnimated:YES completion:nil];
-    //     }
-    // }
+        for (int i = 0; i < self.people.count; ++i) {
+            PeopleInvolvedTableViewCell *cellInvolved = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+            if (cellInvolved.chosen) {
+                [people addObject:cellInvolved.person];
+            }
+        }
+
+        // create the Expense
+        if (people.count != 0) {
+            Expense *expense = [Expense expenseWithName:name
+                                                 unique:[NSString stringWithFormat:@"%@$%@", self.group.unique, name]
+                                                  group:self.group
+                                         peopleInvolved:people
+                                 inManagedObjectContext:delegate.persistentContainer.viewContext];
+            NSLog(@"Expense: %@", expense);
+
+            for (int i = 0; i < self.people.count; ++i) {
+                PeoplePaymentTableViewCell *cellPayment = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:2]];
+                if (cellPayment.chosen) {
+                    double amountDouble = [cellPayment.paymentTextfield.text doubleValue];
+                    int64_t amount = amountDouble * 100;
+                    Payment *payment = [Payment paymentWithAmount:amount
+                                                           person:cellPayment.person
+                                                          expense:expense
+                                           inManagedObjectContext:delegate.persistentContainer.viewContext];
+                    [payments addObject:payment];
+                }
+            }
+
+            if (payments.count == 0) {
+
+                [delegate.persistentContainer.viewContext deleteObject:expense];
+                [delegate saveContext];
+
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Payments Made Cannot Be Zero" message:@"There has to be at least one payment made in the expense." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+
+            [delegate saveContext];
+            NSLog(@"Expense Saved: %@", expense);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"People Involved Cannot Be Zero" message:@"There has to be at least one person involved in the expense." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
