@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
                   unique:(NSString *)unique
   inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void)deleteGroupWithUnique:(NSString *)unique
+     fromManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

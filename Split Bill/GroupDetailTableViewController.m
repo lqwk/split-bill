@@ -14,6 +14,7 @@
 #import "AddExpenseTableViewController.h"
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
+#import "AppDelegate.h"
 
 @interface GroupDetailTableViewController ()
 
@@ -33,7 +34,6 @@
 
 - (void)handleContextChange:(NSNotification *)notification
 {
-    // NSLog(@"%@", [[notification.userInfo objectForKey:@"updated"] class]);
     for (NSManagedObject *obj in [notification.userInfo objectForKey:@"updated"]) {
         if ([obj isKindOfClass:[Group class]]) {
             if (obj == self.group) {
@@ -43,17 +43,17 @@
         NSLog(@"UPDATED: %@", obj);
     }
 
-    self.people = self.group.people.allObjects;
-    self.expenses = self.group.expenses.allObjects;
-    [self.tableView reloadData];
+    self.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    self.expenses = [self.group.expenses.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES]]];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.people = self.group.people.allObjects;
-    self.expenses = self.group.expenses.allObjects;
+    self.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    self.expenses = [self.group.expenses.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:YES]]];
 
     self.navigationItem.title = self.group.name;
 
@@ -117,10 +117,18 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // TODO: Delete the row from Core Data
-
-        // Delete the row from the data source
-        // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        if (indexPath.section == 0) {
+            // Delete a person
+            Person *person = [self.people objectAtIndex:indexPath.row];
+            [delegate.persistentContainer.viewContext deleteObject:person];
+            [delegate saveContext];
+        } else if (indexPath.section == 1) {
+            // Delete an expense
+            Expense *expense = [self.expenses objectAtIndex:indexPath.row];
+            [delegate.persistentContainer.viewContext deleteObject:expense];
+            [delegate saveContext];
+        }
     }
 }
 
