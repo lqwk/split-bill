@@ -12,6 +12,8 @@
 
 @interface AddExpenseTableViewController : UITableViewController
 
+// These properties can never be nil.
+// Always need to be set when view is created.
 @property (nonatomic, strong) Group *group;
 @property (nonatomic, strong) NSArray *people;
 

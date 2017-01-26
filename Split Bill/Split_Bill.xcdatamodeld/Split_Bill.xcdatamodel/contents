@@ -4,32 +4,32 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="expenses" inverseEntity="Group" syncable="YES"/>
-        <relationship name="paymentsInvolved" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payment" inverseName="expense" inverseEntity="Payment" syncable="YES"/>
+        <relationship name="paymentsInvolved" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Payment" inverseName="expense" inverseEntity="Payment" syncable="YES"/>
         <relationship name="peopleInvolved" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="expensesInvolved" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="group" inverseEntity="Expense" syncable="YES"/>
-        <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="group" inverseEntity="Person" syncable="YES"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" inverseName="group" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="people" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Person" inverseName="group" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="paymentsInvolved" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Expense" inverseName="paymentsInvolved" inverseEntity="Expense" syncable="YES"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="paymentsMade" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="expensesInvolved" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="peopleInvolved" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="expensesInvolved" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" inverseName="peopleInvolved" inverseEntity="Expense" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="people" inverseEntity="Group" syncable="YES"/>
-        <relationship name="paymentsMade" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payment" inverseName="person" inverseEntity="Payment" syncable="YES"/>
+        <relationship name="paymentsMade" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Payment" inverseName="person" inverseEntity="Payment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-270" positionY="306" width="128" height="118"/>
+        <element name="Expense" positionX="-360" positionY="287" width="128" height="118"/>
         <element name="Group" positionX="-353" positionY="63" width="128" height="103"/>
-        <element name="Payment" positionX="-56" positionY="279" width="128" height="88"/>
-        <element name="Person" positionX="-92" positionY="-25" width="128" height="133"/>
+        <element name="Payment" positionX="-99" positionY="288" width="128" height="88"/>
+        <element name="Person" positionX="-92" positionY="18" width="128" height="133"/>
     </elements>
 </model>

@@ -42,4 +42,26 @@
     return group;
 }
 
++ (void)deleteGroupWithUnique:(NSString *)unique
+     fromManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Search for the given group
+    NSFetchRequest *req = [Group fetchRequest];
+    req.predicate = [NSPredicate predicateWithFormat:@"unique ==[c] %@", unique];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:req error:&error];
+
+    if (!results || error) {
+        NSLog(@"ERROR in fetching GROUP with unique: %@", unique);
+    } else if (results.count > 1) {
+        NSLog(@"ERROR: more than 1 match for GROUP with unique: %@", unique);
+    } else if (results.count == 1) {
+        NSLog(@"Found GROUP with unique: %@", unique);
+        Group* group = [results lastObject];
+        [context deleteObject:group];
+    } else {
+        NSLog(@"Did not find GROUP with unique: %@", unique);
+    }
+}
+
 @end
