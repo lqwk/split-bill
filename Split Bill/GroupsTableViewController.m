@@ -7,7 +7,7 @@
 //
 
 #import "GroupsTableViewController.h"
-#import "GroupDetailTableViewController.h"
+#import "GroupDetailsViewController.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Group+CoreDataClass.h"
@@ -149,7 +149,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ShowGroup"]) {
-        GroupDetailTableViewController *vc = segue.destinationViewController;
+        GroupDetailsViewController *vc = segue.destinationViewController;
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
