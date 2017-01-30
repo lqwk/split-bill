@@ -26,6 +26,8 @@
 @property (nonatomic, strong) AppDelegate *delegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation GroupDetailsViewController
@@ -44,9 +46,33 @@
     self.tableView.rowHeight = 56.f;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor blueColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (self.refreshControl) {
+        [self.refreshControl endRefreshing];
+    }
 }
 
 #pragma mark - Actions
+
+- (void)addNewCell
+{
+    if (self.showExpenses) {
+        [self performSegueWithIdentifier:@"AddExpense" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"AddPerson" sender:self];
+    }
+}
 
 - (IBAction)valueChangedForSegmentedControl:(UISegmentedControl *)sender
 {

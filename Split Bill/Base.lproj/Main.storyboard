@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -154,29 +153,18 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="X0c-b4-t4B">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Expense" style="done" id="ftL-pv-DGc">
-                                <connections>
-                                    <segue destination="2GA-q3-wXi" kind="presentation" identifier="AddExpense" id="6Gg-pz-0LR"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Person" style="done" id="QtD-ne-cag">
-                                <connections>
-                                    <segue destination="e1e-14-Yrg" kind="presentation" identifier="AddPerson" id="JYF-FD-2Rn"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="X0c-b4-t4B"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="segmentedControl" destination="l3X-If-P31" id="DGu-39-Kl7"/>
                         <outlet property="tableView" destination="Z4d-Uy-V4c" id="Fnw-Qg-1ge"/>
+                        <segue destination="e1e-14-Yrg" kind="presentation" identifier="AddPerson" id="9JP-fv-nuY"/>
+                        <segue destination="2GA-q3-wXi" kind="presentation" identifier="AddExpense" id="jPj-YD-TyN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atC-xr-dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.79999999999995" y="398.95052473763121"/>
+            <point key="canvasLocation" x="975" y="399"/>
         </scene>
         <!--New Group-->
         <scene sceneID="gwS-bW-Nj0">
