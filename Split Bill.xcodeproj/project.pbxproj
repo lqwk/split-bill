@@ -181,17 +181,12 @@
 		B42C6E301E219ED100577965 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B44631FF1E39693500FC3A1F /* GroupDetailsViewController.h */,
-				B44632001E39693500FC3A1F /* GroupDetailsViewController.m */,
-				B42C6E3A1E21B4D700577965 /* Views */,
 				B42C6E311E219EE700577965 /* GroupsTableViewController.h */,
 				B42C6E321E219EE700577965 /* GroupsTableViewController.m */,
-				B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */,
-				B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */,
-				B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */,
-				B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */,
-				B42C6E4B1E25DC9200577965 /* AddExpenseTableViewController.h */,
-				B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */,
+				B44631FF1E39693500FC3A1F /* GroupDetailsViewController.h */,
+				B44632001E39693500FC3A1F /* GroupDetailsViewController.m */,
+				B44632021E400E2D00FC3A1F /* AddViewController */,
+				B42C6E3A1E21B4D700577965 /* Views */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -220,6 +215,19 @@
 				B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B44632021E400E2D00FC3A1F /* AddViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B42C6E371E21ADA400577965 /* AddGroupTableViewController.h */,
+				B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */,
+				B42C6E481E21F8FA00577965 /* AddPersonTableViewController.h */,
+				B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */,
+				B42C6E4B1E25DC9200577965 /* AddExpenseTableViewController.h */,
+				B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */,
+			);
+			name = AddViewController;
 			sourceTree = "<group>";
 		};
 		B450D1A51E1DAB5A00B282A0 = {
