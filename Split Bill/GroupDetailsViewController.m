@@ -17,6 +17,8 @@
 #import "AddPersonTableViewController.h"
 #import "AddExpenseTableViewController.h"
 #import "ResultsViewController.h"
+#import "PersonDetailTableViewController.h"
+#import "ExpenseDetailTableViewController.h"
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
 
@@ -53,6 +55,7 @@
     self.view.backgroundColor = [UIColor backgroundColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0);
 
     self.segmentedControl.tintColor = [UIColor bruinColor];
 
@@ -62,7 +65,8 @@
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new person/expense"];
     [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
-    self.tableView.sectionHeaderHeight = 6.f;
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -166,6 +170,51 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (self.showExpenses) {
+            // Delete an Expense
+            Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.delegate.persistentContainer.viewContext deleteObject:person];
+            [self.delegate saveContext];
+        } else {
+            // Delete a Person
+            Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.delegate.persistentContainer.viewContext deleteObject:expense];
+            [self.delegate saveContext];
+        }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.showExpenses) {
+        // Show Expense
+        NSLog(@"=========================================");
+        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSLog(@"EXPENSE: %@", expense);
+        for (Person *p in expense.peopleInvolved)
+            NSLog(@"PERSON INVOLVED: %@", p);
+        for (Payment *pm in expense.paymentsInvolved)
+            NSLog(@"PAYMENT INVOLVED: %@", pm);
+        NSLog(@"=========================================");
+    } else {
+        // Show Person
+        NSLog(@"=========================================");
+        Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSLog(@"PERSON: %@", person);
+        for (Expense *e in person.expensesInvolved)
+            NSLog(@"EXPENSE INVOLVED: %@", e);
+        for (Payment *p in person.paymentsMade)
+            NSLog(@"PAYMENT MADE: %@", p);
+        NSLog(@"=========================================");
+    }
+}
+
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
@@ -229,51 +278,6 @@
     [self.tableView endUpdates];
 }
 
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        if (self.showExpenses) {
-            // Delete an Expense
-            Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            [self.delegate.persistentContainer.viewContext deleteObject:person];
-            [self.delegate saveContext];
-        } else {
-            // Delete a Person
-            Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            [self.delegate.persistentContainer.viewContext deleteObject:expense];
-            [self.delegate saveContext];
-        }
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.showExpenses) {
-        // Show Expense
-        NSLog(@"=========================================");
-        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        NSLog(@"EXPENSE: %@", expense);
-        for (Person *p in expense.peopleInvolved)
-            NSLog(@"PERSON INVOLVED: %@", p);
-        for (Payment *pm in expense.paymentsInvolved)
-            NSLog(@"PAYMENT INVOLVED: %@", pm);
-        NSLog(@"=========================================");
-    } else {
-        // Show Person
-        NSLog(@"=========================================");
-        Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        NSLog(@"PERSON: %@", person);
-        for (Expense *e in person.expensesInvolved)
-            NSLog(@"EXPENSE INVOLVED: %@", e);
-        for (Payment *p in person.paymentsMade)
-            NSLog(@"PAYMENT MADE: %@", p);
-        NSLog(@"=========================================");
-    }
-}
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -317,6 +321,18 @@
             }
         }
         vc.results = results;
+    } else if ([segue.identifier isEqualToString:@"ShowPersonDetail"]) {
+        PersonDetailTableViewController *vc = segue.destinationViewController;
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.person = person;
+    } else if ([segue.identifier isEqualToString:@"ShowExpenseDetail"]) {
+        ExpenseDetailTableViewController *vc = segue.destinationViewController;
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.expense = expense;
     }
 }
 

@@ -20,9 +20,9 @@
 
 @property (nonatomic, strong, readwrite) NSString *name;
 @property (nonatomic, strong, readwrite) SBMoney *amount;
-@property (nonatomic) NSInteger weight;
-@property (nonatomic, strong) NSArray<SBPayment *> *payments;
-@property (nonatomic, strong) NSArray<SBPerson *> *people;
+@property (nonatomic, readwrite) NSInteger weight;
+@property (nonatomic, strong, readwrite) NSArray<SBPayment *> *payments;
+@property (nonatomic, strong, readwrite) NSArray<SBPerson *> *people;
 
 @property (nonatomic, strong) NSArray<SBPayment *> *involved;
 @property (nonatomic, strong) NSArray<SBPayment *> *uninvolved;

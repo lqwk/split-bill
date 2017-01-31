@@ -16,4 +16,7 @@
 + (UIColor *)backgroundColor;
 + (UIColor *)headerColor;
 
++ (UIColor *)darkGreenColor;
++ (UIColor *)darkRedColor;
+
 @end
