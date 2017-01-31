@@ -31,6 +31,7 @@
 		B446320B1E401B2000FC3A1F /* UIColor+SBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B446320A1E401B2000FC3A1F /* UIColor+SBHelper.m */; };
 		B446320D1E401ED600FC3A1F /* Pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = B446320C1E401ED600FC3A1F /* Pixel.png */; };
 		B44632131E4064A900FC3A1F /* PersonDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632121E4064A900FC3A1F /* PersonDetailTableViewController.m */; };
+		B44632161E41386900FC3A1F /* ExpenseDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632151E41386900FC3A1F /* ExpenseDetailTableViewController.m */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -113,6 +114,8 @@
 		B446320C1E401ED600FC3A1F /* Pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pixel.png; sourceTree = "<group>"; };
 		B44632111E4064A900FC3A1F /* PersonDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailTableViewController.h; sourceTree = "<group>"; };
 		B44632121E4064A900FC3A1F /* PersonDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailTableViewController.m; sourceTree = "<group>"; };
+		B44632141E41386900FC3A1F /* ExpenseDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailTableViewController.h; sourceTree = "<group>"; };
+		B44632151E41386900FC3A1F /* ExpenseDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailTableViewController.m; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				B44632041E40105E00FC3A1F /* ResultsViewController.m */,
 				B44632111E4064A900FC3A1F /* PersonDetailTableViewController.h */,
 				B44632121E4064A900FC3A1F /* PersonDetailTableViewController.m */,
+				B44632141E41386900FC3A1F /* ExpenseDetailTableViewController.h */,
+				B44632151E41386900FC3A1F /* ExpenseDetailTableViewController.m */,
 				B44632021E400E2D00FC3A1F /* AddViewController */,
 				B42C6E3A1E21B4D700577965 /* Views */,
 			);
@@ -649,6 +654,7 @@
 				B4997D0E1E29FDA900F6EC97 /* Payment+CoreDataProperties.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
+				B44632161E41386900FC3A1F /* ExpenseDetailTableViewController.m in Sources */,
 				B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */,
 				B44632131E4064A900FC3A1F /* PersonDetailTableViewController.m in Sources */,
 				B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */,

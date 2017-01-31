@@ -15,6 +15,8 @@
 
 @interface PersonDetailTableViewController ()
 
+@property (nonatomic, strong) NSArray *expenses;
+
 @end
 
 @implementation PersonDetailTableViewController
@@ -27,6 +29,14 @@
     self.tableView.separatorColor = [UIColor separatorColor];
     self.view.backgroundColor = [UIColor backgroundColor];
     self.navigationItem.title = self.person.name;
+
+    NSArray *cdexpenses = [self.person.expensesInvolved sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"unique" ascending:NO]]];
+    NSMutableArray *es = [NSMutableArray arrayWithCapacity:0];
+    for (Expense *e in cdexpenses) {
+        SBExpense *sbe = [SBExpense expenseFromCDExpense:e];
+        [es addObject:sbe];
+    }
+    self.expenses = es;
 }
 
 #pragma mark - Helper Methods
@@ -55,7 +65,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -63,7 +73,7 @@
     switch (section) {
         case 0: return 2; break;
         case 1: return 3; break;
-        case 2: return 0; break;
+        case 2: return self.expenses.count; break;
         default: break;
     }
 
@@ -118,6 +128,18 @@
                     cell.detailTextLabel.textColor = [UIColor darkGreenColor];
                 }
             }
+            break;
+        }
+
+        case 2:
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"PersonBasicCell" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.textLabel.textColor = [UIColor defaultColor];
+            cell.detailTextLabel.textColor = [UIColor darkRedColor];
+            SBExpense *e = [self.expenses objectAtIndex:indexPath.row];
+            cell.textLabel.text = e.name;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
             break;
         }
 

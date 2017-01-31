@@ -18,6 +18,7 @@
 #import "AddExpenseTableViewController.h"
 #import "ResultsViewController.h"
 #import "PersonDetailTableViewController.h"
+#import "ExpenseDetailTableViewController.h"
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
 
@@ -54,6 +55,7 @@
     self.view.backgroundColor = [UIColor backgroundColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0);
 
     self.segmentedControl.tintColor = [UIColor bruinColor];
 
@@ -63,7 +65,6 @@
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new person/expense"];
     [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
-    self.tableView.sectionHeaderHeight = 6.f;
 
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
@@ -326,6 +327,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
         vc.person = person;
+    } else if ([segue.identifier isEqualToString:@"ShowExpenseDetail"]) {
+        ExpenseDetailTableViewController *vc = segue.destinationViewController;
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.expense = expense;
     }
 }
 

@@ -17,6 +17,9 @@
 @property (nonatomic, readonly) NSInteger weight;
 @property (nonatomic, strong, readonly) SBMoney *amount;
 
+@property (nonatomic, strong, readonly) NSArray<SBPayment *> *payments;
+@property (nonatomic, strong, readonly) NSArray<SBPerson *> *people;
+
 + (SBExpense *)expenseWithName:(NSString *)name andPayments:(NSArray<SBPayment *> *)payments andPeople:(NSArray<SBPerson *> *)people;
 
 // Convert Core Data <Expense> to <SBExpense>
