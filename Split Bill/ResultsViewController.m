@@ -8,6 +8,7 @@
 
 #import "ResultsViewController.h"
 #import "ResultTableViewCell.h"
+#import "UIColor+SBHelper.h"
 #import "SBResult.h"
 #import "SBPerson.h"
 #import "SBMoney.h"
@@ -29,6 +30,13 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = 64.f;
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - Actions

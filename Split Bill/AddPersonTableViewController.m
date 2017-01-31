@@ -10,6 +10,7 @@
 #import "TextFieldTableViewCell.h"
 #import "StepperTableViewCell.h"
 #import "AppDelegate.h"
+#import "UIColor+SBHelper.h"
 #import "Person+CoreDataClass.h"
 #import "Group+CoreDataClass.h"
 
@@ -22,6 +23,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - Actions

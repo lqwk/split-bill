@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "GroupDetailsViewController.h"
 #import "AppDelegate.h"
+#import "UIColor+SBHelper.h"
 #import "Group+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
 #import "Person+CoreDataClass.h"
@@ -47,14 +48,21 @@
     [self loadFetchResultsController];
 
     self.tableView.rowHeight = 56.f;
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
+    self.segmentedControl.tintColor = [UIColor bruinColor];
+
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor blueColor];
-    self.refreshControl.tintColor = [UIColor whiteColor];
+    self.refreshControl.backgroundColor = [UIColor clearColor];
+    self.refreshControl.tintColor = [UIColor clearColor];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new person/expense"];
     [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
+    self.tableView.sectionHeaderHeight = 6.f;
 }
 
 - (void)viewWillAppear:(BOOL)animated

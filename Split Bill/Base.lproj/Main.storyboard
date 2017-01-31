@@ -35,10 +35,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2x-gp-3Iq">
-                                            <rect key="frame" x="15" y="32" width="34" height="11"/>
+                                            <rect key="frame" x="15" y="32" width="35" height="11"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="9"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -88,7 +88,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Z4d-Uy-V4c">
-                                <rect key="frame" x="0.0" y="44" width="375" height="515"/>
+                                <rect key="frame" x="0.0" y="37" width="375" height="522"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" textLabel="br2-qY-7Av" detailTextLabel="DXd-dJ-RxJ" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="fkY-9b-RPv">
@@ -142,14 +142,13 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z4d-Uy-V4c" secondAttribute="trailing" id="8JD-o0-9YB"/>
                             <constraint firstItem="l3X-If-P31" firstAttribute="centerX" secondItem="lWK-v1-I9G" secondAttribute="centerX" id="NcO-JY-uwQ"/>
                             <constraint firstItem="rYu-37-1qI" firstAttribute="top" secondItem="Z4d-Uy-V4c" secondAttribute="bottom" id="Zaf-j8-XoS"/>
                             <constraint firstItem="l3X-If-P31" firstAttribute="top" secondItem="yFl-fL-WLr" secondAttribute="bottom" constant="8" id="a4R-JI-70d"/>
                             <constraint firstItem="Z4d-Uy-V4c" firstAttribute="leading" secondItem="lWK-v1-I9G" secondAttribute="leading" id="gko-28-Iko"/>
-                            <constraint firstItem="Z4d-Uy-V4c" firstAttribute="top" secondItem="l3X-If-P31" secondAttribute="bottom" constant="8" id="kbt-qu-4Wa"/>
+                            <constraint firstItem="Z4d-Uy-V4c" firstAttribute="top" secondItem="l3X-If-P31" secondAttribute="bottom" constant="1" id="kbt-qu-4Wa"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -219,7 +218,7 @@
                                 <action selector="cancelAddingGroup:" destination="Ba0-vA-ZjN" id="9CX-LR-bFS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="fBg-r3-Kvh">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="fBg-r3-Kvh">
                             <connections>
                                 <action selector="addGroup:" destination="Ba0-vA-ZjN" id="Mcu-C6-La8"/>
                             </connections>
@@ -321,7 +320,7 @@
                                 <action selector="cancelAddingPerson:" destination="KG9-Bx-Tg1" id="TPN-az-nNv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="rwb-Og-6q1">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="rwb-Og-6q1">
                             <connections>
                                 <action selector="addPerson:" destination="KG9-Bx-Tg1" id="ErM-ZO-Z3Y"/>
                             </connections>
@@ -337,8 +336,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UlG-xl-TrX" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="byl-nK-mlK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="byl-nK-mlK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -524,7 +524,7 @@
                                 <action selector="cancelAddingExpense:" destination="IfA-2O-qge" id="wag-0B-4GB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="Tdp-EQ-e79">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Tdp-EQ-e79">
                             <connections>
                                 <action selector="addExpense:" destination="IfA-2O-qge" id="J2M-rG-QES"/>
                             </connections>
@@ -559,8 +559,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-AR-t7u">
-                                                    <rect key="frame" x="325.5" y="8" width="41.5" height="47.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                    <rect key="frame" x="328" y="8" width="39" height="47.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

@@ -8,6 +8,7 @@
 
 #import "GroupsTableViewController.h"
 #import "GroupDetailsViewController.h"
+#import "UIColor+SBHelper.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Group+CoreDataClass.h"
@@ -37,7 +38,14 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
 
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
     self.tableView.rowHeight = 56.f;
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - UITableViewDataSource
@@ -46,7 +54,11 @@
 {
     Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = group.name;
-    cell.detailTextLabel.text = group.unique;
+    if (group.people.count == 1) {
+        cell.detailTextLabel.text = @"1 person";
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu people", group.people.count];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -66,6 +78,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
 
+    cell.textLabel.textColor = [UIColor defaultColor];
+    //cell.detailTextLabel.textColor = [UIColor defaultColor];
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
