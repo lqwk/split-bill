@@ -125,12 +125,13 @@
         // Configure for Expense
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = expense.unique;
+        SBExpense *e = [SBExpense expenseFromCDExpense:expense];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
     } else {
         // Configure for Person
         Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
         cell.textLabel.text = person.name;
-        cell.detailTextLabel.text = person.unique;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Weight: %lld", person.weight];
     }
 }
 
@@ -159,6 +160,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
     }
 
+    cell.textLabel.textColor = [UIColor defaultColor];
     [self configureCell:cell atIndexPath:indexPath];
 
     return cell;

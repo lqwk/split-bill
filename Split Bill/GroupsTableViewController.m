@@ -79,7 +79,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
 
     cell.textLabel.textColor = [UIColor defaultColor];
-    //cell.detailTextLabel.textColor = [UIColor defaultColor];
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
