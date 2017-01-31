@@ -15,6 +15,9 @@
 #import "Payment+CoreDataClass.h"
 #import "AddPersonTableViewController.h"
 #import "AddExpenseTableViewController.h"
+#import "ResultsViewController.h"
+#import "SBExpense.h"
+#import "SBSplitEngine.h"
 
 @interface GroupDetailsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -274,6 +277,36 @@
         AddExpenseTableViewController *vc = (AddExpenseTableViewController *)navc.topViewController;
         vc.group = self.group;
         vc.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    } else if ([segue.identifier isEqualToString:@"ShowResults"]) {
+        NSArray *results = [NSArray array];
+
+        UINavigationController *navc = segue.destinationViewController;
+        ResultsViewController *vc = (ResultsViewController *)navc.topViewController;
+
+        // Evaluate the results
+        // Get all Expenses from Core Data
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Expense"];
+        request.predicate = [NSPredicate predicateWithFormat:@"unique CONTAINS %@", self.group.name];
+        NSError *error;
+        NSArray *matches = [self.delegate.persistentContainer.viewContext executeFetchRequest:request error:&error];
+
+        if (!matches || error) {
+            NSLog(@"ERROR in fetching EXPENSE for GROUP: %@", self.group.name);
+        } else if (matches.count == 0) {
+            NSLog(@"No matches for EXPENSE for GROUP: %@", self.group.name);
+        } else {
+            // Convert Expenses to SBExpense
+            NSMutableArray *expenses = [NSMutableArray arrayWithCapacity:0];
+            for (Expense *e in matches) {
+                SBExpense *expense = [SBExpense expenseFromCDExpense:e];
+                [expenses addObject:expense];
+                NSLog(@"CONVERTED SBEXPENSE: %@", expense);
+                SBSplitEngine *se = [SBSplitEngine engineWithExpenses:expenses];
+                results = [se resultsForEvaluation];
+                NSLog(@"FINAL RESULTS: %@", results);
+            }
+        }
+        vc.results = results;
     }
 }
 
