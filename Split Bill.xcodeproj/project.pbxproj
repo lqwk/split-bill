@@ -26,6 +26,10 @@
 		B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */; };
 		B42C6E561E25F09300577965 /* PeoplePaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */; };
 		B44632011E39693500FC3A1F /* GroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632001E39693500FC3A1F /* GroupDetailsViewController.m */; };
+		B44632051E40105E00FC3A1F /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632041E40105E00FC3A1F /* ResultsViewController.m */; };
+		B44632081E40180600FC3A1F /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632071E40180600FC3A1F /* ResultTableViewCell.m */; };
+		B446320B1E401B2000FC3A1F /* UIColor+SBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B446320A1E401B2000FC3A1F /* UIColor+SBHelper.m */; };
+		B446320D1E401ED600FC3A1F /* Pixel.png in Resources */ = {isa = PBXBuildFile; fileRef = B446320C1E401ED600FC3A1F /* Pixel.png */; };
 		B450D1B31E1DAB5B00B282A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B21E1DAB5B00B282A0 /* main.m */; };
 		B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1B51E1DAB5B00B282A0 /* AppDelegate.m */; };
 		B450D1BC1E1DAB5B00B282A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BA1E1DAB5B00B282A0 /* Main.storyboard */; };
@@ -99,6 +103,13 @@
 		B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePaymentTableViewCell.m; sourceTree = "<group>"; };
 		B44631FF1E39693500FC3A1F /* GroupDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailsViewController.h; sourceTree = "<group>"; };
 		B44632001E39693500FC3A1F /* GroupDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailsViewController.m; sourceTree = "<group>"; };
+		B44632031E40105E00FC3A1F /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		B44632041E40105E00FC3A1F /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		B44632061E40180600FC3A1F /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
+		B44632071E40180600FC3A1F /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
+		B44632091E401B2000FC3A1F /* UIColor+SBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SBHelper.h"; sourceTree = "<group>"; };
+		B446320A1E401B2000FC3A1F /* UIColor+SBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SBHelper.m"; sourceTree = "<group>"; };
+		B446320C1E401ED600FC3A1F /* Pixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pixel.png; sourceTree = "<group>"; };
 		B450D1AE1E1DAB5B00B282A0 /* Split Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B450D1B21E1DAB5B00B282A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B450D1B41E1DAB5B00B282A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,6 +196,8 @@
 				B42C6E321E219EE700577965 /* GroupsTableViewController.m */,
 				B44631FF1E39693500FC3A1F /* GroupDetailsViewController.h */,
 				B44632001E39693500FC3A1F /* GroupDetailsViewController.m */,
+				B44632031E40105E00FC3A1F /* ResultsViewController.h */,
+				B44632041E40105E00FC3A1F /* ResultsViewController.m */,
 				B44632021E400E2D00FC3A1F /* AddViewController */,
 				B42C6E3A1E21B4D700577965 /* Views */,
 			);
@@ -194,6 +207,8 @@
 		B42C6E3A1E21B4D700577965 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B44632061E40180600FC3A1F /* ResultTableViewCell.h */,
+				B44632071E40180600FC3A1F /* ResultTableViewCell.m */,
 				B42C6E421E21EEE200577965 /* TextFieldTableViewCell.h */,
 				B42C6E431E21EEE200577965 /* TextFieldTableViewCell.m */,
 				B42C6E451E21F7DF00577965 /* StepperTableViewCell.h */,
@@ -213,6 +228,8 @@
 			children = (
 				B42C6E3F1E21B8EF00577965 /* NSDate+SBHelper.h */,
 				B42C6E401E21B8EF00577965 /* NSDate+SBHelper.m */,
+				B44632091E401B2000FC3A1F /* UIColor+SBHelper.h */,
+				B446320A1E401B2000FC3A1F /* UIColor+SBHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 		B450D1B11E1DAB5B00B282A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B446320C1E401ED600FC3A1F /* Pixel.png */,
 				B450D1C01E1DAB5B00B282A0 /* Assets.xcassets */,
 				B450D1C21E1DAB5B00B282A0 /* LaunchScreen.storyboard */,
 				B450D1B21E1DAB5B00B282A0 /* main.m */,
@@ -462,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B446320D1E401ED600FC3A1F /* Pixel.png in Resources */,
 				B42C6E2F1E2199A200577965 /* Split_Bill.xcdatamodeld in Resources */,
 				B450D1C41E1DAB5B00B282A0 /* LaunchScreen.storyboard in Resources */,
 				B450D1C11E1DAB5B00B282A0 /* Assets.xcassets in Resources */,
@@ -620,6 +639,7 @@
 				B44632011E39693500FC3A1F /* GroupDetailsViewController.m in Sources */,
 				B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */,
 				B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */,
+				B44632081E40180600FC3A1F /* ResultTableViewCell.m in Sources */,
 				B4997D0E1E29FDA900F6EC97 /* Payment+CoreDataProperties.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
@@ -628,6 +648,7 @@
 				B42C6E471E21F7DF00577965 /* StepperTableViewCell.m in Sources */,
 				B450D1B61E1DAB5B00B282A0 /* AppDelegate.m in Sources */,
 				B450D1B31E1DAB5B00B282A0 /* main.m in Sources */,
+				B44632051E40105E00FC3A1F /* ResultsViewController.m in Sources */,
 				B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */,
 				B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */,
 				B42C6E561E25F09300577965 /* PeoplePaymentTableViewCell.m in Sources */,
@@ -639,6 +660,7 @@
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
 				B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */,
+				B446320B1E401B2000FC3A1F /* UIColor+SBHelper.m in Sources */,
 				B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

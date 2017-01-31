@@ -9,6 +9,7 @@
 #import "AddGroupTableViewController.h"
 #import "TextFieldTableViewCell.h"
 #import "AppDelegate.h"
+#import "UIColor+SBHelper.h"
 #import "Group+CoreDataClass.h"
 #import "NSDate+SBHelper.h"
 
@@ -21,6 +22,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 #pragma mark - Actions

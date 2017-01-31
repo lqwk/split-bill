@@ -12,6 +12,7 @@
 #import "PeopleInvolvedTableViewCell.h"
 #import "PeoplePaymentTableViewCell.h"
 #import "AppDelegate.h"
+#import "UIColor+SBHelper.h"
 #import "Person+CoreDataClass.h"
 #import "Payment+CoreDataClass.h"
 #import "Expense+CoreDataClass.h"
@@ -38,6 +39,13 @@
     [super viewDidLoad];
 
     self.tableView.rowHeight = 42.f;
+    [self.tableView setBackgroundColor:[UIColor backgroundColor]];
+    self.tableView.separatorColor = [UIColor separatorColor];
+    self.view.backgroundColor = [UIColor backgroundColor];
+
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     self.expenseName = @"";
 
