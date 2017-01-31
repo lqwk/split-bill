@@ -8,6 +8,10 @@
 
 #import "TextFieldTableViewCell.h"
 
+@interface TextFieldTableViewCell () <UITextFieldDelegate>
+
+@end
+
 @implementation TextFieldTableViewCell
 
 - (void)awakeFromNib
@@ -31,11 +35,22 @@
                       [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donePad)]];
     [toolBar sizeToFit];
     self.textField.inputAccessoryView = toolBar;
+    self.textField.delegate = self;
 }
 
 - (void)donePad
 {
     [self.textField resignFirstResponder];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"TEXT FIELD: %@", textField.text);
+    if ([self.delegate respondsToSelector:@selector(textFieldCell:textFieldDidChange:)]) {
+        [self.delegate textFieldCell:self textFieldDidChange:textField.text];
+    }
 }
 
 @end
