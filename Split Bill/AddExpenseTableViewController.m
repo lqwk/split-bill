@@ -18,7 +18,7 @@
 #import "Group+CoreDataClass.h"
 #import "NSDate+SBHelper.h"
 
-@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate>
+@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate, TextFieldTableViewCellDelegate>
 
 @property (nonatomic) double totalCost;
 @property (nonatomic) double totalWeight;
@@ -26,6 +26,8 @@
 
 @property (nonatomic) double totalPaymentWeight;
 @property (nonatomic) double eachPayment;
+
+@property (nonatomic, strong) NSString *expenseName;
 
 @end
 
@@ -36,6 +38,8 @@
     [super viewDidLoad];
 
     self.tableView.rowHeight = 42.f;
+
+    self.expenseName = @"";
 
     self.totalCost = 0;
     double totalWeight = 0;
@@ -91,11 +95,7 @@
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    TextFieldTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
-    NSString *name = [nameCell.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-
-    if ([name isEqualToString:@""]) {
+    if (!self.expenseName || [self.expenseName isEqualToString:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Expense Name Cannot Be Blank" message:@"Please enter a non-blank name for the expense." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:action];
@@ -114,8 +114,11 @@
 
         // create the Expense
         if (people.count != 0) {
-            Expense *expense = [Expense expenseWithName:name
-                                                 unique:[NSString stringWithFormat:@"%@$%@*%@", self.group.unique, [[NSDate date] dateID], name]
+            NSLog(@"EXPENSE NAME: %@", self.expenseName);
+            NSString *unique = [NSString stringWithFormat:@"%@$%@*%@", self.group.unique, [[NSDate date] dateID], self.expenseName];
+            NSLog(@"EXPENSE UNIQUE: %@", unique);
+            Expense *expense = [Expense expenseWithName:self.expenseName
+                                                 unique:unique
                                                   group:self.group
                                          peopleInvolved:people
                                  inManagedObjectContext:delegate.persistentContainer.viewContext];
@@ -189,6 +192,7 @@
                 case 0:
                 {
                     TextFieldTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddExpenseTextCell" forIndexPath:indexPath];
+                    temp.delegate = self;
                     [temp setup];
                     temp.textField.placeholder = @"Name of Expense";
                     temp.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -347,6 +351,13 @@
     }
 
     NSLog(@"PeoplePaymentDelegate -> Weight Changed: %f", self.totalPaymentWeight);
+}
+
+#pragma mark - TextFieldTableViewCellDelegate
+
+- (void)textFieldCell:(TextFieldTableViewCell *)cell textFieldDidChange:(NSString *)text
+{
+    self.expenseName = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 @end

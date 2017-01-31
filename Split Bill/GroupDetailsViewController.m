@@ -54,9 +54,9 @@
     [self.tableView addSubview:self.refreshControl];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
 
     if (self.refreshControl) {
         [self.refreshControl endRefreshing];
