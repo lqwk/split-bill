@@ -441,6 +441,7 @@
 				TargetAttributes = {
 					B450D1AD1E1DAB5A00B282A0 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = YD86QUJBH5;
 						ProvisioningStyle = Automatic;
 					};
 					B450D1C91E1DAB5B00B282A0 = {
@@ -808,6 +809,7 @@
 			baseConfigurationReference = 3E3A36118635D3FAFF621525 /* Pods-Split Bill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD86QUJBH5;
 				INFOPLIST_FILE = "Split Bill/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qingweilan.Split-Bill";
@@ -820,6 +822,7 @@
 			baseConfigurationReference = F981CB1E42E6AB117AEF18AE /* Pods-Split Bill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD86QUJBH5;
 				INFOPLIST_FILE = "Split Bill/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qingweilan.Split-Bill";
