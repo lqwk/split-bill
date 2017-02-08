@@ -109,6 +109,7 @@
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
+    NSLog(@"NUM GROUP OBJECTS: %lu", self.fetchedResultsController.fetchedObjects.count);
 
     switch (type)
     {
@@ -117,10 +118,12 @@
             break;
 
         case NSFetchedResultsChangeDelete:
+            NSLog(@"Deleting GROUP cell at %@", indexPath);
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
 
         case NSFetchedResultsChangeUpdate:
+            NSLog(@"Updating GROUP cell at %@", indexPath);
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
 

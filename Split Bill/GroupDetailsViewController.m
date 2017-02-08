@@ -99,6 +99,9 @@
 {
     self.showExpenses = self.segmentedControl.selectedSegmentIndex == 0;
 
+    self.fetchedResultsController.delegate = self;
+    self.fetchedResultsController = nil;
+
     NSFetchRequest *req = nil;
     if (self.showExpenses) {
         // Fetch expenses
@@ -125,6 +128,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Configure %@, %@", indexPath, cell);
     if (self.showExpenses) {
         // Configure for Expense
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -149,6 +153,7 @@
     NSArray *sections = [self.fetchedResultsController sections];
     id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
     NSInteger numberOfObjects = [sectionInfo numberOfObjects];
+    NSLog(@"NUM ROWS: %lu", numberOfObjects);
     return numberOfObjects;
 }
 
@@ -177,13 +182,13 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if (self.showExpenses) {
             // Delete an Expense
-            Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            [self.delegate.persistentContainer.viewContext deleteObject:person];
+            Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.delegate.persistentContainer.viewContext deleteObject:expense];
             [self.delegate saveContext];
         } else {
             // Delete a Person
-            Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            [self.delegate.persistentContainer.viewContext deleteObject:expense];
+            Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.delegate.persistentContainer.viewContext deleteObject:person];
             [self.delegate saveContext];
         }
     }
@@ -230,6 +235,7 @@
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
+    NSLog(@"NUM OBJECTS: %lu", self.fetchedResultsController.fetchedObjects.count);
 
     switch (type)
     {
@@ -238,10 +244,12 @@
             break;
 
         case NSFetchedResultsChangeDelete:
+            NSLog(@"Deleting cell at %@", indexPath);
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
 
         case NSFetchedResultsChangeUpdate:
+            NSLog(@"Updating cell at %@", indexPath);
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
 
