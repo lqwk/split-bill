@@ -68,6 +68,9 @@
     cell.lendeeName.text = r.lendee.name;
     cell.lenderName.text = r.lender.name;
     cell.amount.text = [NSString stringWithFormat:@"%@", r.amount];
+    cell.lendeeName.textColor = [UIColor darkRedColor];
+    cell.lenderName.textColor = [UIColor darkGreenColor];
+    cell.amount.textColor = [UIColor defaultColor];
 
     return cell;
 }
