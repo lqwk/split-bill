@@ -204,18 +204,7 @@
                 for (Expense *expense in results) {
                     NSLog(@"Found expense: %@", expense);
                     [self.delegate.persistentContainer.viewContext deleteObject:expense];
-                    for (Person *p in expense.peopleInvolved) {
-                        if ([p.unique isEqualToString:personUnique]) {
-                            NSLog(@"  Involved person: %@", p);
-                        }
-                    }
-                    for (Payment *pp in expense.paymentsInvolved) {
-                        if ([pp.person.unique isEqualToString:personUnique]) {
-                            NSLog(@"  Payment person: %@", pp.person);
-                        }
-                    }
                 }
-
                 [self.delegate saveContext];
             }
 
