@@ -101,6 +101,7 @@
         case 1:
         {
             StepperTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddPersonStepperCell" forIndexPath:indexPath];
+            temp.weightLabel.textColor = [UIColor defaultColor];
             cell = temp;
             break;
         }
