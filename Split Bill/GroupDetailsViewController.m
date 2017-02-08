@@ -46,6 +46,8 @@
 
     self.navigationItem.title = self.group.name;
 
+    self.showExpenses = self.segmentedControl.selectedSegmentIndex == 0;
+
     self.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self loadFetchResultsController];
 
@@ -62,7 +64,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor clearColor];
     self.refreshControl.tintColor = [UIColor clearColor];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new person/expense"];
+    [self switchRefreshControlText];
     [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
 
@@ -80,6 +82,17 @@
 
 #pragma mark - Actions
 
+- (void)switchRefreshControlText
+{
+    NSDictionary *attributes = @{ NSForegroundColorAttributeName : [UIColor darkRedColor],
+                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:12.f] };
+    if (self.showExpenses) {
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new Expense" attributes:attributes];
+    } else {
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new Person" attributes:attributes];
+    }
+}
+
 - (void)addNewCell
 {
     if (self.showExpenses) {
@@ -91,14 +104,14 @@
 
 - (IBAction)valueChangedForSegmentedControl:(UISegmentedControl *)sender
 {
+    self.showExpenses = self.segmentedControl.selectedSegmentIndex == 0;
+    [self switchRefreshControlText];
     [self loadFetchResultsController];
     [self.tableView reloadData];
 }
 
 - (void)loadFetchResultsController
 {
-    self.showExpenses = self.segmentedControl.selectedSegmentIndex == 0;
-
     self.fetchedResultsController.delegate = self;
     self.fetchedResultsController = nil;
 
