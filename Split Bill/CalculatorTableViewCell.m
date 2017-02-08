@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorTableViewCell.h"
+#import "UIColor+SBHelper.h"
 
 @interface CalculatorTableViewCell () <UITextFieldDelegate>
 
@@ -38,6 +39,7 @@
     self.calculatorTextField.delegate = self;
 
     self.calculatorTextField.placeholder = @"Total Cost of Expense";
+    self.calculatorTextField.textColor = [UIColor defaultColor];
 }
 
 - (void)donePad

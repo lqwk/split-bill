@@ -7,6 +7,7 @@
 //
 
 #import "TextFieldTableViewCell.h"
+#import "UIColor+SBHelper.h"
 
 @interface TextFieldTableViewCell () <UITextFieldDelegate>
 
@@ -36,6 +37,7 @@
     [toolBar sizeToFit];
     self.textField.inputAccessoryView = toolBar;
     self.textField.delegate = self;
+    self.textField.textColor = [UIColor defaultColor];
 }
 
 - (void)donePad

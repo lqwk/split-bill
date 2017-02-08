@@ -8,6 +8,7 @@
 
 #import "PeopleInvolvedTableViewCell.h"
 #import "Person+CoreDataClass.h"
+#import "UIColor+SBHelper.h"
 
 @implementation PeopleInvolvedTableViewCell
 
@@ -54,6 +55,9 @@
     [toolBar sizeToFit];
     self.shouldPayTextField.inputAccessoryView = toolBar;
     self.nameLabel.text = self.person.name;
+    self.nameLabel.textColor = [UIColor defaultColor];
+    self.weightLabel.textColor = [UIColor defaultColor];
+    self.shouldPayTextField.textColor =[UIColor defaultColor];
 }
 
 - (void)donePad

@@ -13,7 +13,6 @@
 		B42C6E001E20C29100577965 /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF11E20C29100577965 /* Person+CoreDataClass.m */; };
 		B42C6E021E20C29100577965 /* Payment+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF51E20C29100577965 /* Payment+CoreDataClass.m */; };
 		B42C6E041E20C29100577965 /* Group+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DF91E20C29100577965 /* Group+CoreDataClass.m */; };
-		B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DFD1E20C29100577965 /* Expense+CoreDataClass.m */; };
 		B42C6E2F1E2199A200577965 /* Split_Bill.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B450D1BD1E1DAB5B00B282A0 /* Split_Bill.xcdatamodeld */; };
 		B42C6E331E219EE700577965 /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E321E219EE700577965 /* GroupsTableViewController.m */; };
 		B42C6E391E21ADA400577965 /* AddGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E381E21ADA400577965 /* AddGroupTableViewController.m */; };
@@ -43,6 +42,7 @@
 		B450D1F71E1DB34D00B282A0 /* SBPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F61E1DB34D00B282A0 /* SBPayment.m */; };
 		B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1F91E1DB3BC00B282A0 /* SBMoney.m */; };
 		B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B450D1FC1E1F365F00B282A0 /* SBResult.m */; };
+		B45AD3EF1E4ADF50000315CD /* Expense+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6DFD1E20C29100577965 /* Expense+CoreDataClass.m */; };
 		B4997D0C1E29FDA900F6EC97 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B4997D051E29FDA900F6EC97 /* Person+CoreDataProperties.m */; };
 		B4997D0D1E29FDA900F6EC97 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B4997D071E29FDA900F6EC97 /* Expense+CoreDataProperties.m */; };
 		B4997D0E1E29FDA900F6EC97 /* Payment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B4997D091E29FDA900F6EC97 /* Payment+CoreDataProperties.m */; };
@@ -643,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45AD3EF1E4ADF50000315CD /* Expense+CoreDataClass.m in Sources */,
 				B42C6E501E25E19900577965 /* CalculatorTableViewCell.m in Sources */,
 				B4997D0D1E29FDA900F6EC97 /* Expense+CoreDataProperties.m in Sources */,
 				B4997D0F1E29FDA900F6EC97 /* Group+CoreDataProperties.m in Sources */,
@@ -672,7 +673,6 @@
 				B42C6E4D1E25DC9200577965 /* AddExpenseTableViewController.m in Sources */,
 				B450D1F41E1DACA400B282A0 /* SBExpense.m in Sources */,
 				B450D1FD1E1F365F00B282A0 /* SBResult.m in Sources */,
-				B42C6E061E20C29200577965 /* Expense+CoreDataClass.m in Sources */,
 				B446320B1E401B2000FC3A1F /* UIColor+SBHelper.m in Sources */,
 				B42C6E4A1E21F8FA00577965 /* AddPersonTableViewController.m in Sources */,
 			);
