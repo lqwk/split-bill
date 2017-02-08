@@ -187,7 +187,39 @@
             [self.delegate saveContext];
         } else {
             // Delete a Person
+            // Delete all expenses related to the Person first
             Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            NSString *personUnique = person.unique;
+
+            // Fetch all related Expenses
+            NSFetchRequest *expenseRequest = [NSFetchRequest fetchRequestWithEntityName:@"Expense"];
+            expenseRequest.predicate = [NSPredicate predicateWithFormat:@"( ANY peopleInvolved.unique == %@ ) OR ( ANY paymentsInvolved.person.unique == %@ )", personUnique, personUnique];
+            NSError *error;
+            NSArray *results = [self.delegate.persistentContainer.viewContext executeFetchRequest:expenseRequest error:&error];
+            if (!results || error) {
+                NSLog(@"ERROR in fetching EXPENSE with personUnique: %@", personUnique);
+            } else if (results.count == 0) {
+                NSLog(@"Didn't find EXPENSE with personUnique: %@", personUnique);
+            } else {
+                for (Expense *expense in results) {
+                    NSLog(@"Found expense: %@", expense);
+                    [self.delegate.persistentContainer.viewContext deleteObject:expense];
+                    for (Person *p in expense.peopleInvolved) {
+                        if ([p.unique isEqualToString:personUnique]) {
+                            NSLog(@"  Involved person: %@", p);
+                        }
+                    }
+                    for (Payment *pp in expense.paymentsInvolved) {
+                        if ([pp.person.unique isEqualToString:personUnique]) {
+                            NSLog(@"  Payment person: %@", pp.person);
+                        }
+                    }
+                }
+
+                [self.delegate saveContext];
+            }
+
+            // Delete the person
             [self.delegate.persistentContainer.viewContext deleteObject:person];
             [self.delegate saveContext];
         }
