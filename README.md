@@ -11,6 +11,10 @@ An iOS app for splitting bills between people.
 - [ ] UI Improvements
     - [ ] Custom Pull to Add
     - [ ] More Information for Payback Results
+- [ ] Payback System
+    - [ ] Payback Model
+    - [ ] Integrate with Core Data
+    - [ ] UI
 
 # License
 
