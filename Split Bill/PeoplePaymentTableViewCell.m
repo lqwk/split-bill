@@ -17,7 +17,7 @@
     [super awakeFromNib];
 
     // Initialization code
-    self.chosen = YES;
+    self.chosen = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
