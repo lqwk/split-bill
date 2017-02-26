@@ -127,6 +127,7 @@
             NSLog(@"EXPENSE UNIQUE: %@", unique);
             Expense *expense = [Expense expenseWithName:self.expenseName
                                                  unique:unique
+                                              isPayback:NO
                                                   group:self.group
                                          peopleInvolved:people
                                  inManagedObjectContext:delegate.persistentContainer.viewContext];

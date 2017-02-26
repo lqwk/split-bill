@@ -145,9 +145,14 @@
     if (self.showExpenses) {
         // Configure for Expense
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        cell.textLabel.text = expense.name;
-        SBExpense *e = [SBExpense expenseFromCDExpense:expense];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
+        if (expense.isPayback) {
+            // Configure for Payback
+        } else {
+            // Configure for Ordinary Expense
+            cell.textLabel.text = expense.name;
+            SBExpense *e = [SBExpense expenseFromCDExpense:expense];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
+        }
     } else {
         // Configure for Person
         Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -166,7 +171,6 @@
     NSArray *sections = [self.fetchedResultsController sections];
     id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
     NSInteger numberOfObjects = [sectionInfo numberOfObjects];
-    NSLog(@"NUM ROWS: %lu", numberOfObjects);
     return numberOfObjects;
 }
 
@@ -175,10 +179,18 @@
     UITableViewCell *cell = nil;
 
     if (self.showExpenses) {
-        // Use ExpenseCell
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if (expense.isPayback) {
+            // Use PaybackCell
+            NSLog(@"IS PAYBACK");
+        } else {
+            // Use ExpenseCell
+            NSLog(@"IS EXPENSE");
+            cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+        }
     } else {
         // Use PersonCell
+        NSLog(@"IS PERSON");
         cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
     }
 
