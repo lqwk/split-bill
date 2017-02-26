@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class SBResult;
+@class SBResult, Group;
 
 @interface ResultsViewController : UIViewController
 
+@property (nonatomic, strong) Group *group;
 @property (nonatomic, strong) NSArray *results;
 
 @end

@@ -375,6 +375,7 @@
             }
         }
         vc.results = results;
+        vc.group = self.group;
     } else if ([segue.identifier isEqualToString:@"ShowPersonDetail"]) {
         PersonDetailTableViewController *vc = segue.destinationViewController;
         UITableViewCell *cell = sender;

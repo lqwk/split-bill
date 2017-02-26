@@ -25,6 +25,8 @@
 		B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */; };
 		B42C6E561E25F09300577965 /* PeoplePaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */; };
 		B44421471E6294E50025F803 /* Expense+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B44421461E6294E50025F803 /* Expense+CoreDataProperties.m */; };
+		B444214A1E62A1B10025F803 /* AddPaybackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44421491E62A1B10025F803 /* AddPaybackTableViewController.m */; };
+		B444214D1E62AB790025F803 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B444214C1E62AB790025F803 /* PersonTableViewCell.m */; };
 		B44632011E39693500FC3A1F /* GroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632001E39693500FC3A1F /* GroupDetailsViewController.m */; };
 		B44632051E40105E00FC3A1F /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632041E40105E00FC3A1F /* ResultsViewController.m */; };
 		B44632081E40180600FC3A1F /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44632071E40180600FC3A1F /* ResultTableViewCell.m */; };
@@ -105,6 +107,10 @@
 		B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePaymentTableViewCell.m; sourceTree = "<group>"; };
 		B44421451E6294E50025F803 /* Expense+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Expense+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B44421461E6294E50025F803 /* Expense+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Expense+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B44421481E62A1B10025F803 /* AddPaybackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPaybackTableViewController.h; sourceTree = "<group>"; };
+		B44421491E62A1B10025F803 /* AddPaybackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPaybackTableViewController.m; sourceTree = "<group>"; };
+		B444214B1E62AB790025F803 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		B444214C1E62AB790025F803 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 		B44631FF1E39693500FC3A1F /* GroupDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailsViewController.h; sourceTree = "<group>"; };
 		B44632001E39693500FC3A1F /* GroupDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailsViewController.m; sourceTree = "<group>"; };
 		B44632031E40105E00FC3A1F /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				B42C6E521E25E97800577965 /* PeopleInvolvedTableViewCell.m */,
 				B42C6E541E25F09300577965 /* PeoplePaymentTableViewCell.h */,
 				B42C6E551E25F09300577965 /* PeoplePaymentTableViewCell.m */,
+				B444214B1E62AB790025F803 /* PersonTableViewCell.h */,
+				B444214C1E62AB790025F803 /* PersonTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,6 +261,8 @@
 				B42C6E491E21F8FA00577965 /* AddPersonTableViewController.m */,
 				B42C6E4B1E25DC9200577965 /* AddExpenseTableViewController.h */,
 				B42C6E4C1E25DC9200577965 /* AddExpenseTableViewController.m */,
+				B44421481E62A1B10025F803 /* AddPaybackTableViewController.h */,
+				B44421491E62A1B10025F803 /* AddPaybackTableViewController.m */,
 			);
 			name = AddViewController;
 			sourceTree = "<group>";
@@ -651,7 +661,9 @@
 				B42C6E531E25E97800577965 /* PeopleInvolvedTableViewCell.m in Sources */,
 				B450D1FA1E1DB3BC00B282A0 /* SBMoney.m in Sources */,
 				B44632081E40180600FC3A1F /* ResultTableViewCell.m in Sources */,
+				B444214A1E62A1B10025F803 /* AddPaybackTableViewController.m in Sources */,
 				B4997D0E1E29FDA900F6EC97 /* Payment+CoreDataProperties.m in Sources */,
+				B444214D1E62AB790025F803 /* PersonTableViewCell.m in Sources */,
 				B450D1EE1E1DAC8900B282A0 /* SBSplitEngine.m in Sources */,
 				B44421471E6294E50025F803 /* Expense+CoreDataProperties.m in Sources */,
 				B450D1F11E1DAC9B00B282A0 /* SBPerson.m in Sources */,
