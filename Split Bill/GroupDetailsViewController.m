@@ -21,6 +21,7 @@
 #import "ExpenseDetailTableViewController.h"
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
+#import "ResultTableViewCell.h"
 
 @interface GroupDetailsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -147,9 +148,13 @@
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
         if (expense.isPayback) {
             // Configure for Payback
-            cell.textLabel.text = expense.name;
+            ResultTableViewCell *temp = (ResultTableViewCell *)cell;
+            Person *payer = [[expense.peopleInvolved allObjects] lastObject];
+            Payment *payment = [[expense.paymentsInvolved allObjects] lastObject];
+            temp.lenderName.text = payer.name;
+            temp.lendeeName.text = payment.person.name;
             SBExpense *e = [SBExpense expenseFromCDExpense:expense];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
+            temp.amount.text = [NSString stringWithFormat:@"%@", e.amount];
         } else {
             // Configure for Ordinary Expense
             cell.textLabel.text = expense.name;
@@ -186,19 +191,24 @@
         if (expense.isPayback) {
             // Use PaybackCell
             NSLog(@"IS PAYBACK");
-            cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+            ResultTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PaybackCell"];
+            temp.lendeeName.textColor = [UIColor darkGreenColor];
+            temp.lenderName.textColor = [UIColor darkRedColor];
+            temp.amount.textColor = [UIColor defaultColor];
+            cell = temp;
         } else {
             // Use ExpenseCell
             NSLog(@"IS EXPENSE");
             cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+            cell.textLabel.textColor = [UIColor defaultColor];
         }
     } else {
         // Use PersonCell
         NSLog(@"IS PERSON");
         cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
+        cell.textLabel.textColor = [UIColor defaultColor];
     }
 
-    cell.textLabel.textColor = [UIColor defaultColor];
     [self configureCell:cell atIndexPath:indexPath];
 
     return cell;
