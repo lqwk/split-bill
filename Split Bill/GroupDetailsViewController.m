@@ -147,6 +147,9 @@
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
         if (expense.isPayback) {
             // Configure for Payback
+            cell.textLabel.text = expense.name;
+            SBExpense *e = [SBExpense expenseFromCDExpense:expense];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
         } else {
             // Configure for Ordinary Expense
             cell.textLabel.text = expense.name;
@@ -183,6 +186,7 @@
         if (expense.isPayback) {
             // Use PaybackCell
             NSLog(@"IS PAYBACK");
+            cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
         } else {
             // Use ExpenseCell
             NSLog(@"IS EXPENSE");
