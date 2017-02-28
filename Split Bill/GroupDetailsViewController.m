@@ -21,6 +21,7 @@
 #import "ExpenseDetailTableViewController.h"
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
+#import "ResultTableViewCell.h"
 
 @interface GroupDetailsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -145,9 +146,21 @@
     if (self.showExpenses) {
         // Configure for Expense
         Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        cell.textLabel.text = expense.name;
-        SBExpense *e = [SBExpense expenseFromCDExpense:expense];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
+        if (expense.isPayback) {
+            // Configure for Payback
+            ResultTableViewCell *temp = (ResultTableViewCell *)cell;
+            Person *payer = [[expense.peopleInvolved allObjects] lastObject];
+            Payment *payment = [[expense.paymentsInvolved allObjects] lastObject];
+            temp.lenderName.text = payer.name;
+            temp.lendeeName.text = payment.person.name;
+            SBExpense *e = [SBExpense expenseFromCDExpense:expense];
+            temp.amount.text = [NSString stringWithFormat:@"%@", e.amount];
+        } else {
+            // Configure for Ordinary Expense
+            cell.textLabel.text = expense.name;
+            SBExpense *e = [SBExpense expenseFromCDExpense:expense];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", e.amount];
+        }
     } else {
         // Configure for Person
         Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -166,7 +179,6 @@
     NSArray *sections = [self.fetchedResultsController sections];
     id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
     NSInteger numberOfObjects = [sectionInfo numberOfObjects];
-    NSLog(@"NUM ROWS: %lu", numberOfObjects);
     return numberOfObjects;
 }
 
@@ -175,14 +187,28 @@
     UITableViewCell *cell = nil;
 
     if (self.showExpenses) {
-        // Use ExpenseCell
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+        Expense *expense = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if (expense.isPayback) {
+            // Use PaybackCell
+            NSLog(@"IS PAYBACK");
+            ResultTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PaybackCell"];
+            temp.lendeeName.textColor = [UIColor darkGreenColor];
+            temp.lenderName.textColor = [UIColor darkRedColor];
+            temp.amount.textColor = [UIColor defaultColor];
+            cell = temp;
+        } else {
+            // Use ExpenseCell
+            NSLog(@"IS EXPENSE");
+            cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseCell"];
+            cell.textLabel.textColor = [UIColor defaultColor];
+        }
     } else {
         // Use PersonCell
+        NSLog(@"IS PERSON");
         cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
+        cell.textLabel.textColor = [UIColor defaultColor];
     }
 
-    cell.textLabel.textColor = [UIColor defaultColor];
     [self configureCell:cell atIndexPath:indexPath];
 
     return cell;
@@ -363,6 +389,7 @@
             }
         }
         vc.results = results;
+        vc.group = self.group;
     } else if ([segue.identifier isEqualToString:@"ShowPersonDetail"]) {
         PersonDetailTableViewController *vc = segue.destinationViewController;
         UITableViewCell *cell = sender;

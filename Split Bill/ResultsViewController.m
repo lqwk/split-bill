@@ -8,7 +8,9 @@
 
 #import "ResultsViewController.h"
 #import "ResultTableViewCell.h"
+#import "AddPaybackTableViewController.h"
 #import "UIColor+SBHelper.h"
+#import "Group+CoreDataClass.h"
 #import "SBResult.h"
 #import "SBPerson.h"
 #import "SBMoney.h"
@@ -80,6 +82,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    ResultTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"AddPayback" sender:cell];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return @"Click on any result to create a Payback.";
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddPayback"]) {
+        UINavigationController *navc = segue.destinationViewController;
+        AddPaybackTableViewController *vc = (AddPaybackTableViewController *)navc.topViewController;
+        vc.group = self.group;
+        vc.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    }
 }
 
 @end

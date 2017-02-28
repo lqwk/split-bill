@@ -16,6 +16,7 @@
 
 + (Expense *)expenseWithName:(NSString *)name
                       unique:(NSString *)unique
+                   isPayback:(BOOL)isPayback
                        group:(Group *)group
               peopleInvolved:(NSSet<Person *> *)peopleInvolved
       inManagedObjectContext:(NSManagedObjectContext *)context
@@ -40,6 +41,7 @@
         expense = [NSEntityDescription insertNewObjectForEntityForName:@"Expense" inManagedObjectContext:context];
         expense.name = name;
         expense.unique = unique;
+        expense.isPayback = isPayback;
         expense.group = group;
         if (expense.peopleInvolved == nil) {
             expense.peopleInvolved = peopleInvolved;
