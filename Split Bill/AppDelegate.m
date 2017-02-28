@@ -21,6 +21,14 @@
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor headerColor]];
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setFont:[UIFont systemFontOfSize:12.0]];
 
+//    NSArray *locales = [NSLocale availableLocaleIdentifiers];
+//    for (NSString *localeSymbol in locales) {
+//        NSLocale *locale = [NSLocale localeWithLocaleIdentifier:localeSymbol];
+//        for (NSString *code in [NSLocale ISOCurrencyCodes]) {
+//            NSLog(@"%@ %@ : %@", [locale displayNameForKey:NSLocaleCurrencySymbol value:code], code, [locale displayNameForKey:NSLocaleCurrencyCode value:code]);
+//        }
+//    }
+
     return YES;
 }
 

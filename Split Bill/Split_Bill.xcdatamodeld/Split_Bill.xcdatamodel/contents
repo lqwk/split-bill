@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isPayback" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,7 +29,7 @@
         <relationship name="paymentsMade" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Payment" inverseName="person" inverseEntity="Payment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-360" positionY="287" width="128" height="133"/>
+        <element name="Expense" positionX="-360" positionY="287" width="128" height="150"/>
         <element name="Group" positionX="-353" positionY="63" width="128" height="103"/>
         <element name="Payment" positionX="-99" positionY="288" width="128" height="88"/>
         <element name="Person" positionX="-92" positionY="18" width="128" height="133"/>
