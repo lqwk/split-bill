@@ -13,8 +13,9 @@ An iOS app for splitting bills between people.
     - [ ] More Information for Payback Results
 - [ ] Payback System
     - [x] Payback Model
-    - [ ] Integrate with Core Data
+    - [x] Integrate with Core Data
     - [x] UI
+    - [ ] Details Page for Person
 
 # License
 
