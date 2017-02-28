@@ -82,6 +82,7 @@
 
     Expense *expense = [Expense expenseWithName:expenseName
                                          unique:[NSString stringWithFormat:@"%@$%@*%@", self.group.unique, [[NSDate date] dateID], expenseName]
+                                       currency:@"USD"
                                       isPayback:YES
                                           group:self.group
                                  peopleInvolved:peopleInvolved

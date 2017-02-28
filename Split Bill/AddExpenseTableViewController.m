@@ -127,6 +127,7 @@
             NSLog(@"EXPENSE UNIQUE: %@", unique);
             Expense *expense = [Expense expenseWithName:self.expenseName
                                                  unique:unique
+                                               currency:@"USD"
                                               isPayback:NO
                                                   group:self.group
                                          peopleInvolved:people
