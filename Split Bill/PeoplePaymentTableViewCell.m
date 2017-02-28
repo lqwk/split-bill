@@ -8,6 +8,7 @@
 
 #import "PeoplePaymentTableViewCell.h"
 #import "Person+CoreDataClass.h"
+#import "UIColor+SBHelper.h"
 
 @implementation PeoplePaymentTableViewCell
 
@@ -16,7 +17,7 @@
     [super awakeFromNib];
 
     // Initialization code
-    self.chosen = YES;
+    self.chosen = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -52,6 +53,8 @@
     [toolBar sizeToFit];
     self.paymentTextfield.inputAccessoryView = toolBar;
     self.nameLabel.text = self.person.name;
+    self.nameLabel.textColor = [UIColor defaultColor];
+    self.paymentTextfield.textColor = [UIColor defaultColor];
 }
 
 - (void)donePad

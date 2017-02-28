@@ -11,5 +11,7 @@
 @interface StepperTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
 @end

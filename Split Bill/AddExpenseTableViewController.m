@@ -127,6 +127,7 @@
             NSLog(@"EXPENSE UNIQUE: %@", unique);
             Expense *expense = [Expense expenseWithName:self.expenseName
                                                  unique:unique
+                                              isPayback:NO
                                                   group:self.group
                                          peopleInvolved:people
                                  inManagedObjectContext:delegate.persistentContainer.viewContext];
@@ -264,6 +265,10 @@
         PeopleInvolvedTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.chosen = !cell.chosen;
     } else if (indexPath.section == 2) {
+        for (int i = 0; i < [tableView numberOfRowsInSection:2]; i++) {
+            PeoplePaymentTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:2]];
+            cell.chosen = NO;
+        }
         PeoplePaymentTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.chosen = !cell.chosen;
     }
@@ -286,7 +291,7 @@
     switch (section) {
         case 0: break;
         case 1: return @"Click on the person to remove from \"Who Should Pay\". Click again to re-add."; break;
-        case 2: return @"Click on the person to remove from \"Who Paid\". Click again to re-add."; break;
+        case 2: return @"Click on the person who paid for this expense."; break;
         default: break;
     }
 
