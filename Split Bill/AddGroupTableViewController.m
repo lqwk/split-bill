@@ -52,7 +52,7 @@
         [alert addAction:action];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        Group *group = [Group groupWithName:groupName unique:[NSString stringWithFormat:@"%@/%@", [[NSDate date] dateID], groupName] inManagedObjectContext:delegate.persistentContainer.viewContext];
+        Group *group = [Group groupWithName:groupName unique:[NSString stringWithFormat:@"%@/%@", [[NSDate date] dateID], groupName] currency:@"USD" inManagedObjectContext:delegate.persistentContainer.viewContext];
         [delegate saveContext];
         NSLog(@"%@", group);
         [self dismissViewControllerAnimated:YES completion:nil];

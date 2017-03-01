@@ -10,6 +10,7 @@
         <relationship name="peopleInvolved" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="expensesInvolved" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" inverseName="group" inverseEntity="Expense" syncable="YES"/>
@@ -30,7 +31,7 @@
     </entity>
     <elements>
         <element name="Expense" positionX="-360" positionY="287" width="128" height="150"/>
-        <element name="Group" positionX="-353" positionY="63" width="128" height="103"/>
+        <element name="Group" positionX="-353" positionY="63" width="128" height="120"/>
         <element name="Payment" positionX="-99" positionY="288" width="128" height="88"/>
         <element name="Person" positionX="-92" positionY="18" width="128" height="133"/>
     </elements>
