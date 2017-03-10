@@ -6,6 +6,7 @@
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //
 
+#import <MJRefresh/MJRefresh.h>
 #import "ResultsViewController.h"
 #import "ResultTableViewCell.h"
 #import "AddPaybackTableViewController.h"
@@ -39,9 +40,24 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18] }];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Pixel"] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(addPayback)];
+    header.stateLabel.font = [UIFont boldSystemFontOfSize:14];
+    header.stateLabel.textColor = [UIColor defaultColor];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"Pull down to add new Payback" forState:MJRefreshStateIdle];
+    [header setTitle:@"Release to add new Payback" forState:MJRefreshStatePulling];
+    [header setTitle:@"Adding new Payback" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_header = header;
 }
 
 #pragma mark - Actions
+
+- (void)addPayback
+{
+    [self.tableView.mj_header endRefreshing];
+    [self performSegueWithIdentifier:@"AddPayback" sender:nil];
+}
 
 - (IBAction)dismissResults:(UIBarButtonItem *)sender
 {
@@ -89,7 +105,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return @"Click on any result to create a Payback.";
+    return @"Pull down or click on any result to create a Payback.";
 }
 
 #pragma mark - Navigation
@@ -101,6 +117,11 @@
         AddPaybackTableViewController *vc = (AddPaybackTableViewController *)navc.topViewController;
         vc.group = self.group;
         vc.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+        if ([sender isKindOfClass:[ResultTableViewCell class]]) {
+
+        } else {
+            
+        }
     }
 }
 
