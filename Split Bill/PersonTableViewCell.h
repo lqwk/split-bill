@@ -13,6 +13,7 @@
 @interface PersonTableViewCell : UITableViewCell
 
 @property (nonatomic) BOOL chosen;
+@property (nonatomic) BOOL isLendee;
 @property (nonatomic, strong) Person *person;
 
 @end

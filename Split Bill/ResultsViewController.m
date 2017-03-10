@@ -118,9 +118,14 @@
         vc.group = self.group;
         vc.people = [self.group.people.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         if ([sender isKindOfClass:[ResultTableViewCell class]]) {
-
+            ResultTableViewCell *cell = sender;
+            vc.setupAmount = cell.amount.text;
+            vc.setupLendeeName = cell.lenderName.text;
+            vc.setupLenderName = cell.lendeeName.text;
         } else {
-            
+            vc.setupAmount = nil;
+            vc.setupLendeeName = nil;
+            vc.setupLenderName = nil;
         }
     }
 }
