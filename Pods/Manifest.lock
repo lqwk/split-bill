@@ -1,12 +1,15 @@
 PODS:
+  - MJRefresh (3.1.12)
   - VENCalculatorInputView (1.5.4)
 
 DEPENDENCIES:
+  - MJRefresh
   - VENCalculatorInputView (~> 1.5)
 
 SPEC CHECKSUMS:
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   VENCalculatorInputView: 988fa681ba6bb9b1f067842493bb622e80cc8da2
 
-PODFILE CHECKSUM: c64b00fb184120bd36734bd2398bcff8df42d62e
+PODFILE CHECKSUM: 2c5c9bf8b4a9c31dc11c9601c99ad61e4aeb3ac9
 
 COCOAPODS: 1.0.1
