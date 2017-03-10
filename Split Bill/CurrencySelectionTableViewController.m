@@ -13,8 +13,9 @@
 @interface CurrencySelectionTableViewController ()
 
 @property (nonatomic, strong) NSDictionary *currencies;
-@property (nonatomic, strong) NSArray *orderedCurrencyKeys;
+
 @property (nonatomic, strong) NSIndexPath *chosenIndexPath;
+@property (nonatomic, strong) NSString *chosenCurrency;
 
 @property (nonatomic, strong) NSArray *sectionNames;
 @property (nonatomic, strong) NSArray *sortedKeys;
@@ -44,13 +45,13 @@
 
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.currencies = delegate.currencies;
-    self.orderedCurrencyKeys = [self.currencies keysSortedByValueUsingComparator:^NSComparisonResult(id _Nonnull obj1, id _Nonnull obj2) {
+    NSArray *orderedCurrencyKeys = [self.currencies keysSortedByValueUsingComparator:^NSComparisonResult(id _Nonnull obj1, id _Nonnull obj2) {
         NSString *c1 = [obj1 objectAtIndex:0];
         NSString *c2 = [obj2 objectAtIndex:0];
         return [c1 localizedCompare:c2];
     }];
 
-    for (NSString *key in self.orderedCurrencyKeys) {
+    for (NSString *key in orderedCurrencyKeys) {
         NSArray *currencyDetails = [self.currencies objectForKey:key];
         NSString *currencyName = [currencyDetails objectAtIndex:0];
         NSString *startingLetter = [currencyName substringToIndex:1];
@@ -68,23 +69,18 @@
     NSArray *sortedKeys = [self.sectionsDictionary.allKeys sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
     self.sortedKeys = sortedKeys;
 
-    NSLog(@"%@", self.currency);
-    if (self.currency) {
-        NSIndexPath *indexPath = [self indexPathForCurrency:self.currency];
-        self.chosenIndexPath = indexPath;
-    } else {
-        self.chosenIndexPath = [NSIndexPath indexPathForRow:2 inSection:20];
-    }
+    NSIndexPath *indexPath = [self indexPathForCurrency:self.currency];
+    self.chosenIndexPath = indexPath;
+    self.chosenCurrency = self.currency;
+    NSLog(@"%@, %@, %@", self.currency, self.chosenCurrency, self.chosenIndexPath);
 }
 
 #pragma mark - Actions
 
 - (IBAction)chooseCurrency:(UIBarButtonItem *)sender
 {
-    UITableViewCell *chosenCell = [self.tableView cellForRowAtIndexPath:self.chosenIndexPath];
-    NSString *currency = [chosenCell.detailTextLabel.text substringToIndex:3];
     if ([self.delegate respondsToSelector:@selector(currencySelectionTableViewController:didChooseCurrency:)]) {
-        [self.delegate currencySelectionTableViewController:self didChooseCurrency:currency];
+        [self.delegate currencySelectionTableViewController:self didChooseCurrency:self.chosenCurrency];
     }
 
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -100,6 +96,7 @@
     _chosenIndexPath = chosenIndexPath;
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.chosenIndexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    self.chosenCurrency = cell.detailTextLabel.text;
 }
 
 #pragma mark - UITableViewDataSource
@@ -120,13 +117,12 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CurrencySelectionCell" forIndexPath:indexPath];
 
-
     NSString *key = [self.sortedKeys objectAtIndex:indexPath.section];
     NSString *currency = [[self.sectionsDictionary objectForKey:key] objectAtIndex:indexPath.row];
     NSArray *currencyDetails = [self.currencies objectForKey:currency];
     cell.textLabel.text = [currencyDetails objectAtIndex:0];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@   %@", currency, [currencyDetails objectAtIndex:1]];
-    if ([indexPath compare:self.chosenIndexPath] == NSOrderedSame) {
+    if ([currency isEqualToString:self.chosenCurrency]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
