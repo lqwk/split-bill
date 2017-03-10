@@ -26,7 +26,7 @@ An iOS app for splitting bills between people.
 
 # Bugs
 
-- [ ] Do not allow negative values in Calculator view
+- [x] Do not allow negative values in Calculator view
 
 # License
 
