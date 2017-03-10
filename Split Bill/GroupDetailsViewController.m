@@ -6,6 +6,7 @@
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //
 
+#import <MJRefresh/MJRefresh.h>
 #import <CoreData/CoreData.h>
 #import "GroupDetailsViewController.h"
 #import "AppDelegate.h"
@@ -22,7 +23,6 @@
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
 #import "ResultTableViewCell.h"
-#import <MJRefresh/MJRefresh.h>
 
 @interface GroupDetailsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
