@@ -22,6 +22,7 @@
 #import "SBExpense.h"
 #import "SBSplitEngine.h"
 #import "ResultTableViewCell.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface GroupDetailsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -32,8 +33,6 @@
 
 @property (nonatomic, strong) AppDelegate *delegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -58,44 +57,37 @@
     self.view.backgroundColor = [UIColor backgroundColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0);
 
     self.segmentedControl.tintColor = [UIColor bruinColor];
 
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor clearColor];
-    self.refreshControl.tintColor = [UIColor clearColor];
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(addNewCell)];
+    header.stateLabel.font = [UIFont boldSystemFontOfSize:14];
+    header.stateLabel.textColor = [UIColor defaultColor];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
     [self switchRefreshControlText];
-    [self.refreshControl addTarget:self action:@selector(addNewCell) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
 
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    if (self.refreshControl) {
-        [self.refreshControl endRefreshing];
-    }
 }
 
 #pragma mark - Actions
 
 - (void)switchRefreshControlText
 {
-    NSDictionary *attributes = @{ NSForegroundColorAttributeName : [UIColor darkRedColor],
-                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:12.f] };
     if (self.showExpenses) {
-        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new Expense" attributes:attributes];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Pull down to add new Expense" forState:MJRefreshStateIdle];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Release to add new Expense" forState:MJRefreshStatePulling];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Adding new Expense" forState:MJRefreshStateRefreshing];
     } else {
-        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to add new Person" attributes:attributes];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Pull down to add new Person" forState:MJRefreshStateIdle];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Release to add new Person" forState:MJRefreshStatePulling];
+        [(MJRefreshNormalHeader *)self.tableView.mj_header setTitle:@"Adding new Person" forState:MJRefreshStateRefreshing];
     }
 }
 
 - (void)addNewCell
 {
+    [self.tableView.mj_header endRefreshing];
     if (self.showExpenses) {
         [self performSegueWithIdentifier:@"AddExpense" sender:self];
     } else {
