@@ -96,7 +96,7 @@
     _chosenIndexPath = chosenIndexPath;
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.chosenIndexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    self.chosenCurrency = cell.detailTextLabel.text;
+    self.chosenCurrency = [cell.detailTextLabel.text substringToIndex:3];
 }
 
 #pragma mark - UITableViewDataSource
