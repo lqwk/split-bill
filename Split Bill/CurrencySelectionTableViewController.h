@@ -21,5 +21,6 @@
 @interface CurrencySelectionTableViewController : UITableViewController
 
 @property (nonatomic, assign) id <CurrencySelectionDelegate> delegate;
+@property (nonatomic, strong) NSString *currency;
 
 @end

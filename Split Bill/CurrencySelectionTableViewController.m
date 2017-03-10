@@ -68,7 +68,13 @@
     NSArray *sortedKeys = [self.sectionsDictionary.allKeys sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
     self.sortedKeys = sortedKeys;
 
-    self.chosenIndexPath = [NSIndexPath indexPathForRow:2 inSection:20];
+    NSLog(@"%@", self.currency);
+    if (self.currency) {
+        NSIndexPath *indexPath = [self indexPathForCurrency:self.currency];
+        self.chosenIndexPath = indexPath;
+    } else {
+        self.chosenIndexPath = [NSIndexPath indexPathForRow:2 inSection:20];
+    }
 }
 
 #pragma mark - Actions
@@ -156,6 +162,20 @@
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.chosenIndexPath];
     cell.accessoryType = UITableViewCellAccessoryNone;
     self.chosenIndexPath = indexPath;
+}
+
+#pragma mark - Helpers
+
+- (NSIndexPath *)indexPathForCurrency:(NSString *)currency
+{
+    NSArray *currencyDetails = [self.currencies objectForKey:currency];
+    NSString *currencyName = [currencyDetails objectAtIndex:0];
+    NSString *startingChar = [currencyName substringToIndex:1];
+    NSUInteger section = [self.sortedKeys indexOfObject:startingChar];
+    NSArray *sectionInfo = [self.sectionsDictionary objectForKey:startingChar];
+    NSUInteger row = [sectionInfo indexOfObject:currency];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    return indexPath;
 }
 
 @end

@@ -269,16 +269,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lWs-fh-1Pm">
-                                            <rect key="frame" x="15" y="17" width="32" height="18"/>
+                                            <rect key="frame" x="15" y="17" width="30" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AWU-5X-wkl">
-                                            <rect key="frame" x="320" y="17" width="40" height="18"/>
+                                            <rect key="frame" x="322" y="17" width="38" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -597,6 +597,30 @@
                                     <outlet property="paymentTextfield" destination="RRd-Tq-Mhf" id="CbI-Se-nkD"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChooseCurrencyCell" textLabel="0be-0t-45m" detailTextLabel="hr8-Hl-NlN" rowHeight="52" style="IBUITableViewCellStyleValue1" id="Q6v-mz-pTg">
+                                <rect key="frame" x="0.0" y="264" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q6v-mz-pTg" id="jWk-RO-UDI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0be-0t-45m">
+                                            <rect key="frame" x="15" y="17" width="30" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hr8-Hl-NlN">
+                                            <rect key="frame" x="322" y="17" width="38" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="IfA-2O-qge" id="SYN-DH-Ryp"/>
@@ -615,6 +639,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="bna-Vp-Q0j" kind="presentation" identifier="ChooseExpenseCurrency" id="Py7-53-gCZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ6-Zx-ztZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -858,7 +885,7 @@
             </objects>
             <point key="canvasLocation" x="175" y="1224"/>
         </scene>
-        <!--New Expense-->
+        <!--New Payback-->
         <scene sceneID="LOt-cq-yds">
             <objects>
                 <tableViewController id="snu-GI-mCc" customClass="AddPaybackTableViewController" sceneMemberID="viewController">
@@ -915,7 +942,7 @@
                             <outlet property="delegate" destination="snu-GI-mCc" id="VWu-lL-lGG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Expense" id="dna-Xx-f6U">
+                    <navigationItem key="navigationItem" title="New Payback" id="dna-Xx-f6U">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="J0b-Ke-4oe">
                             <connections>
                                 <action selector="cancelAddingPayback:" destination="snu-GI-mCc" id="iQN-ci-q1e"/>
@@ -1029,4 +1056,7 @@
             <point key="canvasLocation" x="3608.8000000000002" y="-528.48575712143929"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hxa-hq-Ry2"/>
+    </inferredMetricsTieBreakers>
 </document>

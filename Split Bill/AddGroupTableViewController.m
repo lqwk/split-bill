@@ -124,6 +124,15 @@
     return @"";
 }
 
+#pragma mark - CurrencySelectionDelegate
+
+- (void)currencySelectionTableViewController:(CurrencySelectionTableViewController *)vc didChooseCurrency:(NSString *)currency
+{
+    NSLog(@"CHOSEN DEFAULT CURRENCY: %@", currency);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    cell.detailTextLabel.text = currency;
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -132,16 +141,8 @@
         UINavigationController *nvc = segue.destinationViewController;
         CurrencySelectionTableViewController *vc = (CurrencySelectionTableViewController *)nvc.topViewController;
         vc.delegate = self;
+        vc.currency = nil;
     }
-}
-
-#pragma mark - CurrencySelectionDelegate
-
-- (void)currencySelectionTableViewController:(CurrencySelectionTableViewController *)vc didChooseCurrency:(NSString *)currency
-{
-    NSLog(@"CHOSEN DEFAULT CURRENCY: %@", currency);
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-    cell.detailTextLabel.text = currency;
 }
 
 @end

@@ -18,8 +18,9 @@
 #import "Expense+CoreDataClass.h"
 #import "Group+CoreDataClass.h"
 #import "NSDate+SBHelper.h"
+#import "CurrencySelectionTableViewController.h"
 
-@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate, TextFieldTableViewCellDelegate>
+@interface AddExpenseTableViewController () <CalculatorTableViewCellDelegate, PeopleInvolvedCellDelegate, PeoplePaymentCellDelegate, TextFieldTableViewCellDelegate, CurrencySelectionDelegate>
 
 @property (nonatomic) double totalCost;
 @property (nonatomic) double totalWeight;
@@ -125,9 +126,11 @@
             NSLog(@"EXPENSE NAME: %@", self.expenseName);
             NSString *unique = [NSString stringWithFormat:@"%@$%@*%@", self.group.unique, [[NSDate date] dateID], self.expenseName];
             NSLog(@"EXPENSE UNIQUE: %@", unique);
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            NSString *currency = cell.detailTextLabel.text;
             Expense *expense = [Expense expenseWithName:self.expenseName
                                                  unique:unique
-                                               currency:@"USD"
+                                               currency:currency
                                               isPayback:NO
                                                   group:self.group
                                          peopleInvolved:people
@@ -182,7 +185,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
     switch (section) {
-        case 0: return 2; break;
+        case 0: return 3; break;
         case 1: return self.people.count; break;
         case 2: return self.people.count; break;
         default: break;
@@ -217,6 +220,16 @@
                     temp.delegate = self;
                     temp.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = temp;
+                    break;
+                }
+
+                case 2:
+                {
+                    cell = [tableView dequeueReusableCellWithIdentifier:@"ChooseCurrencyCell"];
+                    cell.textLabel.text = @"Currency";
+                    cell.detailTextLabel.text = self.group.currency;
+                    cell.textLabel.textColor = [UIColor defaultColor];
+                    cell.detailTextLabel.textColor = [UIColor headerColor];
                     break;
                 }
 
@@ -262,7 +275,9 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        [self performSegueWithIdentifier:@"ChooseExpenseCurrency" sender:nil];
+    } else if (indexPath.section == 1) {
         PeopleInvolvedTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.chosen = !cell.chosen;
     } else if (indexPath.section == 2) {
@@ -372,6 +387,29 @@
 - (void)textFieldCell:(TextFieldTableViewCell *)cell textFieldDidChange:(NSString *)text
 {
     self.expenseName = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+#pragma mark - CurrencySelectionDelegate
+
+- (void)currencySelectionTableViewController:(CurrencySelectionTableViewController *)vc didChooseCurrency:(NSString *)currency
+{
+    NSLog(@"CHOSEN DEFAULT CURRENCY: %@", currency);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    cell.detailTextLabel.text = currency;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ChooseExpenseCurrency"]) {
+        UINavigationController *nvc = segue.destinationViewController;
+        CurrencySelectionTableViewController *vc = (CurrencySelectionTableViewController *)nvc.topViewController;
+        vc.delegate = self;
+
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+        vc.currency = cell.detailTextLabel.text;
+    }
 }
 
 @end
