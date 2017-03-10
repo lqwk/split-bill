@@ -15,6 +15,7 @@
 
 + (Group *)groupWithName:(NSString *)name
                   unique:(NSString *)unique
+                currency:(NSString *)currency
   inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Group *group = nil;
@@ -37,6 +38,7 @@
         group = [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:context];
         group.name = name;
         group.unique = unique;
+        group.currency = currency;
     }
 
     return group;

@@ -21,6 +21,11 @@
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor headerColor]];
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setFont:[UIFont systemFontOfSize:12.0]];
 
+    NSURL *currencyURL = [[NSBundle mainBundle] URLForResource:@"currency-codes" withExtension:@"json"];
+    NSData *currencyData = [NSData dataWithContentsOfURL:currencyURL];
+    NSDictionary *currencies = [NSJSONSerialization JSONObjectWithData:currencyData options:0 error:NULL];
+    self.currencies = currencies;
+
     return YES;
 }
 

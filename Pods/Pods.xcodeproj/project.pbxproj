@@ -24,45 +24,32 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>01DF97B8565B470CAA760D44353DB996</key>
+		<key>016F5BBD09A11902E39FAE22233B723C</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E473BA90D62CC37F0C3087E8FBA68061</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/VENCalculatorInputView/VENCalculatorInputView-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
+			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>VENCalculatorIconBackspace.png</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/Images/VENCalculatorIconBackspace.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>04C1DB49FA812C21EEEBEE206A0ED54E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>90B4D11D505F86542006276D26F555A3</string>
+				<string>4B6321052A94E5BC5BB2D5A222AC6277</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>060BEF28FD77603008D121AC80AD2533</key>
 		<dict>
@@ -77,91 +64,23 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>064DF53AF13657EB99C659C9AAA90890</key>
+		<key>09E404C85D210E2A5E8D83EE36FCD267</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1255434351EC560C8CFBCF20074AD6EB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-Split BillTests.a</string>
-			<key>path</key>
-			<string>libPods-Split BillTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>085EE2D6FBDF94CF6636C54C2C080D23</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UITextField+VENCalculatorInputView.m</string>
-			<key>path</key>
-			<string>VENCalculatorInputView/UITextField+VENCalculatorInputView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CFF521CB232D46F06054C4CF3B6636A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>7EDE1E794B07B35E38D0918C2FB01A17</string>
-			<key>buildPhases</key>
-			<array>
-				<string>AB81502F2A6C0BC790E7EAC03D348E8C</string>
-				<string>27FC8580ADDA56A6EA9EFF7AC5A4729F</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>BC09F9C853C8EBA419E95965736706CD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Split Bill</string>
-			<key>productName</key>
-			<string>Pods-Split Bill</string>
-			<key>productReference</key>
-			<string>5976AE54FE0007109E303879D30DCA28</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>0D6400A8AE3DE1B32B01D6792A916E21</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A6E24EB7815020359F2D9810DC017AB4</string>
-			<key>buildPhases</key>
-			<array>
-				<string>B01E7A6D2AD6D953E8C416F2CE59DB4F</string>
-				<string>771AFEE6C5677EE1871E0ED951F012B7</string>
-				<string>CCB71CD63AD4C718048ACCEBA25FB388</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>VENCalculatorInputView</string>
-			<key>productName</key>
-			<string>VENCalculatorInputView</string>
-			<key>productReference</key>
-			<string>304AF8AB07F3E1CBF49E5F4D36A5F596</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>0D7F3A90E9112A0B66016028FC43344F</key>
+		<key>0A6D5E84E4CAE68C043632C4A0E9BACB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>650415EDB1B01761075CBB983E4E0CA2</string>
+			<string>A1BAE46C4C5EDE326CCC44CE686A83C2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -171,6 +90,85 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>0D6D49AD555695C5C64FEB093FB0BEC4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>VENCalculatorInputView-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1255434351EC560C8CFBCF20074AD6EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>157BA2017E5E0F81A6E6546D2D82F271</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshNormalHeader.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Header/MJRefreshNormalHeader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>17116CB74631BC1BBE3AC25AAFC2D878</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshBackStateFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1750E8156D634B9DCFCBDF366430F326</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BDEA84820195D9ECDA7FB64060A2386</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>177522CEB4625C17624E7B089BF18E45</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshBackNormalFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1932687BD698F777579460032B634068</key>
 		<dict>
@@ -211,6 +209,20 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Debug</string>
+		</dict>
+		<key>1A7453093307B50F6D5214FAADC17F62</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D5FA37478CA6F37242B222929195BDF8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>1AA72812B4FC33930F3F47DD08C96017</key>
 		<dict>
@@ -296,12 +308,95 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>1F77C82F51B5367F4CF96BEA89083249</key>
+		<key>1D8F17D389EA064B6EE074C165302F19</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A4657CDAD5B6116FB99F5FAD1DB09A73</string>
+			<string>5865B1C88F9F442961E13FAFA0F0DE21</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>1E88082E67EECA1458FA24BBF7677908</key>
+		<dict>
+			<key>fileRef</key>
+			<string>425CCFA795BD53FCA2370348D94211DB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>1F48696AD698115D898EC7CCD60D075A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>76E86812674FB672FAE29FC2F5741179</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1F74D2665B5E446B96FD18A23356417F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshBackGifFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1FADF5A1743B4E8E6C224669FBDBC2E2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BDFFC97B6886DA4D60A3FD9A1B470E13</string>
+				<string>4F0F22E6C517F93AA60245B8F0758C70</string>
+				<string>8BDF88DEEB8331A07AA043A99D98881D</string>
+				<string>FF5E33268519062050E04B19DE662413</string>
+				<string>75BD514FD12C031C80DA6A3C8301DD58</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1FBB0C2B7A2A2DD6925E4EDBD5DEA9A5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIScrollView+MJRefresh.h</string>
+			<key>path</key>
+			<string>MJRefresh/UIScrollView+MJRefresh.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2070626DF7C9190E998DED76739A87A3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshNormalHeader.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Header/MJRefreshNormalHeader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>21ACB4088B5F1A12116F3BE16EE57801</key>
 		<dict>
@@ -316,7 +411,97 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>230CE7E890287C8EC6EC3BFCEDAC5CB2</key>
+		<key>23209A6396632F2379442C47F216E19F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UITextField+VENCalculatorInputView.m</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/UITextField+VENCalculatorInputView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>241753CE5689B5D5DB77C54D99D06F29</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>70BC44266C6FFE30D2C57129458E070B</string>
+			<key>remoteInfo</key>
+			<string>MJRefresh</string>
+		</dict>
+		<key>2427E2F0CA20B2924D366EA986934663</key>
+		<dict>
+			<key>fileRef</key>
+			<string>724C375F5D4D583AD63DDEB71A8978FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>25BD086B173F656DC560D67EEF4C7FA4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B5933EAB99004825A31A04214758B8C7</string>
+				<string>2C458820E60BA85B92C998971110483F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2B26D5E48F0E3AE2C208390CBF0ECD3A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5ED0B0D1982941E350C84C2CFDA56DB0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2B4E79A25426CA39553511B1F2DA830A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MJRefresh-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BDEA84820195D9ECDA7FB64060A2386</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshBackFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshBackFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C458820E60BA85B92C998971110483F</key>
 		<dict>
 			<key>baseConfigurationReference</key>
 			<string>A455DA4A543A6FF9B42208EF73A9EF2C</string>
@@ -356,59 +541,19 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>27FC8580ADDA56A6EA9EFF7AC5A4729F</key>
+		<key>2D7FBA552B3CED667D78641BD3DEF96C</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C3AE5139430E6CD26AF46195E90749AD</string>
-			</array>
+			<key>fileRef</key>
+			<string>BE88E70CA97547BF8BBC8E200F656AEA</string>
 			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2B18B1E696A160DB3F05BD7797AF8C5E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>VENCalculatorInputView.m</string>
-			<key>path</key>
-			<string>VENCalculatorInputView/VENCalculatorInputView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2B26D5E48F0E3AE2C208390CBF0ECD3A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5ED0B0D1982941E350C84C2CFDA56DB0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2CFBDC0A5BB0CD28E01A53584F671706</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>59733BED44AB42A1770F87B7A36C9C39</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
 		<dict>
@@ -424,20 +569,52 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>304AF8AB07F3E1CBF49E5F4D36A5F596</key>
+		<key>2EE62D1750FB43E70D2A3266A1D023FB</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
 			<key>includeInIndex</key>
-			<string>0</string>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>libVENCalculatorInputView.a</string>
+			<string>UIScrollView+MJExtension.m</string>
 			<key>path</key>
-			<string>libVENCalculatorInputView.a</string>
+			<string>MJRefresh/UIScrollView+MJExtension.m</string>
 			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>34509A2745482CFBCF03BAAFEA0DAE4E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C10291D821E77E019EC760D33F1DAB2B</string>
+				<string>2D7FBA552B3CED667D78641BD3DEF96C</string>
+				<string>6D40913F14E30C5027EDB1E8E5267456</string>
+				<string>820AE72EE18049DB0D39950065ABA727</string>
+				<string>60B872A80D2C7EC0A342F16970BF22BB</string>
+				<string>1750E8156D634B9DCFCBDF366430F326</string>
+				<string>729824F7571ED25599AD2A5E1E831189</string>
+				<string>69E1CE5225A654934B2A36CCEECD0F82</string>
+				<string>8355E9060CF4352ED0E21569A6FED32F</string>
+				<string>1E88082E67EECA1458FA24BBF7677908</string>
+				<string>6401732D299AF2E66A86932AC8BB931D</string>
+				<string>401E263227EC555D61B8BBB94ED09D73</string>
+				<string>6ACE435B71030CD770DECAA65380285F</string>
+				<string>881AB1EA374C9358F2A83F1D835D1B35</string>
+				<string>4A55E2CB58A23956EF1822F5A6DF5F2C</string>
+				<string>9347B960A275D7EEF8F79F348578B45D</string>
+				<string>832385F31AACCFABD48F783C577C8785</string>
+				<string>7BB5FA5A44FBC13830AE9E7731A38D7F</string>
+				<string>4C359B72D6BDE27D946D1B4D5A22DE00</string>
+				<string>B10A64BAF7708212BEE77303B46759A0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>370DD07500C7C7AF993759C9188405C5</key>
 		<dict>
@@ -449,6 +626,49 @@
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
 			<string>Pods-Split BillUITests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>39118F063946FDA896CF123E8EE08B86</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MJRefresh.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>39DDA1E0A824AC5041C955C45405FCEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefresh.h</string>
+			<key>path</key>
+			<string>MJRefresh/MJRefresh.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A08A45F01410350725068EDC9B5C6A1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshConst.m</string>
+			<key>path</key>
+			<string>MJRefresh/MJRefreshConst.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -525,25 +745,282 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>3F4A58CDFFA075DFDAE7F707DC0AE1A8</key>
+		<key>3E2DC491EBDC50D93BF4259F19CA0A55</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshGifHeader.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Header/MJRefreshGifHeader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E8DB3914572C8035BAA5FBC9705947A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CFA235700E5F0CCB560FE1F41CA81819</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DDCA954FA320CFB57CE9B99B8524BF59</string>
+				<string>09E404C85D210E2A5E8D83EE36FCD267</string>
+				<string>CBBEF71FC8DEF8262F67669B0F0A553C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>VENCalculatorInputView</string>
+			<key>productName</key>
+			<string>VENCalculatorInputView</string>
+			<key>productReference</key>
+			<string>75BD514FD12C031C80DA6A3C8301DD58</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>3EA0055C7F40C997E12C46CA584FBE3C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>VENCalculatorInputTextField.m</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENCalculatorInputTextField.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FFA3FDD4A45A529F958E120695E2838</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7160317F70BEE042DE1CEA347B157399</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>401E263227EC555D61B8BBB94ED09D73</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BB1E21D5F9B9D5D35FA140D864E5EE29</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>421218FE25CB8F59A4458F5CFD1BA52F</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>7523C69984F81A1C0AC7F749EC24435E</string>
-				<string>EEC3552EE83BA90C9C2F3764B41EDDCA</string>
-				<string>63D2ED420899E4B466EF1F0E83078938</string>
+				<string>39118F063946FDA896CF123E8EE08B86</string>
+				<string>8E07812F2E3003A5BFE775F8314B548E</string>
+				<string>2B4E79A25426CA39553511B1F2DA830A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Resources</string>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/MJRefresh</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>42D2C3B2EE37024927EEF067AD84689F</key>
+		<key>425CCFA795BD53FCA2370348D94211DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshComponent.h</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshComponent.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>42E3D7EE87DBFF9252C5DD538D6FD823</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Split BillUITests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>43EAEA05A57D9237DD038EC7971F0AE7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>VENCalculatorInputView.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44529459406814AB948DF5BFEEA0A227</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FC39AFDF050DDC1BF0645F80A500B244</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4548D482088C76C3191E06CDFD55A8E3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2070626DF7C9190E998DED76739A87A3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>45A1EC5F61681127D935750E20D09AA5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>79DF0C736F3C5E958DADA5D7A6BAD91E</string>
+				<string>FC532D63671E8783CC0D561369FFB4FF</string>
+				<string>FF12F35D3A429E2FEEA8E3911BEF2982</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>467ADC9DF6A1E6193FE860E7DF3E8D07</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E52BC8E12A1B786D8854269F036D5B54</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>499211EAF9B4ACA6D9DC215454184F4D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E8E5A9AC8F7ADA6051B0372A7B1488DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A55E2CB58A23956EF1822F5A6DF5F2C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>157BA2017E5E0F81A6E6546D2D82F271</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4AB0DA579B94B1DAEB61E788B3248C96</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-Split BillUITests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B6321052A94E5BC5BB2D5A222AC6277</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>E473BA90D62CC37F0C3087E8FBA68061</string>
+			<string>39118F063946FDA896CF123E8EE08B86</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MJRefresh/MJRefresh-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>4BB42A36FA144DFE69DDCFFB4EBF239C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>name</key>
+			<string>MJRefresh.bundle</string>
+			<key>path</key>
+			<string>MJRefresh/MJRefresh.bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4BCD0FFD4F77B37727CC6B7935E24155</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-Split BillUITests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C1B065AC33F83DFD2BB1975DDF7D775</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>43EAEA05A57D9237DD038EC7971F0AE7</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -580,153 +1057,28 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>42E3D7EE87DBFF9252C5DD538D6FD823</key>
+		<key>4C359B72D6BDE27D946D1B4D5A22DE00</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>1FBB0C2B7A2A2DD6925E4EDBD5DEA9A5</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Split BillUITests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>455B9E2A327347B1A7A55EA420947A70</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>0D6400A8AE3DE1B32B01D6792A916E21</string>
-			<key>remoteInfo</key>
-			<string>VENCalculatorInputView</string>
-		</dict>
-		<key>45A1EC5F61681127D935750E20D09AA5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>79DF0C736F3C5E958DADA5D7A6BAD91E</string>
-				<string>FC532D63671E8783CC0D561369FFB4FF</string>
-				<string>FF12F35D3A429E2FEEA8E3911BEF2982</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4AB0DA579B94B1DAEB61E788B3248C96</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-Split BillUITests-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4BCD0FFD4F77B37727CC6B7935E24155</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-Split BillUITests-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>50A548EFA55CEC065A165921FF112E61</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Split BillTests-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>58DF6DD010B982D1A57592DECC6904EE</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>21ACB4088B5F1A12116F3BE16EE57801</string>
-			<key>buildSettings</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
 			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.2</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
 			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
 		</dict>
-		<key>59733BED44AB42A1770F87B7A36C9C39</key>
+		<key>4E7FAD89D8CDC305DFFF923CF8AD8D31</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>B219F7612AB1DF0724ABD276768B9A00</string>
-				<string>79BC002809D736F79BE9E3A05B616A1F</string>
-				<string>6BBD7DDAD1B991DF2C3D408F8FABBCF5</string>
-				<string>085EE2D6FBDF94CF6636C54C2C080D23</string>
-				<string>5D166ABEFA1205AA653D910BF29C91B3</string>
-				<string>A4657CDAD5B6116FB99F5FAD1DB09A73</string>
-				<string>D9D9337F9E703F33E2672E0A3822ADEE</string>
-				<string>2B18B1E696A160DB3F05BD7797AF8C5E</string>
-				<string>650415EDB1B01761075CBB983E4E0CA2</string>
-				<string>81BC737F219596D3FF5708F4CFCF37A7</string>
-				<string>3F4A58CDFFA075DFDAE7F707DC0AE1A8</string>
-				<string>E45C6EFEFAEF2A6888193410ED8D5FE6</string>
-			</array>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>VENCalculatorInputView</string>
-			<key>path</key>
-			<string>VENCalculatorInputView</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>5976AE54FE0007109E303879D30DCA28</key>
+		<key>4F0F22E6C517F93AA60245B8F0758C70</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -741,44 +1093,47 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>5D166ABEFA1205AA653D910BF29C91B3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>VENCalculatorInputTextField.h</string>
-			<key>path</key>
-			<string>VENCalculatorInputView/VENCalculatorInputTextField.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5ED0B0D1982941E350C84C2CFDA56DB0</key>
+		<key>4F367DCDFE766D2A4DB80B51A41AACA0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>50A548EFA55CEC065A165921FF112E61</string>
+			<string>3A08A45F01410350725068EDC9B5C6A1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>63D2ED420899E4B466EF1F0E83078938</key>
+		<key>50A548EFA55CEC065A165921FF112E61</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>VENCalculatorInputView.xib</string>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/VENCalculatorInputView.xib</string>
+			<string>Pods-Split BillTests-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>650415EDB1B01761075CBB983E4E0CA2</key>
+		<key>5865B1C88F9F442961E13FAFA0F0DE21</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>VENCalculatorInputView-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A18A32422C5C66F04A1803B4E06737A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>177522CEB4625C17624E7B089BF18E45</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5A94EBD240AB1BD94B99F857E2791F02</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -793,7 +1148,43 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6BBD7DDAD1B991DF2C3D408F8FABBCF5</key>
+		<key>5ED0B0D1982941E350C84C2CFDA56DB0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>50A548EFA55CEC065A165921FF112E61</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>60B872A80D2C7EC0A342F16970BF22BB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA00D566569359EBB162CECA085B7942</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>61D21D7B34A3200FE42F490D2B10B364</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>VENCalculatorInputView.xib</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENCalculatorInputView.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>62F321739ACED17187CFA8A06ACBC295</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -802,11 +1193,189 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>UITextField+VENCalculatorInputView.h</string>
+			<string>MJRefreshHeader.h</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/UITextField+VENCalculatorInputView.h</string>
+			<string>MJRefresh/Base/MJRefreshHeader.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6401732D299AF2E66A86932AC8BB931D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E83E483ACACCBBA403167237CF5D8DE3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6409487BE8046DF6531DCDDAE8E6E9C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>VENCalculatorInputView.h</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENCalculatorInputView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>656643109880BDCC60AFB6D3CA9A4738</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshBackGifFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>66534D51244743EC8B48E4652306C62E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshAutoGifFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>678C9629713C062D2BB60FC4AB157131</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>VENMoneyCalculator.m</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENMoneyCalculator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>688D93469DE4EEB08CBC870955BA9AB1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSBundle+MJRefresh.m</string>
+			<key>path</key>
+			<string>MJRefresh/NSBundle+MJRefresh.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6901281A7C00101630EF8C88FCE64335</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>69E1CE5225A654934B2A36CCEECD0F82</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CB482E0EE8C698D91EECF0E9A50AF176</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6ACE435B71030CD770DECAA65380285F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A35BCFD6036E84020050E5287656A3F0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6D40913F14E30C5027EDB1E8E5267456</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CB2A46307BAE284E2072FDC83E8CE595</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6E9813A3A92FBA6F262C2C9EA2D60D14</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EE62D1750FB43E70D2A3266A1D023FB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>70BC44266C6FFE30D2C57129458E070B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>04C1DB49FA812C21EEEBEE206A0ED54E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>94BDFDFA4567D11ADBE332123689D3BD</string>
+				<string>91247678E3E2D23B0BF2C3EF48002167</string>
+				<string>34509A2745482CFBCF03BAAFEA0DAE4E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MJRefresh</string>
+			<key>productName</key>
+			<string>MJRefresh</string>
+			<key>productReference</key>
+			<string>BDFFC97B6886DA4D60A3FD9A1B470E13</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
 		</dict>
 		<key>7160317F70BEE042DE1CEA347B157399</key>
 		<dict>
@@ -821,10 +1390,38 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>744C9986294FFD2112F988B35F4D6676</key>
+		<key>724C375F5D4D583AD63DDEB71A8978FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshAutoStateFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>72621DC4B8CA90A2CC039DBC40F85F0D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>VENCalculatorIconBackspace@2x.png</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/Images/VENCalculatorIconBackspace@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>729824F7571ED25599AD2A5E1E831189</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D9D9337F9E703F33E2672E0A3822ADEE</string>
+			<string>1F74D2665B5E446B96FD18A23356417F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -835,38 +1432,49 @@
 				</array>
 			</dict>
 		</dict>
-		<key>7523C69984F81A1C0AC7F749EC24435E</key>
+		<key>75BD514FD12C031C80DA6A3C8301DD58</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libVENCalculatorInputView.a</string>
+			<key>path</key>
+			<string>libVENCalculatorInputView.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>76E86812674FB672FAE29FC2F5741179</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>VENCalculatorIconBackspace.png</string>
+			<string>MJRefreshBackStateFooter.m</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/Images/VENCalculatorIconBackspace.png</string>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>76FF5F290D6F2901BB1D4B75718A2AE4</key>
+		<key>777A861D7A0ED7A46ED02C5611EDC9FD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>085EE2D6FBDF94CF6636C54C2C080D23</string>
+			<string>688D93469DE4EEB08CBC870955BA9AB1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>771AFEE6C5677EE1871E0ED951F012B7</key>
+		<key>78E642FD20DDC06D7DB26D73AD4B74C9</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>85C1D828520DE75D3B8CF57AAA1CFA22</string>
-			</array>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
 			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>79B5207C7359F978F33F9020592746F3</key>
 		<dict>
@@ -878,21 +1486,6 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods-Split BillTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>79BC002809D736F79BE9E3A05B616A1F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSString+VENCalculatorInputView.m</string>
-			<key>path</key>
-			<string>VENCalculatorInputView/NSString+VENCalculatorInputView.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -924,36 +1517,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>2CFBDC0A5BB0CD28E01A53584F671706</string>
-				<string>858BE5857AE5A9236D9631B68106365B</string>
-				<string>45A1EC5F61681127D935750E20D09AA5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7EDE1E794B07B35E38D0918C2FB01A17</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>58DF6DD010B982D1A57592DECC6904EE</string>
-				<string>230CE7E890287C8EC6EC3BFCEDAC5CB2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>81BC737F219596D3FF5708F4CFCF37A7</key>
+		<key>79F47832E6B0EC702CBC070A086F3B7C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -962,34 +1526,187 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>VENMoneyCalculator.m</string>
+			<string>MJRefreshStateHeader.m</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/VENMoneyCalculator.m</string>
+			<string>MJRefresh/Custom/Header/MJRefreshStateHeader.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>858BE5857AE5A9236D9631B68106365B</key>
+		<key>7BB5FA5A44FBC13830AE9E7731A38D7F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8A5162B616FE075E26CFD475CB6A1B0B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>5976AE54FE0007109E303879D30DCA28</string>
-				<string>064DF53AF13657EB99C659C9AAA90890</string>
-				<string>FF26F61B3B49A3EB8F2A4969FEB23815</string>
-				<string>304AF8AB07F3E1CBF49E5F4D36A5F596</string>
+				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>DF5B98D4038DB597B09A92ADEDF459DF</string>
+				<string>1FADF5A1743B4E8E6C224669FBDBC2E2</string>
+				<string>45A1EC5F61681127D935750E20D09AA5</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>85C1D828520DE75D3B8CF57AAA1CFA22</key>
+		<key>820AE72EE18049DB0D39950065ABA727</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<string>DA07343E39A6887C406775C1D58B9096</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>832385F31AACCFABD48F783C577C8785</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F35579E51693355DB9D214DCE0EE532F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>8326FCD347724DF04BBFBE396F19763B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshComponent.m</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshComponent.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8355E9060CF4352ED0E21569A6FED32F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>17116CB74631BC1BBE3AC25AAFC2D878</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>84883F2C43081F5A3176C951B496D709</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>VENCalculatorInputView.m</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENCalculatorInputView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>84C0DCF2EBAB219CFB956BE8579BAC32</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>MJRefresh</string>
+			<key>target</key>
+			<string>70BC44266C6FFE30D2C57129458E070B</string>
+			<key>targetProxy</key>
+			<string>241753CE5689B5D5DB77C54D99D06F29</string>
+		</dict>
+		<key>881AB1EA374C9358F2A83F1D835D1B35</key>
+		<dict>
+			<key>fileRef</key>
+			<string>62F321739ACED17187CFA8A06ACBC295</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>8A5162B616FE075E26CFD475CB6A1B0B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIScrollView+MJExtension.h</string>
+			<key>path</key>
+			<string>MJRefresh/UIScrollView+MJExtension.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A9118E83980D38CDCA9C5476CDBEC66</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79F47832E6B0EC702CBC070A086F3B7C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BDF88DEEB8331A07AA043A99D98881D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-Split BillTests.a</string>
+			<key>path</key>
+			<string>libPods-Split BillTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8E07812F2E3003A5BFE775F8314B548E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MJRefresh-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8ECFFD080C805959CEC3EB5708D71C90</key>
 		<dict>
@@ -1003,6 +1720,127 @@
 			<string>Pods-Split BillUITests-resources.sh</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8F7ED473E2E932DDEAAE6155BD683A28</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5A94EBD240AB1BD94B99F857E2791F02</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>8FFEE0150399528668D8E3EC52D36CCC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>43EAEA05A57D9237DD038EC7971F0AE7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/VENCalculatorInputView/VENCalculatorInputView-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>90B4D11D505F86542006276D26F555A3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>39118F063946FDA896CF123E8EE08B86</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MJRefresh/MJRefresh-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>91247678E3E2D23B0BF2C3EF48002167</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>78E642FD20DDC06D7DB26D73AD4B74C9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9347B960A275D7EEF8F79F348578B45D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B5F244B57CA3C723EC168A33951F914C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>93A4A3777CF96A4AAC1D13BA6DCCEA73</key>
 		<dict>
@@ -1023,26 +1861,37 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>955D739BAE14AF3C5187BC9791E2B2DC</key>
+		<key>94BDFDFA4567D11ADBE332123689D3BD</key>
 		<dict>
-			<key>fileRef</key>
-			<string>2B18B1E696A160DB3F05BD7797AF8C5E</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CEFDC58C7241F86D92DEF8EDFCE7DF99</string>
+				<string>C0266DA702333927677C77CC3FCB8390</string>
+				<string>B7B6154D69B450647A1787A95ECAD0F2</string>
+				<string>A2F6E9757ACC5A5FFACE3FE77F525BBB</string>
+				<string>2427E2F0CA20B2924D366EA986934663</string>
+				<string>E7A8DDD289D3BFB8950D29CBF67C7132</string>
+				<string>F01687C8E9A3E4F8A528BE97DE7BDB80</string>
+				<string>5A18A32422C5C66F04A1803B4E06737A</string>
+				<string>1F48696AD698115D898EC7CCD60D075A</string>
+				<string>F52763D22F95CF0A6F8491822F37BF5D</string>
+				<string>4F367DCDFE766D2A4DB80B51A41AACA0</string>
+				<string>E954B9D3A283FB30A945CE8823E102DD</string>
+				<string>F3AC7C93C770A6F7918EA23972C1762A</string>
+				<string>499211EAF9B4ACA6D9DC215454184F4D</string>
+				<string>4548D482088C76C3191E06CDFD55A8E3</string>
+				<string>8A9118E83980D38CDCA9C5476CDBEC66</string>
+				<string>777A861D7A0ED7A46ED02C5611EDC9FD</string>
+				<string>6E9813A3A92FBA6F262C2C9EA2D60D14</string>
+				<string>467ADC9DF6A1E6193FE860E7DF3E8D07</string>
+				<string>44529459406814AB948DF5BFEEA0A227</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95CBBE506CE68D36ED7554F9EBA6DEBB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5D166ABEFA1205AA653D910BF29C91B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>989BA41FC85D793B5130B02364EB70C1</key>
 		<dict>
@@ -1057,19 +1906,84 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9BA4928BFC1FB839FCB3027DF254B66A</key>
+		<key>9CAFD64517E6C7CA95655B76ECF5A21A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>3E8DB3914572C8035BAA5FBC9705947A</string>
+			<key>remoteInfo</key>
+			<string>VENCalculatorInputView</string>
+		</dict>
+		<key>9D67C61DD97ECB3F52768762BFBA85CB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshBackFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshBackFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A1BAE46C4C5EDE326CCC44CE686A83C2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UITextField+VENCalculatorInputView.h</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/UITextField+VENCalculatorInputView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A2F6E9757ACC5A5FFACE3FE77F525BBB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B219F7612AB1DF0724ABD276768B9A00</string>
+			<string>CF9C8D8ED52C987B53217D2331447302</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+		</dict>
+		<key>A35BCFD6036E84020050E5287656A3F0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshGifHeader.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Header/MJRefreshGifHeader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A36AAA083185831843E530B4EE78600E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>678C9629713C062D2BB60FC4AB157131</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A36EE9BCCBC1CE1DA23A3B02464DD149</key>
+		<dict>
+			<key>fileRef</key>
+			<string>84883F2C43081F5A3176C951B496D709</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>A455DA4A543A6FF9B42208EF73A9EF2C</key>
 		<dict>
@@ -1083,35 +1997,6 @@
 			<string>Pods-Split Bill.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A4657CDAD5B6116FB99F5FAD1DB09A73</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>VENCalculatorInputTextField.m</string>
-			<key>path</key>
-			<string>VENCalculatorInputView/VENCalculatorInputTextField.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A6E24EB7815020359F2D9810DC017AB4</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>01DF97B8565B470CAA760D44353DB996</string>
-				<string>42D2C3B2EE37024927EEF067AD84689F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
 		</dict>
 		<key>A9E8533E615EA7FD02D27524E68EE149</key>
 		<dict>
@@ -1191,6 +2076,21 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>AA00D566569359EBB162CECA085B7942</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshAutoStateFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>AA62FEC8DA30122247E3D6545DDF9756</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1203,19 +2103,6 @@
 			<string>Pods-Split Bill-acknowledgements.markdown</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AB81502F2A6C0BC790E7EAC03D348E8C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AFAC6577D68EAE384315FEF574A71419</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>AEABED44EB4285BD3ED596483C96F860</key>
 		<dict>
@@ -1230,32 +2117,61 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AFAC6577D68EAE384315FEF574A71419</key>
+		<key>B10A64BAF7708212BEE77303B46759A0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7160317F70BEE042DE1CEA347B157399</string>
+			<string>C5948F6DC5D66731242C27A21561FE7F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
-		<key>B01E7A6D2AD6D953E8C416F2CE59DB4F</key>
+		<key>B5933EAB99004825A31A04214758B8C7</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D4E0C484C4B0F71C3D4A20D54962B761</string>
-				<string>76FF5F290D6F2901BB1D4B75718A2AE4</string>
-				<string>1F77C82F51B5367F4CF96BEA89083249</string>
-				<string>C77519E16346A75121D94A252EFD6840</string>
-				<string>955D739BAE14AF3C5187BC9791E2B2DC</string>
-				<string>ED4763D1A27A7C5883F0D9E9438A48B5</string>
-			</array>
+			<key>baseConfigurationReference</key>
+			<string>21ACB4088B5F1A12116F3BE16EE57801</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>10.2</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
 			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
-		<key>B219F7612AB1DF0724ABD276768B9A00</key>
+		<key>B5F244B57CA3C723EC168A33951F914C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1264,11 +2180,18 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSString+VENCalculatorInputView.h</string>
+			<string>MJRefreshStateHeader.h</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/NSString+VENCalculatorInputView.h</string>
+			<string>MJRefresh/Custom/Header/MJRefreshStateHeader.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B7B6154D69B450647A1787A95ECAD0F2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>66534D51244743EC8B48E4652306C62E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>B868F92E1899AFB9D51B35F4A23C72F1</key>
 		<dict>
@@ -1283,16 +2206,35 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>BC09F9C853C8EBA419E95965736706CD</key>
+		<key>B96926559B643ABD732B302CCF93251E</key>
 		<dict>
+			<key>children</key>
+			<array>
+				<string>016F5BBD09A11902E39FAE22233B723C</string>
+				<string>72621DC4B8CA90A2CC039DBC40F85F0D</string>
+				<string>61D21D7B34A3200FE42F490D2B10B364</string>
+			</array>
 			<key>isa</key>
-			<string>PBXTargetDependency</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>VENCalculatorInputView</string>
-			<key>target</key>
-			<string>0D6400A8AE3DE1B32B01D6792A916E21</string>
-			<key>targetProxy</key>
-			<string>455B9E2A327347B1A7A55EA420947A70</string>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BB1E21D5F9B9D5D35FA140D864E5EE29</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
 		<dict>
@@ -1304,6 +2246,36 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BDFFC97B6886DA4D60A3FD9A1B470E13</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libMJRefresh.a</string>
+			<key>path</key>
+			<string>libMJRefresh.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BE88E70CA97547BF8BBC8E200F656AEA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshAutoFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshAutoFooter.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1321,6 +2293,26 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
+		<key>BF298E3B56EAFC84D9637933911E6457</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4E7FAD89D8CDC305DFFF923CF8AD8D31</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C0266DA702333927677C77CC3FCB8390</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D7D964255976412AB8A4E3C903586142</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>C0D993AF6654FF0728A7845999022C54</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1334,12 +2326,52 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C3AE5139430E6CD26AF46195E90749AD</key>
+		<key>C10291D821E77E019EC760D33F1DAB2B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<string>39DDA1E0A824AC5041C955C45405FCEB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>C266430A2A8E4CBDEFA4EFD501A2DD3C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F59D7D03623039A9C03604D5506E09F0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C44D996C1C8FE19E06E8861370377B10</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D5FA37478CA6F37242B222929195BDF8</string>
+				<string>F59D7D03623039A9C03604D5506E09F0</string>
+				<string>A1BAE46C4C5EDE326CCC44CE686A83C2</string>
+				<string>23209A6396632F2379442C47F216E19F</string>
+				<string>E6DB880C15DCAB103C1301D4D5E07632</string>
+				<string>3EA0055C7F40C997E12C46CA584FBE3C</string>
+				<string>6409487BE8046DF6531DCDDAE8E6E9C8</string>
+				<string>84883F2C43081F5A3176C951B496D709</string>
+				<string>5A94EBD240AB1BD94B99F857E2791F02</string>
+				<string>678C9629713C062D2BB60FC4AB157131</string>
+				<string>B96926559B643ABD732B302CCF93251E</string>
+				<string>C9851E7DF3A066770064A493F943E6F2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>VENCalculatorInputView</string>
+			<key>path</key>
+			<string>VENCalculatorInputView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C520B203064EB71E6EFF8D4EEFECECF2</key>
 		<dict>
@@ -1381,12 +2413,20 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>C77519E16346A75121D94A252EFD6840</key>
+		<key>C5948F6DC5D66731242C27A21561FE7F</key>
 		<dict>
-			<key>fileRef</key>
-			<string>FDCC6B3E4C531C65FF61A7491DBE63CD</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIView+MJExtension.h</string>
+			<key>path</key>
+			<string>MJRefresh/UIView+MJExtension.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C7D723A0979C28315F9D34839A2DF751</key>
 		<dict>
@@ -1398,6 +2438,53 @@
 			<string>text.script.sh</string>
 			<key>path</key>
 			<string>Pods-Split BillTests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9851E7DF3A066770064A493F943E6F2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>43EAEA05A57D9237DD038EC7971F0AE7</string>
+				<string>5865B1C88F9F442961E13FAFA0F0DE21</string>
+				<string>0D6D49AD555695C5C64FEB093FB0BEC4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/VENCalculatorInputView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB2A46307BAE284E2072FDC83E8CE595</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshAutoGifFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB482E0EE8C698D91EECF0E9A50AF176</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshBackNormalFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1414,22 +2501,77 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>CCB71CD63AD4C718048ACCEBA25FB388</key>
+		<key>CBBEF71FC8DEF8262F67669B0F0A553C</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>9BA4928BFC1FB839FCB3027DF254B66A</string>
-				<string>DDE057E210F1B2099A4AFA238D1E22B1</string>
-				<string>95CBBE506CE68D36ED7554F9EBA6DEBB</string>
-				<string>744C9986294FFD2112F988B35F4D6676</string>
-				<string>0D7F3A90E9112A0B66016028FC43344F</string>
+				<string>1A7453093307B50F6D5214FAADC17F62</string>
+				<string>0A6D5E84E4CAE68C043632C4A0E9BACB</string>
+				<string>F4D257541A591C92C20AB14CF1BC204E</string>
+				<string>CEF16A1553BE6DAA0120FDDCCF1BF188</string>
+				<string>8F7ED473E2E932DDEAAE6155BD683A28</string>
 			</array>
 			<key>isa</key>
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>CE254E679243C66338C8F3335564896B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>39DDA1E0A824AC5041C955C45405FCEB</string>
+				<string>BE88E70CA97547BF8BBC8E200F656AEA</string>
+				<string>D7D964255976412AB8A4E3C903586142</string>
+				<string>CB2A46307BAE284E2072FDC83E8CE595</string>
+				<string>66534D51244743EC8B48E4652306C62E</string>
+				<string>DA07343E39A6887C406775C1D58B9096</string>
+				<string>CF9C8D8ED52C987B53217D2331447302</string>
+				<string>AA00D566569359EBB162CECA085B7942</string>
+				<string>724C375F5D4D583AD63DDEB71A8978FD</string>
+				<string>2BDEA84820195D9ECDA7FB64060A2386</string>
+				<string>9D67C61DD97ECB3F52768762BFBA85CB</string>
+				<string>1F74D2665B5E446B96FD18A23356417F</string>
+				<string>656643109880BDCC60AFB6D3CA9A4738</string>
+				<string>CB482E0EE8C698D91EECF0E9A50AF176</string>
+				<string>177522CEB4625C17624E7B089BF18E45</string>
+				<string>17116CB74631BC1BBE3AC25AAFC2D878</string>
+				<string>76E86812674FB672FAE29FC2F5741179</string>
+				<string>425CCFA795BD53FCA2370348D94211DB</string>
+				<string>8326FCD347724DF04BBFBE396F19763B</string>
+				<string>E83E483ACACCBBA403167237CF5D8DE3</string>
+				<string>3A08A45F01410350725068EDC9B5C6A1</string>
+				<string>BB1E21D5F9B9D5D35FA140D864E5EE29</string>
+				<string>6901281A7C00101630EF8C88FCE64335</string>
+				<string>A35BCFD6036E84020050E5287656A3F0</string>
+				<string>3E2DC491EBDC50D93BF4259F19CA0A55</string>
+				<string>62F321739ACED17187CFA8A06ACBC295</string>
+				<string>E8E5A9AC8F7ADA6051B0372A7B1488DF</string>
+				<string>157BA2017E5E0F81A6E6546D2D82F271</string>
+				<string>2070626DF7C9190E998DED76739A87A3</string>
+				<string>B5F244B57CA3C723EC168A33951F914C</string>
+				<string>79F47832E6B0EC702CBC070A086F3B7C</string>
+				<string>F35579E51693355DB9D214DCE0EE532F</string>
+				<string>688D93469DE4EEB08CBC870955BA9AB1</string>
+				<string>8A5162B616FE075E26CFD475CB6A1B0B</string>
+				<string>2EE62D1750FB43E70D2A3266A1D023FB</string>
+				<string>1FBB0C2B7A2A2DD6925E4EDBD5DEA9A5</string>
+				<string>E52BC8E12A1B786D8854269F036D5B54</string>
+				<string>C5948F6DC5D66731242C27A21561FE7F</string>
+				<string>FC39AFDF050DDC1BF0645F80A500B244</string>
+				<string>CEDC197A77F7845DA3BF0140E6B848F5</string>
+				<string>421218FE25CB8F59A4458F5CFD1BA52F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MJRefresh</string>
+			<key>path</key>
+			<string>MJRefresh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CEC22C73C1608DFA5D5D78BDCB218219</key>
 		<dict>
@@ -1444,25 +2586,75 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>D12839D18F60D5C81A0CA7A320B12CBB</key>
+		<key>CEDC197A77F7845DA3BF0140E6B848F5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4BB42A36FA144DFE69DDCFFB4EBF239C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CEF16A1553BE6DAA0120FDDCCF1BF188</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<string>6409487BE8046DF6531DCDDAE8E6E9C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CEFDC58C7241F86D92DEF8EDFCE7DF99</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8E07812F2E3003A5BFE775F8314B548E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>D30B6F8870FEBA221A793077D5EFDEBB</key>
+		<key>CF9C8D8ED52C987B53217D2331447302</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshAutoNormalFooter.m</string>
 			<key>path</key>
-			<string>VENCalculatorInputView-prefix.pch</string>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CFA235700E5F0CCB560FE1F41CA81819</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8FFEE0150399528668D8E3EC52D36CCC</string>
+				<string>4C1B065AC33F83DFD2BB1975DDF7D775</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>D12839D18F60D5C81A0CA7A320B12CBB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -1490,7 +2682,7 @@
 			<key>mainGroup</key>
 			<string>7DB346D0F39D3F0E887471402A8071AB</string>
 			<key>productRefGroup</key>
-			<string>858BE5857AE5A9236D9631B68106365B</string>
+			<string>1FADF5A1743B4E8E6C224669FBDBC2E2</string>
 			<key>projectDirPath</key>
 			<string></string>
 			<key>projectReferences</key>
@@ -1499,20 +2691,14 @@
 			<string></string>
 			<key>targets</key>
 			<array>
-				<string>0CFF521CB232D46F06054C4CF3B6636A</string>
+				<string>70BC44266C6FFE30D2C57129458E070B</string>
+				<string>F566D5229B3BB7DB07DFD6860AC23B6E</string>
 				<string>E97DAA839FF50A8263A84A542536CD90</string>
 				<string>E62EF923C992460CFA92485F4C6A97C9</string>
-				<string>0D6400A8AE3DE1B32B01D6792A916E21</string>
+				<string>3E8DB3914572C8035BAA5FBC9705947A</string>
 			</array>
 		</dict>
-		<key>D4E0C484C4B0F71C3D4A20D54962B761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>79BC002809D736F79BE9E3A05B616A1F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D9D9337F9E703F33E2672E0A3822ADEE</key>
+		<key>D5FA37478CA6F37242B222929195BDF8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1521,25 +2707,80 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>VENCalculatorInputView.h</string>
+			<string>NSString+VENCalculatorInputView.h</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/VENCalculatorInputView.h</string>
+			<string>VENCalculatorInputView/NSString+VENCalculatorInputView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>DDE057E210F1B2099A4AFA238D1E22B1</key>
+		<key>D7D964255976412AB8A4E3C903586142</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshAutoFooter.m</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshAutoFooter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA07343E39A6887C406775C1D58B9096</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshAutoNormalFooter.h</string>
+			<key>path</key>
+			<string>MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA24898E9D51A0BE4CDCC436E10DB7E5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6BBD7DDAD1B991DF2C3D408F8FABBCF5</string>
+			<string>3EA0055C7F40C997E12C46CA584FBE3C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+		</dict>
+		<key>DDCA954FA320CFB57CE9B99B8524BF59</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C266430A2A8E4CBDEFA4EFD501A2DD3C</string>
+				<string>F148747963A05E607D6DDFCE106ADC9D</string>
+				<string>DA24898E9D51A0BE4CDCC436E10DB7E5</string>
+				<string>1D8F17D389EA064B6EE074C165302F19</string>
+				<string>A36EE9BCCBC1CE1DA23A3B02464DD149</string>
+				<string>A36AAA083185831843E530B4EE78600E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DF5B98D4038DB597B09A92ADEDF459DF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CE254E679243C66338C8F3335564896B</string>
+				<string>C44D996C1C8FE19E06E8861370377B10</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E0186B88EA1BA45BB213EB374A88281E</key>
 		<dict>
@@ -1581,33 +2822,29 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>E45C6EFEFAEF2A6888193410ED8D5FE6</key>
+		<key>E12C808A8DBA433B5AED42029A9728A6</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>E473BA90D62CC37F0C3087E8FBA68061</string>
-				<string>FDCC6B3E4C531C65FF61A7491DBE63CD</string>
-				<string>D30B6F8870FEBA221A793077D5EFDEBB</string>
-			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXTargetDependency</string>
 			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/VENCalculatorInputView</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>VENCalculatorInputView</string>
+			<key>target</key>
+			<string>3E8DB3914572C8035BAA5FBC9705947A</string>
+			<key>targetProxy</key>
+			<string>9CAFD64517E6C7CA95655B76ECF5A21A</string>
 		</dict>
-		<key>E473BA90D62CC37F0C3087E8FBA68061</key>
+		<key>E52BC8E12A1B786D8854269F036D5B54</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIScrollView+MJRefresh.m</string>
 			<key>path</key>
-			<string>VENCalculatorInputView.xcconfig</string>
+			<string>MJRefresh/UIScrollView+MJRefresh.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1631,9 +2868,68 @@
 			<key>productName</key>
 			<string>Pods-Split BillUITests</string>
 			<key>productReference</key>
-			<string>FF26F61B3B49A3EB8F2A4969FEB23815</string>
+			<string>FF5E33268519062050E04B19DE662413</string>
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E6DB880C15DCAB103C1301D4D5E07632</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>VENCalculatorInputTextField.h</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/VENCalculatorInputTextField.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E7A8DDD289D3BFB8950D29CBF67C7132</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9D67C61DD97ECB3F52768762BFBA85CB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E83E483ACACCBBA403167237CF5D8DE3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MJRefreshConst.h</string>
+			<key>path</key>
+			<string>MJRefresh/MJRefreshConst.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E8E5A9AC8F7ADA6051B0372A7B1488DF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MJRefreshHeader.m</string>
+			<key>path</key>
+			<string>MJRefresh/Base/MJRefreshHeader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E954B9D3A283FB30A945CE8823E102DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6901281A7C00101630EF8C88FCE64335</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>E97DAA839FF50A8263A84A542536CD90</key>
 		<dict>
@@ -1655,16 +2951,9 @@
 			<key>productName</key>
 			<string>Pods-Split BillTests</string>
 			<key>productReference</key>
-			<string>064DF53AF13657EB99C659C9AAA90890</string>
+			<string>8BDF88DEEB8331A07AA043A99D98881D</string>
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>ED4763D1A27A7C5883F0D9E9438A48B5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>81BC737F219596D3FF5708F4CFCF37A7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>EDB2A331566AFB7786820BC59BD08E80</key>
 		<dict>
@@ -1679,18 +2968,41 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EEC3552EE83BA90C9C2F3764B41EDDCA</key>
+		<key>F01687C8E9A3E4F8A528BE97DE7BDB80</key>
+		<dict>
+			<key>fileRef</key>
+			<string>656643109880BDCC60AFB6D3CA9A4738</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F148747963A05E607D6DDFCE106ADC9D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>23209A6396632F2379442C47F216E19F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F35579E51693355DB9D214DCE0EE532F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>VENCalculatorIconBackspace@2x.png</string>
+			<string>NSBundle+MJRefresh.h</string>
 			<key>path</key>
-			<string>VENCalculatorInputView/Images/VENCalculatorIconBackspace@2x.png</string>
+			<string>MJRefresh/NSBundle+MJRefresh.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F3AC7C93C770A6F7918EA23972C1762A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E2DC491EBDC50D93BF4259F19CA0A55</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>F3F251986207752E2576DE85871F973E</key>
 		<dict>
@@ -1704,6 +3016,97 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>F4D257541A591C92C20AB14CF1BC204E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E6DB880C15DCAB103C1301D4D5E07632</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F52763D22F95CF0A6F8491822F37BF5D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8326FCD347724DF04BBFBE396F19763B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F566D5229B3BB7DB07DFD6860AC23B6E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>25BD086B173F656DC560D67EEF4C7FA4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FC2D225F382580DABF908A4BAC1D9C0D</string>
+				<string>BF298E3B56EAFC84D9637933911E6457</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>84C0DCF2EBAB219CFB956BE8579BAC32</string>
+				<string>E12C808A8DBA433B5AED42029A9728A6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Split Bill</string>
+			<key>productName</key>
+			<string>Pods-Split Bill</string>
+			<key>productReference</key>
+			<string>4F0F22E6C517F93AA60245B8F0758C70</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>F59D7D03623039A9C03604D5506E09F0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSString+VENCalculatorInputView.m</string>
+			<key>path</key>
+			<string>VENCalculatorInputView/NSString+VENCalculatorInputView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FC2D225F382580DABF908A4BAC1D9C0D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3FFA3FDD4A45A529F958E120695E2838</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FC39AFDF050DDC1BF0645F80A500B244</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIView+MJExtension.m</string>
+			<key>path</key>
+			<string>MJRefresh/UIView+MJExtension.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FC532D63671E8783CC0D561369FFB4FF</key>
 		<dict>
@@ -1739,19 +3142,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>FDCC6B3E4C531C65FF61A7491DBE63CD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VENCalculatorInputView-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>FDCDD6A516601FF8F2D389AB5A5FAECD</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1786,7 +3176,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FF26F61B3B49A3EB8F2A4969FEB23815</key>
+		<key>FF5E33268519062050E04B19DE662413</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
