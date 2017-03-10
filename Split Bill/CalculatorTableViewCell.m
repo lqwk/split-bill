@@ -52,6 +52,15 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     NSLog(@"Called CalculatorDelegate: %@", textField.text);
+
+    // Nullify all negative values
+    double textFieldValue = [textField.text doubleValue];
+    if (textFieldValue < 0) {
+        textField.text = nil;
+    }
+
+    NSLog(@"NON-NEG: Called CalculatorDelegate: %@", textField.text);
+
     if ([self.delegate respondsToSelector:@selector(calculatorCell:calculatorTextFieldDidChange:)]) {
         [self.delegate calculatorCell:self calculatorTextFieldDidChange:textField.text];
     }
