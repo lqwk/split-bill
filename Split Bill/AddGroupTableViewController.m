@@ -141,7 +141,8 @@
         UINavigationController *nvc = segue.destinationViewController;
         CurrencySelectionTableViewController *vc = (CurrencySelectionTableViewController *)nvc.topViewController;
         vc.delegate = self;
-        vc.currency = @"USD";
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+        vc.currency = cell.detailTextLabel.text;
     }
 }
 
