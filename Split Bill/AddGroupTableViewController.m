@@ -141,7 +141,7 @@
         UINavigationController *nvc = segue.destinationViewController;
         CurrencySelectionTableViewController *vc = (CurrencySelectionTableViewController *)nvc.topViewController;
         vc.delegate = self;
-        vc.currency = nil;
+        vc.currency = @"USD";
     }
 }
 
