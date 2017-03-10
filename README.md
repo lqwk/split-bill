@@ -21,8 +21,6 @@ An iOS app for splitting bills between people.
     - [x] Payback Model
     - [x] Integrate with Core Data
     - [x] User Interface
-    - [ ] Details Page for Person
-    - [ ] More Information for Payback Results
     - [x] Pull-to-Add Payback
     - [ ] Auto-Setup Payback (Person & Amount) when User Clicks on a ResultTableViewCell
 
