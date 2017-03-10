@@ -80,11 +80,13 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/Images/VENCalculatorIconBackspace.png"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/Images/VENCalculatorIconBackspace@2x.png"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/VENCalculatorInputView.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/Images/VENCalculatorIconBackspace.png"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/Images/VENCalculatorIconBackspace@2x.png"
   install_resource "VENCalculatorInputView/VENCalculatorInputView/VENCalculatorInputView.xib"

@@ -7,6 +7,7 @@ target 'Split Bill' do
 
   # Pods for Split Bill
   pod 'VENCalculatorInputView', '~> 1.5'
+  pod 'MJRefresh'
 
   target 'Split BillTests' do
     inherit! :search_paths
