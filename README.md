@@ -8,11 +8,12 @@ An iOS app for splitting bills between people.
     - [x] Integrate with Core Data
 - [x] Basic User Interface
 - [ ] Currency & Conversion
-    - [ ] Currency Data
+    - [x] Currency Data
     - [ ] Currency Selection
-        - [ ] Default Currency for Group
+        - [x] Default Currency for Group
         - [ ] Currency for Expense
-    - [ ] Core Data Integration
+        - [ ] Currency Search
+    - [x] Core Data Integration
 - [ ] User Interface Improvements
     - [ ] Custom Pull-to-Add
     - [ ] More Information for Payback Results
