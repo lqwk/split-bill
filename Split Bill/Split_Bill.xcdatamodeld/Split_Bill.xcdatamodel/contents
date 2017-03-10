@@ -32,7 +32,7 @@
     <elements>
         <element name="Expense" positionX="-360" positionY="287" width="128" height="150"/>
         <element name="Group" positionX="-353" positionY="63" width="128" height="120"/>
-        <element name="Payment" positionX="-99" positionY="288" width="128" height="88"/>
-        <element name="Person" positionX="-92" positionY="18" width="128" height="133"/>
+        <element name="Payment" positionX="-99" positionY="288" width="128" height="90"/>
+        <element name="Person" positionX="-92" positionY="18" width="128" height="135"/>
     </elements>
 </model>
