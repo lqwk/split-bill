@@ -35,7 +35,11 @@
 
     self.payer = nil;
     self.receiver = nil;
-    self.amount = 0;
+    if (self.setupAmount) {
+        self.amount = [self.setupAmount floatValue];
+    } else {
+        self.amount = 0;
+    }
 
     self.tableView.rowHeight = 42.f;
     [self.tableView setBackgroundColor:[UIColor backgroundColor]];
@@ -97,7 +101,7 @@
     NSLog(@"PAYBACK PAYMENT: %@", payment);
     NSLog(@"PAYBACK: %@", expense);
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelAddingPayback:(UIBarButtonItem *)sender
@@ -154,6 +158,7 @@
             temp.textLabel.textColor = [UIColor defaultColor];
             if (self.setupLenderName && [temp.person.name isEqualToString:self.setupLenderName]) {
                 temp.chosen = YES;
+                self.payer = temp.person;
             } else {
                 temp.chosen = NO;
             }
@@ -171,6 +176,7 @@
             temp.textLabel.textColor = [UIColor defaultColor];
             if (self.setupLendeeName && [temp.person.name isEqualToString:self.setupLendeeName]) {
                 temp.chosen = YES;
+                self.receiver = temp.person;
             } else {
                 temp.chosen = NO;
             }
