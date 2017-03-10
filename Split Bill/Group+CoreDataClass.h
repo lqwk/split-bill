@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Group *)groupWithName:(NSString *)name
                   unique:(NSString *)unique
+                currency:(NSString *)currency
   inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (void)deleteGroupWithUnique:(NSString *)unique

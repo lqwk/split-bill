@@ -2,7 +2,7 @@
 //  Group+CoreDataProperties.h
 //  Split Bill
 //
-//  Created by Qingwei Lan on 1/13/17.
+//  Created by Qingwei Lan on 3/1/17.
 //  Copyright © 2017 Qingwei Lan. All rights reserved.
 //  This file was automatically generated and should not be edited.
 //
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *unique;
+@property (nullable, nonatomic, copy) NSString *currency;
 @property (nullable, nonatomic, retain) NSSet<Expense *> *expenses;
 @property (nullable, nonatomic, retain) NSSet<Person *> *people;
 

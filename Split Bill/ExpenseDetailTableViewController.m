@@ -43,7 +43,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 3; break;
+        case 0: return 4; break;
         case 1: return self.sbe.payments.count; break;
         case 2: return self.sbe.people.count; break;
         default: break;
@@ -74,6 +74,9 @@
             } else if (indexPath.row == 2) {
                 cell.textLabel.text = @"Total Amount";
                 cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", self.sbe.amount];
+            } else if (indexPath.row == 3) {
+                cell.textLabel.text = @"Currency";
+                cell.detailTextLabel.text = self.expense.currency;
             }
             break;
         }
@@ -122,15 +125,5 @@
 
     return @"";
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Expense *)expenseWithName:(NSString *)name
                       unique:(NSString *)unique
+                    currency:(NSString *)currency
+                   isPayback:(BOOL)isPayback
                        group:(Group *)group
               peopleInvolved:(NSSet<Person *> *)peopleInvolved
       inManagedObjectContext:(NSManagedObjectContext *)context;
