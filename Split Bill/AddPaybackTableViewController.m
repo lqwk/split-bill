@@ -133,7 +133,11 @@
         {
             CalculatorTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"AddPaybackCalculatorCell"];
             [temp setup];
-            temp.calculatorTextField.placeholder = @"Payback Amount";
+            if (self.setupAmount) {
+                temp.calculatorTextField.text = self.setupAmount;
+            } else {
+                temp.calculatorTextField.placeholder = @"Payback Amount";
+            }
             temp.delegate = self;
             temp.selectionStyle = UITableViewCellSelectionStyleNone;
             cell = temp;
@@ -145,8 +149,14 @@
             // Who paid
             PersonTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
             temp.person = [self.people objectAtIndex:indexPath.row];
+            temp.isLendee = YES;
             temp.textLabel.text = temp.person.name;
             temp.textLabel.textColor = [UIColor defaultColor];
+            if (self.setupLenderName && [temp.person.name isEqualToString:self.setupLenderName]) {
+                temp.chosen = YES;
+            } else {
+                temp.chosen = NO;
+            }
             cell = temp;
             break;
         }
@@ -156,8 +166,14 @@
             // Who received
             PersonTableViewCell *temp = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
             temp.person = [self.people objectAtIndex:indexPath.row];
+            temp.isLendee = NO;
             temp.textLabel.text = temp.person.name;
             temp.textLabel.textColor = [UIColor defaultColor];
+            if (self.setupLendeeName && [temp.person.name isEqualToString:self.setupLendeeName]) {
+                temp.chosen = YES;
+            } else {
+                temp.chosen = NO;
+            }
             cell = temp;
             break;
         }

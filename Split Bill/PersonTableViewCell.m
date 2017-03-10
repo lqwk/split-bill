@@ -7,6 +7,7 @@
 //
 
 #import "PersonTableViewCell.h"
+#import "UIColor+SBHelper.h"
 
 @implementation PersonTableViewCell
 
@@ -30,8 +31,16 @@
     _chosen = chosen;
     if (self.chosen) {
         self.accessoryType = UITableViewCellAccessoryCheckmark;
+        self.textLabel.font = [UIFont boldSystemFontOfSize:15.f];
+        if (self.isLendee) {
+            self.textLabel.textColor = [UIColor darkRedColor];
+        } else {
+            self.textLabel.textColor = [UIColor darkGreenColor];
+        }
     } else {
         self.accessoryType = UITableViewCellAccessoryNone;
+        self.textLabel.font = [UIFont systemFontOfSize:15.f];
+        self.textLabel.textColor = [UIColor defaultColor];
     }
 }
 

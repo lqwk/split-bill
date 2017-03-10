@@ -15,4 +15,8 @@
 @property (nonatomic, strong) Group *group;
 @property (nonatomic, strong) NSArray *people;
 
+@property (nonatomic, strong) NSString *setupAmount;
+@property (nonatomic, strong) NSString *setupLendeeName;
+@property (nonatomic, strong) NSString *setupLenderName;
+
 @end
