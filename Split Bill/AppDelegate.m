@@ -23,8 +23,8 @@
 
     NSURL *currencyURL = [[NSBundle mainBundle] URLForResource:@"currency-codes" withExtension:@"json"];
     NSData *currencyData = [NSData dataWithContentsOfURL:currencyURL];
-    NSDictionary *currency = [NSJSONSerialization JSONObjectWithData:currencyData options:0 error:NULL];
-    NSLog(@"%@", currency);
+    NSDictionary *currencies = [NSJSONSerialization JSONObjectWithData:currencyData options:0 error:NULL];
+    self.currencies = currencies;
 
     return YES;
 }

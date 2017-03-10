@@ -17,6 +17,7 @@
 
 - (void)saveContext;
 
+@property (nonatomic, strong) NSDictionary *currencies;
 
 @end
 
